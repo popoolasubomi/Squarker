@@ -77,22 +77,22 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
   * User can view percentage of growth in form of percentage
   
 * Squat Screen
- * User can start squatting indefinitely or for a set amount of time
- * User can click on setting's button to set the amount of squatting time
- * User can view amount of squats done overtime
- * User can share achievement with others via other social media platforms
+  * User can start squatting indefinitely or for a set amount of time
+  * User can click on setting's button to set the amount of squatting time
+  * User can view amount of squats done overtime
+  * User can share achievement with others via other social media platforms
 
 * Detail Screen:
- * User can view details of a certain cell's information
- * User can like & Comment
+  * User can view details of a certain cell's information
+  * User can like & Comment
 
 * Setting Screen
- * User can set amount of time required to do squats
- * User can view status growth overtime
- * User can edit profile photo
+  * User can set amount of time required to do squats
+  * User can view status growth overtime
+  * User can edit profile photo
 
 * Share Screen
- * User chooses social media choice to share achievement
+  * User chooses social media choice to share achievement
 
 ### 3. Navigation
 
