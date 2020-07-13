@@ -12,7 +12,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-* Want to jump higher as a basketballer or high jumper? Imagine an App that keeps track of your progress with Squats and pairs you with other users near by that challenges you to reach daily goals and top the leaderboard. Squarker is soley built for the purpose of enhancing the lower limbs' muscles for better performance in specific sporting activities.
+Want to jump higher as a basketballer or high jumper? Imagine an App that keeps track of your progress with Squats and pairs you with other users near by that challenges you to reach daily goals and top the leaderboard. Squarker is soley built for the purpose of enhancing the lower limbs' muscles for better performance in specific sporting activities.
 
 
 ### App Evaluation
