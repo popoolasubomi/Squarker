@@ -12,10 +12,12 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
+
 Want to jump higher as a basketballer or high jumper? Imagine an App that keeps track of your progress with Squats and pairs you with other users near by that challenges you to reach daily goals and top the leaderboard. Squarker is soley built for the purpose of enhancing the lower limbs' muscles for better performance in specific sporting activities.
 
 
 ### App Evaluation
+
 - **Category:** Fitness & Social
 - **Mobile:** Present on IOS devices
 - **Story:** Allows user engage in Competitive training as well as improve in Jumping abilities
@@ -46,29 +48,84 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login Screen
+  * User can Log in
+  * User can view Squarker Logo
+  * User can click sign up button
+
+* Registeration Screen
+  * User can Sign up for an account
+  * User can Log in after signing up
+  
+* Home Screen / Timeline
+  * User can View Posts of other users
+  * User can click on Post to see more information
+  * User can click on profile image to go to user's profile
+  * User can search for name to only display name's timeline
+  * User can infinitely scroll
+  
+* Profile Screen
+  * User can view his profile and his status
+  * User can view how many squatts he has done since the beginning
+  * User can click on setting's button to view status growth and adjust profile pic
+  * User can view his achievements / Posts
+  * User can View total number of likes
+
+* Progress Screen
+  * User can track his progress over time
+  * User can view amounts of squats performed
+  * User can view percentage of growth in form of percentage
+  
+ * Squat Screen
+  * User can start squatting indefinitely or for a set amount of time
+  * User can click on setting's button to set the amount of squatting time
+  * User can view amount of squats done overtime
+  * User can share achievement with others via other social media platforms
+ 
+ * Detail Screen:
+  * User can view details of a certain cell's information
+  * User can like & Comment
+ 
+ * Setting Screen
+  * User can set amount of time required to do squats
+  * User can view status growth overtime
+  * User can edit profile photo
+  
+ * Share Screen
+  * User chooses social media choice to share achievement
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Home Screen / TimeLine
+* Profile Screen
+* Progress Screen
+* Squat Screen
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login Screen
+  * Sign Up Screen
+  * Home / Timeline Screen
+
+* Sign Up Screen
+  * Login Screen
+  * Home / Timeline Screen
+  
+* Home / Timeline Screen
+  * Detail Screen
+  * User Profile Screen
+ 
+* Profile Screen
+  * Setting Screen
+  * Detail Screen
+
+* Squat Screen
+  * Setting Screen
+  * Share Screen
+  
+* Progress Screen
 
 ## Wireframes
 
