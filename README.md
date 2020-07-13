@@ -1,8 +1,8 @@
-# Squarker
+
 Original App Design Project - README Template
 ===
 
-# APP_NAME_HERE
+# Squarker
 
 ## Table of Contents
 1. [Overview](#Overview)
