@@ -16,13 +16,12 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Fitness & Social
+- **Mobile:** Present on IOS devices
+- **Story:** Allows user engage in Competitive training as well as improve in Jumping abilities
+- **Market:** Athletes / Users that haven't trained since the pandemic began would find this app useful as they could once again par with others to get fit
+- **Habit:** Could be used through out the day time
+- **Scope:** Would easily spread to connect with more Users to train and get in shape
 
 ## Product Spec
 
@@ -30,13 +29,20 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Users can Sign Up / Login / Logout
+* Users can View their profiles along with that of their friends
+* Users can upload their achievements to a general page 
+* Users can keep track of the number of squats performed
+* Users can view statistics of how much times they squat in a day and track progress
+* Users can share results via Facebook, Instagram.
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Users can find other squatters near by
+* Users can guage how high they jump
+* Uses get push notifications to remind them of their squatting schedule
+* Users can Edit and post videos of squatting (Monetized Model)
+* Users can play music to match the tempo at which they squat (Monitized Model)
 
 ### 2. Screen Archetypes
 
