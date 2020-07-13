@@ -71,8 +71,8 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+
+<img src="file:///Users/subomi/Desktop/Screen%20Shot%202020-07-13%20at%205.24.28%20PM.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
