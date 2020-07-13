@@ -72,7 +72,7 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 ## Wireframes
 
-<img src="" width=600>
+<img src="https://i.imgur.com/o0gSKz0.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
