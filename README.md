@@ -50,12 +50,13 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 **Optional Nice-to-have Stories**
 
+* Integration of Apple Health's Kit SDK
 * Users can post photos of them right after squats.
 * Users can find other squatters near by
 * Users can guage how high they jump
 * Uses get push notifications to remind them of their squatting schedule
-* Users can Edit and post videos of squatting (Monetized Model)
-* Users can play music to match the tempo at which they squat (Monitized Model)
+* Users can Edit and post videos of squatting 
+* Users can play music to match the tempo at which they squat 
 
 ### 2. Screen Archetypes
 
