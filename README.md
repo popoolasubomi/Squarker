@@ -132,6 +132,7 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 <img src="https://i.imgur.com/o0gSKz0.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src = "https://i.imgur.com/XCbLewn.png" width=600>
 
 ### [BONUS] Interactive Prototype
 
