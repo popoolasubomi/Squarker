@@ -2,7 +2,7 @@
 Original App Design Project - README Template
 ===
 
-# Squarker
+# Elevate
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -13,7 +13,7 @@ Original App Design Project - README Template
 ## Overview
 ### Description
 
-Want to jump higher as a basketballer or high jumper? Imagine an App that keeps track of your progress with Squats and pairs you with other users near by that challenges you to reach daily goals and top the leaderboard. Squarker is soley built for the purpose of enhancing the lower limbs' muscles for better performance in specific sporting activities.
+Want to jump higher as a basketballer or high jumper? Imagine an App that keeps track of your progress with Squats and pairs you with other users near by that challenges you to reach daily goals and top the leaderboard. Elevate is soley built for the purpose of enhancing the lower limbs' muscles for better performance in specific sporting activities.
 
 
 ### App Evaluation
@@ -34,7 +34,7 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 * Users can Sign Up / Login / Logout
 * Users can View their profiles along with that of their friends
 * Users can upload their achievements to a general page 
-* Users can keep track of the number of squats performed
+* Users can automatically keep track of the number of squats performed
 * Users can view statistics of how much times they squat in a day and track progress
 * Users can share results via Facebook, Instagram.
 
