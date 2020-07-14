@@ -40,6 +40,7 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 **Optional Nice-to-have Stories**
 
+* Users can post photos of them right after squats.
 * Users can find other squatters near by
 * Users can guage how high they jump
 * Uses get push notifications to remind them of their squatting schedule
