@@ -133,15 +133,15 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src = "https://i.imgur.com/XCbLewn.png" width=600>
-![](https://i.imgur.com/epbjTTV.png)
-![](https://i.imgur.com/pbcogwO.png)
-![](https://i.imgur.com/cL7CAie.png)
-![](https://i.imgur.com/y3SCynk.png)
-![](https://i.imgur.com/nI4sHIx.png)
-![](https://i.imgur.com/N3XyqL7.png)
-![](https://i.imgur.com/dWv6M0B.png)
-![](https://i.imgur.com/MKot422.png)
-![](https://i.imgur.com/WwyXxkA.png)
+<img src = "https://i.imgur.com/epbjTTV.png" width=600>
+<img src = "https://i.imgur.com/pbcogwO.png" width=600>
+<img src = "https://i.imgur.com/cL7CAie.png" width=600>
+<img src = "https://i.imgur.com/y3SCynk.png" width=600>
+<img src = "https://i.imgur.com/nI4sHIx.png" width=600>
+<img src = "https://i.imgur.com/N3XyqL7.png" width=600>
+<img src = "https://i.imgur.com/dWv6M0B.png" width=600>
+<img src = "https://i.imgur.com/MKot422.png" width=600>
+<img src = "https://i.imgur.com/WwyXxkA.png" width=600>
 
 ### [BONUS] Interactive Prototype
 
