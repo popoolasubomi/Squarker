@@ -133,15 +133,7 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src = "https://i.imgur.com/XCbLewn.png" width=600>
-<img src = "https://i.imgur.com/epbjTTV.png" width=200>
-<img src = "https://i.imgur.com/pbcogwO.png" width=200>
-<img src = "https://i.imgur.com/cL7CAie.png" width=200>
-<img src = "https://i.imgur.com/y3SCynk.png" width=200>
-<img src = "https://i.imgur.com/nI4sHIx.png" width=200>
-<img src = "https://i.imgur.com/N3XyqL7.png" width=200>
-<img src = "https://i.imgur.com/dWv6M0B.png" width=200>
-<img src = "https://i.imgur.com/MKot422.png" width=200>
-<img src = "https://i.imgur.com/WwyXxkA.png" width=200>
+
 
 ### [BONUS] Interactive Prototype
 
