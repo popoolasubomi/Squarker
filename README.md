@@ -31,11 +31,21 @@ Want to jump higher as a basketballer or high jumper? Imagine an App that keeps 
 
 **Required Must-have Stories**
 
-* Users can Sign Up / Login / Logout
+* Users can Sign Up
+* Users can Login
+* Users can Logout
 * Users can View their profiles along with that of their friends
+* Users can change their profile pic 
+* Users can adjust the amount of time to perform squats
 * Users can upload their achievements to a general page 
 * Users can automatically keep track of the number of squats performed
 * Users can view statistics of how much times they squat in a day and track progress
+* Users can view achievements of other others on a timeline / general page
+* Users can click on cell's achievement to see more information
+* Users can like
+* Users can comment
+* Users can grow status when they break a threshold limit of a number of squats
+* Users can search for name to view name's achievements
 * Users can share results via Facebook, Instagram.
 
 **Optional Nice-to-have Stories**
