@@ -17,6 +17,7 @@
 		437B886F24BF62B60073C533 /* ElevateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B886E24BF62B60073C533 /* ElevateTests.m */; };
 		437B887A24BF62B60073C533 /* ElevateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B887924BF62B60073C533 /* ElevateUITests.m */; };
 		437B888C24BF73590073C533 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888B24BF73590073C533 /* SignUpViewController.m */; };
+		437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888E24BF7A8C0073C533 /* LoginViewController.m */; };
 		54163124F682B9FF2D30D2AA /* Pods_Elevate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359FDC34018F1F87F3E8D3DE /* Pods_Elevate.framework */; };
 		6FCAB2C2CD91A79215E74151 /* Pods_ElevateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F10B4E51C2C08AFBD7BAD /* Pods_ElevateTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,8 @@
 		437B887B24BF62B60073C533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		437B888A24BF73590073C533 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		437B888B24BF73590073C533 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		437B888D24BF7A8C0073C533 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		437B888E24BF7A8C0073C533 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		483365DB59C01BF455718CA3 /* Pods-ElevateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevateTests.release.xcconfig"; path = "Target Support Files/Pods-ElevateTests/Pods-ElevateTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A7B81352B4F019D68C23300 /* Pods-Elevate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate.release.xcconfig"; path = "Target Support Files/Pods-Elevate/Pods-Elevate.release.xcconfig"; sourceTree = "<group>"; };
 		62DFCE8323E0D2B10432BB08 /* Pods-Elevate-ElevateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate-ElevateUITests.debug.xcconfig"; path = "Target Support Files/Pods-Elevate-ElevateUITests/Pods-Elevate-ElevateUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				437B888A24BF73590073C533 /* SignUpViewController.h */,
 				437B888B24BF73590073C533 /* SignUpViewController.m */,
+				437B888D24BF7A8C0073C533 /* LoginViewController.h */,
+				437B888E24BF7A8C0073C533 /* LoginViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				437B886524BF62B60073C533 /* main.m in Sources */,
 				437B888C24BF73590073C533 /* SignUpViewController.m in Sources */,
 				437B885724BF62B40073C533 /* SceneDelegate.m in Sources */,
+				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
