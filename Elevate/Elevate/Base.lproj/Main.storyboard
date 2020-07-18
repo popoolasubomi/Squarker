@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="KIG-gM-gCm">
             <objects>
-                <viewController id="k7z-m0-EYb" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="k7z-m0-EYb" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ydf-nu-mf6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="tEg-Sk-WKv" appends="YES" id="tTl-8n-woF"/>
+                                    <outletCollection property="gestureRecognizers" destination="yFP-Mm-nJ8" appends="YES" id="Eda-ZJ-fC3"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evg-nq-QGx">
@@ -47,7 +47,7 @@
                                 <rect key="frame" x="20" y="494" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce6-Oh-Mo2">
                                 <rect key="frame" x="20" y="601" width="374" height="40"/>
@@ -89,9 +89,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gi9-VM-QvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="tEg-Sk-WKv">
+                <tapGestureRecognizer id="yFP-Mm-nJ8">
                     <connections>
-                        <action selector="onTap:" destination="k7z-m0-EYb" id="JQi-za-RX6"/>
+                        <action selector="onTap:" destination="k7z-m0-EYb" id="idw-Iu-tTB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -110,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Duw-LZ-SHr" appends="YES" id="fGB-W0-lX2"/>
+                                    <outletCollection property="gestureRecognizers" destination="phF-y0-v05" appends="YES" id="uEl-BB-3rB"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-eI-bQD">
@@ -175,25 +175,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Duw-LZ-SHr">
+                <tapGestureRecognizer id="phF-y0-v05">
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="ZL7-Ln-dBO"/>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="FaE-3P-2FQ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-52.173913043478265" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Timeline-->
         <scene sceneID="Ujj-Fp-Nmu">
             <objects>
-                <viewController id="ISZ-qx-kaJ" sceneMemberID="viewController">
+                <viewController id="ISZ-qx-kaJ" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lxn-f5-i5z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7PC-fJ-akp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="z3S-ny-CA1"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="z3S-ny-CA1">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="IUI-bX-Gg8">
+                            <connections>
+                                <action selector="logoutButton:" destination="ISZ-qx-kaJ" id="bvc-fC-ouY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="-2770" y="1873"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="gMO-T3-1cI">
             <objects>
                 <viewController id="KVq-cq-bwi" sceneMemberID="viewController">
@@ -248,7 +254,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EZa-Fz-y9x"/>
+                    <navigationItem key="navigationItem" title="Profile" id="EZa-Fz-y9x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,7 +279,7 @@
             </objects>
             <point key="canvasLocation" x="-1277" y="1873"/>
         </scene>
-        <!--View Controller-->
+        <!--Progress-->
         <scene sceneID="6pm-Cq-n0W">
             <objects>
                 <viewController id="9YS-H6-fjE" sceneMemberID="viewController">
@@ -283,7 +289,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="udM-Nh-0WU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gkU-a3-T9K"/>
+                    <navigationItem key="navigationItem" title="Progress" id="gkU-a3-T9K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogs-t4-xMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,7 +314,7 @@
             </objects>
             <point key="canvasLocation" x="41" y="1873"/>
         </scene>
-        <!--View Controller-->
+        <!--Squat-->
         <scene sceneID="DTI-Od-wYw">
             <objects>
                 <viewController id="dss-Lv-NSv" sceneMemberID="viewController">
@@ -318,7 +324,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="f4S-VY-j3f"/>
                     </view>
-                    <navigationItem key="navigationItem" id="B2r-LY-95c"/>
+                    <navigationItem key="navigationItem" title="Squat" id="B2r-LY-95c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-dt-J51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,7 +351,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aaj-xu-n9W"/>
+        <segue reference="MTj-Ah-h4Y"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>

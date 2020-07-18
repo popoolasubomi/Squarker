@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		386AEA5EE909C13F9F8B2B4D /* Pods_Elevate_ElevateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735269D1EA823D1EA1BD5473 /* Pods_Elevate_ElevateUITests.framework */; };
+		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
 		437B885D24BF62B40073C533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437B885B24BF62B40073C533 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		0C5F10B4E51C2C08AFBD7BAD /* Pods_ElevateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359FDC34018F1F87F3E8D3DE /* Pods_Elevate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elevate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		437B884F24BF62B40073C533 /* Elevate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437B885224BF62B40073C533 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		437B885324BF62B40073C533 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				437B888B24BF73590073C533 /* SignUpViewController.m */,
 				437B888D24BF7A8C0073C533 /* LoginViewController.h */,
 				437B888E24BF7A8C0073C533 /* LoginViewController.m */,
+				433171C824C2A623008568D9 /* HomeViewController.h */,
+				433171C924C2A623008568D9 /* HomeViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				437B888C24BF73590073C533 /* SignUpViewController.m in Sources */,
 				437B885724BF62B40073C533 /* SceneDelegate.m in Sources */,
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
+				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
