@@ -115,6 +115,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		435AD14D24C7530F006EE244 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				437B885B24BF62B40073C533 /* Main.storyboard */,
+				437B886024BF62B60073C533 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		437B884624BF62B40073C533 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +149,7 @@
 		437B885124BF62B40073C533 /* Elevate */ = {
 			isa = PBXGroup;
 			children = (
+				435AD14D24C7530F006EE244 /* Storyboard */,
 				437B888924BF73150073C533 /* Models */,
 				437B888824BF73090073C533 /* Views */,
 				437B888724BF72F90073C533 /* View Controllers */,
@@ -147,9 +157,7 @@
 				437B885324BF62B40073C533 /* AppDelegate.m */,
 				437B885524BF62B40073C533 /* SceneDelegate.h */,
 				437B885624BF62B40073C533 /* SceneDelegate.m */,
-				437B885B24BF62B40073C533 /* Main.storyboard */,
 				437B885E24BF62B60073C533 /* Assets.xcassets */,
-				437B886024BF62B60073C533 /* LaunchScreen.storyboard */,
 				437B886324BF62B60073C533 /* Info.plist */,
 				437B886424BF62B60073C533 /* main.m */,
 			);
@@ -283,6 +291,7 @@
 				TargetAttributes = {
 					437B884E24BF62B40073C533 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1160;
 					};
 					437B886924BF62B60073C533 = {
 						CreatedOnToolsVersion = 11.5;
@@ -624,6 +633,7 @@
 			baseConfigurationReference = E7C801E7B25DF4F6A9C8DD74 /* Pods-Elevate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = Elevate/Info.plist;
@@ -633,6 +643,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = codePath.Elevate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Elevate/Swift Files/Elevate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -642,6 +655,7 @@
 			baseConfigurationReference = 4A7B81352B4F019D68C23300 /* Pods-Elevate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = Elevate/Info.plist;
@@ -651,6 +665,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = codePath.Elevate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Elevate/Swift Files/Elevate-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

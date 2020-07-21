@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2012" y="2753"/>
+            <point key="canvasLocation" x="-1952" y="2753"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rbR-uA-Jxk">
@@ -216,7 +216,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="grb-s4-xHW" kind="relationship" relationship="viewControllers" id="1c3-hy-2lW"/>
-                        <segue destination="iN5-v3-K3R" kind="relationship" relationship="viewControllers" id="IYr-HP-7LR"/>
+                        <segue destination="03C-AS-UYY" kind="relationship" relationship="viewControllers" id="jw5-eS-doF"/>
+                        <segue destination="iN5-v3-K3R" kind="relationship" relationship="viewControllers" id="u6Y-BL-FxC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6t-n5-Wqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,7 +228,7 @@
         <scene sceneID="VGP-FF-MOf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="grb-s4-xHW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="download 1" id="1o0-IH-Qju"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-32" id="1o0-IH-Qju"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gJP-e6-saf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -240,7 +241,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cn-0M-Bdq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2770" y="1873"/>
+            <point key="canvasLocation" x="-1951" y="1873"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4T0-1s-0ul">
+            <objects>
+                <viewController id="aXc-0Y-g0L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWT-eY-Phf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6vO-0g-Dl6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XQ9-Ht-VMf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hN-Xv-Q4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597" y="2753"/>
         </scene>
         <!--Profile-->
         <scene sceneID="gMO-T3-1cI">
@@ -256,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="2753"/>
+            <point key="canvasLocation" x="699" y="2753"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -275,7 +292,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYn-JW-ImC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1277" y="1873"/>
+            <point key="canvasLocation" x="699" y="1873"/>
         </scene>
         <!--Progress-->
         <scene sceneID="6pm-Cq-n0W">
@@ -291,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogs-t4-xMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="2753"/>
+            <point key="canvasLocation" x="700" y="3708"/>
         </scene>
         <!--Graph-->
         <scene sceneID="m3r-ga-xQi">
@@ -310,7 +327,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRb-z7-zNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="1873"/>
+            <point key="canvasLocation" x="-449" y="3708"/>
         </scene>
         <!--Squat-->
         <scene sceneID="DTI-Od-wYw">
@@ -326,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-dt-J51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2355" y="2753"/>
+            <point key="canvasLocation" x="3371" y="3708"/>
         </scene>
         <!--Squat-->
         <scene sceneID="WNf-PX-ZIa">
@@ -345,7 +362,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziE-pz-tFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2354" y="1873"/>
+            <point key="canvasLocation" x="2009" y="3708"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="M7Q-1O-StI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="03C-AS-UYY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search-30" id="UdA-ck-mTn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5l6-MA-k0J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aXc-0Y-g0L" kind="relationship" relationship="rootViewController" id="7cL-yn-1By"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwk-xh-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597" y="1873"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -353,8 +389,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>
-        <image name="download 1" width="40" height="40"/>
+        <image name="icons8-home-32" width="32" height="32"/>
         <image name="icons8-increase-24" width="24" height="24"/>
+        <image name="icons8-search-30" width="30" height="30"/>
         <image name="icons8-squats-30" width="30" height="30"/>
         <image name="icons8-user-30" width="30" height="30"/>
         <image name="images 1" width="236" height="454"/>
