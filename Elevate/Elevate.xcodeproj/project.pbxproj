@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		386AEA5EE909C13F9F8B2B4D /* Pods_Elevate_ElevateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735269D1EA823D1EA1BD5473 /* Pods_Elevate_ElevateUITests.framework */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
+		435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18424C76595006EE244 /* CGImage+Extension.swift */; };
+		435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18524C76595006EE244 /* CGPoint+Extension.swift */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
 		437B885D24BF62B40073C533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437B885B24BF62B40073C533 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		359FDC34018F1F87F3E8D3DE /* Pods_Elevate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elevate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		435AD18424C76595006EE244 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
+		435AD18524C76595006EE244 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		437B884F24BF62B40073C533 /* Elevate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437B885224BF62B40073C533 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		437B885324BF62B40073C533 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		435AD18324C7651A006EE244 /* Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				435AD18424C76595006EE244 /* CGImage+Extension.swift */,
+				435AD18524C76595006EE244 /* CGPoint+Extension.swift */,
+			);
+			path = "Swift Files";
+			sourceTree = "<group>";
+		};
 		437B884624BF62B40073C533 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		437B885124BF62B40073C533 /* Elevate */ = {
 			isa = PBXGroup;
 			children = (
+				435AD18324C7651A006EE244 /* Swift Files */,
 				435AD14D24C7530F006EE244 /* Storyboard */,
 				437B888924BF73150073C533 /* Models */,
 				437B888824BF73090073C533 /* Views */,
@@ -463,6 +477,8 @@
 				437B888C24BF73590073C533 /* SignUpViewController.m in Sources */,
 				437B885724BF62B40073C533 /* SceneDelegate.m in Sources */,
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
+				435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */,
+				435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FC4BA904EF73BF9DA3B66AB /* Pods-ElevateTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
@@ -696,6 +713,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 483365DB59C01BF455718CA3 /* Pods-ElevateTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
@@ -717,6 +735,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62DFCE8323E0D2B10432BB08 /* Pods-Elevate-ElevateUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = ElevateUITests/Info.plist;
@@ -736,6 +755,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D17274C58F9AAF08671CA110 /* Pods-Elevate-ElevateUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = ElevateUITests/Info.plist;
