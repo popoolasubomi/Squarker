@@ -22,6 +22,8 @@
 		435AD19B24C772B1006EE244 /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19624C772B1006EE244 /* PopOverModalViewController.swift */; };
 		435AD19C24C772B1006EE244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19724C772B1006EE244 /* ViewController.swift */; };
 		435AD19D24C772B1006EE244 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19824C772B1006EE244 /* PoseImageView.swift */; };
+		435AD1A024C7741A006EE244 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19E24C7741A006EE244 /* VideoCapture.swift */; };
+		435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
 		437B885D24BF62B40073C533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437B885B24BF62B40073C533 /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 		435AD19624C772B1006EE244 /* PopOverModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
 		435AD19724C772B1006EE244 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		435AD19824C772B1006EE244 /* PoseImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
+		435AD19E24C7741A006EE244 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCapture.swift; path = "Elevate/Swift Files/VideoCapture.swift"; sourceTree = SOURCE_ROOT; };
+		435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AVCaptureVideoOrientation+Extension.swift"; path = "Elevate/Swift Files/AVCaptureVideoOrientation+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		437B884F24BF62B40073C533 /* Elevate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437B885224BF62B40073C533 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		437B885324BF62B40073C533 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		435AD14D24C7530F006EE244 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */,
+				435AD19E24C7741A006EE244 /* VideoCapture.swift */,
 				437B885B24BF62B40073C533 /* Main.storyboard */,
 				437B886024BF62B60073C533 /* LaunchScreen.storyboard */,
 			);
@@ -521,9 +527,11 @@
 				435AD19224C77233006EE244 /* Pose.swift in Sources */,
 				435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */,
 				435AD19D24C772B1006EE244 /* PoseImageView.swift in Sources */,
+				435AD1A024C7741A006EE244 /* VideoCapture.swift in Sources */,
 				435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 				435AD19324C77233006EE244 /* PoseBuilderConfiguration.swift in Sources */,
+				435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
