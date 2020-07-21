@@ -8,6 +8,8 @@ target 'Elevate' do
   # Pods for Elevate
     pod 'AFNetworking'
     pod 'Parse'
+    pod 'Parse/UI'
+    pod 'IQKeyboardManager'
 
   target 'ElevateTests' do
     inherit! :search_paths
