@@ -16,10 +16,10 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var labelgudei: UILabel!
     
-    var counter = 0
+    var counter = 0 
     var previous = [Float]()
     var current = [Float]()
-    var oken: String = "r"
+    var current_action: String = "r"
     
     private let videoCapture = VideoCapture()
 
@@ -80,23 +80,6 @@ class ViewController: UIViewController {
                                      with coordinator: UIViewControllerTransitionCoordinator) {
         // Reinitilize the camera to update its output stream with the new orientation.
         setupAndBeginCapturingVideoFrames()
-    }
-
-    @IBAction func onCameraButtonTapped(_ sender: Any) {
-        videoCapture.flipCamera { error in
-            if let error = error {
-                print("Failed to flip camera with error \(error)")
-            }
-        }
-    }
-
-    @IBAction func onAlgorithmSegmentValueChanged(_ sender: UISegmentedControl) {
-        guard let selectedAlgorithm = Algorithm(
-            rawValue: sender.selectedSegmentIndex) else {
-                return
-        }
-
-        algorithm = selectedAlgorithm
     }
 }
 
