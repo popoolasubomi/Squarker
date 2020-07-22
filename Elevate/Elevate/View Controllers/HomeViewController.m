@@ -25,6 +25,15 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self hideNavigationBarTitle];
+}
+
+- (void) hideNavigationBarTitle{
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.text = @"";
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
 }
 
 -(void) loadPosts{

@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *caption;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
+
 @end
 
 NS_ASSUME_NONNULL_END
