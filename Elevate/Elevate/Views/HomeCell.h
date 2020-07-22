@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeCell : UITableViewCell
 
+@property (nonatomic, strong) Post *post;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
+-(void)setPost:(Post *)post;
 
 @end
 

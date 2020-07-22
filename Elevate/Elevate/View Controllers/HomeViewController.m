@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
+#import "HomeCell.h"
+#import "Post.h"
 #import "Parse/Parse.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -61,7 +63,9 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
+    Post *post = self.posts[indexPath.row];
+    [cell setPost: post];
     return cell;
 }
 

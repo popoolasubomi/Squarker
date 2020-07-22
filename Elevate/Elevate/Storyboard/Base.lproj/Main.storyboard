@@ -216,14 +216,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="kzz-Ai-UkQ" customClass="HomeCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="200" id="kzz-Ai-UkQ" customClass="HomeCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kzz-Ai-UkQ" id="1H8-bl-GZ2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="PhU-TH-5pi">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="PhU-TH-5pi" customClass="PFImageView">
                                                     <rect key="frame" x="20" y="36" width="152" height="153"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -249,7 +249,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-y1-ruL">
-                                                    <rect key="frame" x="187" y="56" width="207" height="113"/>
+                                                    <rect key="frame" x="195" y="56" width="199" height="113"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.15673911737911594" green="0.15673911737911594" blue="0.15673911737911594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -260,7 +260,7 @@
                                         <connections>
                                             <outlet property="caption" destination="2bd-y1-ruL" id="22t-14-jwS"/>
                                             <outlet property="numberOfSquats" destination="qnm-sb-VVj" id="IlU-8k-2AX"/>
-                                            <outlet property="profileImage" destination="PhU-TH-5pi" id="wcv-Jx-U14"/>
+                                            <outlet property="profileImage" destination="PhU-TH-5pi" id="VY3-Ph-WuX"/>
                                             <outlet property="usernameLabel" destination="QO4-de-gcL" id="xXw-gl-clR"/>
                                         </connections>
                                     </tableViewCell>

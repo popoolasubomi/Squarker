@@ -7,6 +7,7 @@
 //
 
 #import "HomeCell.h"
+#import "Post.h"
 
 @implementation HomeCell
 
@@ -19,6 +20,20 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setPost:(Post *) post{
+    _post = post;
+    
+    self.profileImage.file = post.image;
+    [self.profileImage loadInBackground];
+    
+    PFUser *user = self.post[@"author"];
+    self.usernameLabel.text = user != nil ? user.username : @"🤖";
+    
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%@", post.squats];
+    
+    self.caption.text = post.caption;
 }
 
 @end
