@@ -27,6 +27,7 @@
     [super viewDidLoad];
   
     self.numberOfSquats.text = [NSString stringWithFormat: @"%@", self.numSquats];
+    self.textView.delegate = self;
 }
 
 - (void) errorAlert{
