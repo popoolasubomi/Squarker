@@ -217,7 +217,8 @@
                     <connections>
                         <segue destination="grb-s4-xHW" kind="relationship" relationship="viewControllers" id="1c3-hy-2lW"/>
                         <segue destination="03C-AS-UYY" kind="relationship" relationship="viewControllers" id="jw5-eS-doF"/>
-                        <segue destination="iN5-v3-K3R" kind="relationship" relationship="viewControllers" id="u6Y-BL-FxC"/>
+                        <segue destination="yhc-4d-jJ8" kind="relationship" relationship="viewControllers" id="OOD-bW-09b"/>
+                        <segue destination="iN5-v3-K3R" kind="relationship" relationship="viewControllers" id="aTg-4v-5Dz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6t-n5-Wqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -257,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hN-Xv-Q4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="2753"/>
+            <point key="canvasLocation" x="-1117" y="2753"/>
         </scene>
         <!--Profile-->
         <scene sceneID="gMO-T3-1cI">
@@ -308,13 +309,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogs-t4-xMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="3708"/>
+            <point key="canvasLocation" x="-52" y="2753"/>
         </scene>
-        <!--Graph-->
+        <!--Growth-->
         <scene sceneID="m3r-ga-xQi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yhc-4d-jJ8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Graph" image="icons8-increase-24" id="rnf-sb-FX2"/>
+                    <tabBarItem key="tabBarItem" title="Growth" image="icons8-increase-24" id="rnf-sb-FX2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="czc-ob-z4K">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -327,7 +328,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRb-z7-zNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449" y="3708"/>
+            <point key="canvasLocation" x="-52" y="1873"/>
         </scene>
         <!--Squat-->
         <scene sceneID="DTI-Od-wYw">
@@ -394,6 +395,27 @@
             </objects>
             <point key="canvasLocation" x="3369.5652173913045" y="3707.8125"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="4Mh-L7-xhb">
+            <objects>
+                <viewController id="Q0H-mc-KZk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNY-1d-2qk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-fO-t3B">
+                                <rect key="frame" x="0.0" y="182" width="414" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mwc-Ik-Yrj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVg-8K-0O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4459.420289855073" y="3707.8125"/>
+        </scene>
         <!--Squat-->
         <scene sceneID="WNf-PX-ZIa">
             <objects>
@@ -427,7 +449,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwk-xh-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="1873"/>
+            <point key="canvasLocation" x="-1117" y="1873"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
