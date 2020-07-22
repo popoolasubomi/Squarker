@@ -10,6 +10,7 @@
 		386AEA5EE909C13F9F8B2B4D /* Pods_Elevate_ElevateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735269D1EA823D1EA1BD5473 /* Pods_Elevate_ElevateUITests.framework */; };
 		43079EB324C7B25900E41A75 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB224C7B25900E41A75 /* Post.m */; };
 		43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB524C8A23C00E41A75 /* PostViewController.m */; };
+		43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB824C8C44F00E41A75 /* HomeCell.m */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18424C76595006EE244 /* CGImage+Extension.swift */; };
 		435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18524C76595006EE244 /* CGPoint+Extension.swift */; };
@@ -68,6 +69,8 @@
 		43079EB224C7B25900E41A75 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		43079EB424C8A23C00E41A75 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		43079EB524C8A23C00E41A75 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		43079EB724C8C44F00E41A75 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		43079EB824C8C44F00E41A75 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		435AD18424C76595006EE244 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 		437B888824BF73090073C533 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43079EB724C8C44F00E41A75 /* HomeCell.h */,
+				43079EB824C8C44F00E41A75 /* HomeCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 				435AD19324C77233006EE244 /* PoseBuilderConfiguration.swift in Sources */,
+				43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */,
 				435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
