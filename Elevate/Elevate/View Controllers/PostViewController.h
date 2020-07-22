@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PostViewController : UIViewController
 
+@property (nonatomic, strong) NSNumber *numSquats;
+
 @end
 
 NS_ASSUME_NONNULL_END

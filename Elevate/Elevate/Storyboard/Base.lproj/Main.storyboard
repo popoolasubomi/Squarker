@@ -228,7 +228,7 @@
         <!--Home-->
         <scene sceneID="VGP-FF-MOf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="grb-s4-xHW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="grb-s4-xHW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="icons8-home-32" id="1o0-IH-Qju"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gJP-e6-saf">
@@ -425,6 +425,9 @@
                                 <state key="normal" title="Share">
                                     <color key="titleColor" red="0.13302233222175294" green="0.32601349335530166" blue="0.67286945841319801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareButton:" destination="Q0H-mc-KZk" eventType="touchUpInside" id="Asa-Bu-wEN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGc-b8-fv3">
                                 <rect key="frame" x="20" y="69" width="113" height="44"/>
@@ -455,10 +458,23 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Mwc-Ik-Yrj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Zfc-1h-cT3" appends="YES" id="n0S-HL-aN3"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="numberOfSquats" destination="bhD-Wa-icU" id="QPA-7D-6hz"/>
+                        <outlet property="textView" destination="H70-rv-ovO" id="hyQ-KZ-COs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVg-8K-0O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Zfc-1h-cT3">
+                    <connections>
+                        <action selector="onTap:" destination="Q0H-mc-KZk" id="RHm-ea-ry1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4459.420289855073" y="3707.8125"/>
         </scene>
