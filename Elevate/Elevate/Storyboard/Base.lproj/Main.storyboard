@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7z-m0-EYb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0H-mc-KZk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -465,7 +465,10 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="instructionLabel" destination="xs8-eo-99q" id="bYu-tw-DOv"/>
                         <outlet property="numberOfSquats" destination="bhD-Wa-icU" id="QPA-7D-6hz"/>
+                        <outlet property="postButton" destination="C99-tw-He6" id="oah-no-w2S"/>
+                        <outlet property="squatsLabel" destination="FGc-b8-fv3" id="Dmg-gz-voV"/>
                         <outlet property="textView" destination="H70-rv-ovO" id="hyQ-KZ-COs"/>
                     </connections>
                 </viewController>

@@ -11,10 +11,13 @@
 #import "SceneDelegate.h"
 #import "Post.h"
 
-@interface PostViewController ()
+@interface PostViewController () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *squatsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *postButton;
 
 @end
 
@@ -73,6 +76,40 @@
             }
         }];
     }
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    CGRect newFrame = textView.frame;
+    newFrame.origin.y -= 150;
+    
+    [UIView animateWithDuration: 0.2 animations:^{
+        self.numberOfSquats.alpha = 0;
+        self.instructionLabel.alpha = 0;
+        self.squatsLabel.alpha = 0;
+        self.numberOfSquats.alpha = 0;
+        self.postButton.alpha = 0;
+    }];
+    
+    [UIView animateWithDuration: 0.3 animations:^{
+        self.textView.frame = newFrame;
+    }];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    CGRect newFrame = textView.frame;
+    newFrame.origin.y += 150;
+    
+    [UIView animateWithDuration: 0.3 animations:^{
+        self.numberOfSquats.alpha = 1;
+        self.instructionLabel.alpha = 1;
+        self.squatsLabel.alpha = 1;
+        self.numberOfSquats.alpha = 1;
+        self.postButton.alpha = 1;
+    }];
+    
+    [UIView animateWithDuration: 0.2 animations:^{
+        self.textView.frame = newFrame;
+    }];
 }
 
 - (IBAction)onTap:(id)sender {
