@@ -38,6 +38,13 @@
     self.navigationItem.titleView = titleLabel;
 }
 
+- (void) showNavigationBarTitle{
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.text = @"Timeline";
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+}
+
 -(void) loadPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey: @"author"];
