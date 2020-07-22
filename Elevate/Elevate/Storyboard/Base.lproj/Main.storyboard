@@ -283,7 +283,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="0bU-Fl-ePh" id="Paj-W6-QEE"/>
                         <outlet property="tableView" destination="sfU-zr-igF" id="7qX-Oy-WGp"/>
+                        <outlet property="titleLabel" destination="Fz2-ZA-bD1" id="ahU-1M-KJU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

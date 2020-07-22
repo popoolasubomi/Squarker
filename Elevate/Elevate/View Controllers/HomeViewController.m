@@ -13,10 +13,13 @@
 #import "Post.h"
 #import "Parse/Parse.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-@property (nonatomic, strong) NSArray *posts;
+@property (nonatomic, strong) NSMutableArray *posts;
+@property (nonatomic, strong) NSMutableArray *filteredData;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -27,6 +30,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.searchBar.delegate = self;
     
     [self hideNavigationBarTitle];
 }
@@ -52,12 +57,28 @@
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            self.posts = posts;
+            self.posts = (NSMutableArray *) posts;
+            self.filteredData = self.posts;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText) {
+        if (searchText.length != 0) {
+            NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+                return [evaluatedObject[@"author"] containsString: searchText];
+            }];
+            self.filteredData = [self.posts filteredArrayUsingPredicate: predicate];
+        }
+        else {
+            self.filteredData = self.posts;
+        }
+        [self.tableView reloadData];
+    }
 }
 
 - (IBAction)logoutButton:(id)sender {
@@ -71,13 +92,13 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
-    Post *post = self.posts[indexPath.row];
+    Post *post = self.filteredData[indexPath.row];
     [cell setPost: post];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count;
+    return self.filteredData.count;
 }
 
 @end
