@@ -25,6 +25,8 @@
 -(void)setPost:(Post *) post{
     _post = post;
     
+    self.profileImage.layer.cornerRadius = 18;
+    self.profileImage.layer.masksToBounds = YES;
     self.profileImage.file = post.image;
     [self.profileImage loadInBackground];
     

@@ -11,6 +11,7 @@
 		43079EB324C7B25900E41A75 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB224C7B25900E41A75 /* Post.m */; };
 		43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB524C8A23C00E41A75 /* PostViewController.m */; };
 		43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB824C8C44F00E41A75 /* HomeCell.m */; };
+		43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18424C76595006EE244 /* CGImage+Extension.swift */; };
 		435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18524C76595006EE244 /* CGPoint+Extension.swift */; };
@@ -71,6 +72,8 @@
 		43079EB524C8A23C00E41A75 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		43079EB724C8C44F00E41A75 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		43079EB824C8C44F00E41A75 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		43079EBA24C8FCEF00E41A75 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		435AD18424C76595006EE244 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				433171C924C2A623008568D9 /* HomeViewController.m */,
 				43079EB424C8A23C00E41A75 /* PostViewController.h */,
 				43079EB524C8A23C00E41A75 /* PostViewController.m */,
+				43079EBA24C8FCEF00E41A75 /* ProfileViewController.h */,
+				43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
 				435AD19C24C772B1006EE244 /* ViewController.swift in Sources */,
 				435AD19224C77233006EE244 /* Pose.swift in Sources */,
+				43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */,
 				435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */,
 				435AD19D24C772B1006EE244 /* PoseImageView.swift in Sources */,
 				435AD1A024C7741A006EE244 /* VideoCapture.swift in Sources */,
