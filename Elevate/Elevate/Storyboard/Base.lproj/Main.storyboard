@@ -726,7 +726,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="sxK-b9-Hqr">
-                                        <barButtonItem key="rightBarButtonItem" image="icons8-slr-camera-24" id="aHd-lE-VIS"/>
+                                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="F7T-Gy-8HG">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="JCR-HH-mpG" id="rEb-6r-p2w"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="icons8-slr-camera-24" id="aHd-lE-VIS">
+                                            <connections>
+                                                <action selector="cameraButton:" destination="JCR-HH-mpG" id="mq9-RW-d9O"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -767,11 +776,11 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
                                 <rect key="frame" x="36" y="193" width="341" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="nng-UX-j5H">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="nng-UX-j5H" customClass="PFImageView">
                                 <rect key="frame" x="108" y="301" width="196" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -811,18 +820,27 @@
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="DSz-EA-Bqh"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qeF-Ar-4s4" appends="YES" id="T3j-QD-kKd"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="heightTextView" destination="cLV-qW-biP" id="SL1-Zq-vwu"/>
                         <outlet property="nameTextView" destination="dDS-V8-5JB" id="U57-sD-Ryi"/>
-                        <outlet property="profileImage" destination="nng-UX-j5H" id="dwx-n1-cFy"/>
+                        <outlet property="profileImage" destination="nng-UX-j5H" id="g6L-on-N0P"/>
                         <outlet property="slider" destination="fzv-dA-dzr" id="2IM-Qv-llq"/>
                         <outlet property="sliderValue" destination="zBg-qd-Ly9" id="QZ4-AJ-0dG"/>
                         <outlet property="toggleSwitch" destination="aWc-mG-0gc" id="dP0-Pg-SOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPl-t0-iBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qeF-Ar-4s4">
+                    <connections>
+                        <action selector="onTap:" destination="JCR-HH-mpG" id="2J0-7x-fCd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2042.0289855072465" y="2162.9464285714284"/>
         </scene>
@@ -1057,6 +1075,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>
+        <image name="close-icon" width="26" height="24"/>
         <image name="download" width="200" height="200"/>
         <image name="favor-icon-red" width="30" height="30"/>
         <image name="icons8-home-32" width="32" height="32"/>
