@@ -538,7 +538,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="9On-w0-IlS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="9On-w0-IlS" customClass="PFImageView">
                                 <rect key="frame" x="20" y="109" width="145" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -700,7 +700,7 @@
                         <outlet property="middleView" destination="AJh-cd-gz7" id="5wd-XI-14H"/>
                         <outlet property="numLikes" destination="tRg-QL-YCJ" id="0Ah-eC-aiP"/>
                         <outlet property="numSquats" destination="B1m-6c-i3y" id="vTL-FU-4kM"/>
-                        <outlet property="profileImage" destination="9On-w0-IlS" id="49v-Ux-nkZ"/>
+                        <outlet property="profileImage" destination="9On-w0-IlS" id="a4f-kq-cUM"/>
                         <outlet property="segmentedController" destination="BNK-FI-ev0" id="lZA-Tf-Jhp"/>
                         <outlet property="squatImage" destination="ZdY-kB-P6Y" id="Rfs-jj-Nhd"/>
                         <outlet property="statusLabel" destination="GQV-Ux-NSE" id="Pg2-qE-cL6"/>

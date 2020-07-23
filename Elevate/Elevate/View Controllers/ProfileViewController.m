@@ -9,11 +9,12 @@
 #import "ProfileViewController.h"
 #import "HomeCell.h"
 #import "Post.h"
+@import Parse;
 
 @interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
 @property (weak, nonatomic) IBOutlet UILabel *statusRank;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *posts;
+@property (nonatomic, strong) NSMutableArray *friends;
 
 @end
 
@@ -38,12 +40,15 @@
     self.tableView.dataSource = self;
     
     [self populateView];
+    [self loadPosts];
 }
 
 - (IBAction)changeSegment:(id)sender {
     if (self.segmentedController.selectedSegmentIndex == 0){
+        [self loadPosts];
         self.displayLabel.text = @"My Timeline";
     } else{
+        [self loadFriends];
         self.displayLabel.text = @"Friends";
     }
 }
@@ -57,6 +62,12 @@
         self.statusRank.text = [user objectForKey: @"status"];
         self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
         self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
+        
+        PFFileObject *imageData = [user objectForKey: @"image"];
+        self.profileImage.layer.cornerRadius = 72;
+        self.profileImage.layer.masksToBounds = YES;
+        self.profileImage.file = imageData;
+        [self.profileImage loadInBackground];
     } else{
         self.displayName.alpha = 0;
         self.statusLabel.alpha = 0;
@@ -80,6 +91,12 @@
     }];
 }
 
+- (void) loadFriends{
+    PFUser *user = PFUser.currentUser;
+    self.friends = [user objectForKey: @"Friends"];
+    [self.tableView reloadData];
+}
+
 - (IBAction)settingsButton:(id)sender {
     [self performSegueWithIdentifier: @"settingsSegue" sender: nil];
 }
@@ -88,20 +105,15 @@
     [self performSegueWithIdentifier: @"squatSegue" sender: nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
-    Post *post = self.posts[indexPath.row];
-    [cell setPost: post];
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        Post *post = self.posts[indexPath.row];
+        [cell setPost: post];
+    } else{
+        NSString *friendName = self.friends[indexPath.row];
+        [cell setFriends: friendName];
+    }
     return cell;
 }
 

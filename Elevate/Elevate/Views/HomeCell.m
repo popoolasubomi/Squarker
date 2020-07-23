@@ -38,4 +38,14 @@
     self.caption.text = post.caption;
 }
 
+- (void)setFriends:(NSString *)friendName{
+    _friendName = friendName;
+    
+    CGRect newFrame = self.caption.frame;
+    newFrame.origin.y += 50;
+    newFrame.size.height = 21;
+    
+    self.caption.alpha = 0;
+    self.usernameLabel.frame = newFrame;
+}
 @end
