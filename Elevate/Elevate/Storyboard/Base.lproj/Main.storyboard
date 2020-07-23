@@ -787,6 +787,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
                                 <rect key="frame" x="36" y="193" width="341" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateSliderValue:" destination="JCR-HH-mpG" eventType="valueChanged" id="e85-zr-Mxv"/>
+                                </connections>
                             </slider>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="nng-UX-j5H" customClass="PFImageView">
                                 <rect key="frame" x="108" y="301" width="196" height="195"/>

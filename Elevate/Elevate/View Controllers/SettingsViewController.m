@@ -115,6 +115,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)updateSliderValue:(id)sender {
+    self.sliderValue.text = [NSString stringWithFormat: @"%f mins", self.slider.value];
+}
+
 - (IBAction)submitButton:(id)sender {
     if ([self.heightTextView isEqual: @""] || [self.nameTextView isEqual: @""]){
         [self emptyFieldsAlert];
