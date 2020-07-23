@@ -448,7 +448,7 @@
                                             <fragment content="Users Timeline">
                                                 <attributes>
                                                     <font key="NSFont" size="25" name="Cochin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -643,7 +643,7 @@
                                             <fragment content="My Timeline">
                                                 <attributes>
                                                     <font key="NSFont" size="25" name="Cochin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -673,6 +673,9 @@
                                     <segment title="Timleine"/>
                                     <segment title="Friends"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSegment:" destination="KVq-cq-bwi" eventType="valueChanged" id="Cgj-u6-zh6"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

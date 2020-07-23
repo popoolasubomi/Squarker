@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "HomeCell.h"
+#import "Post.h"
 
 @interface ProfileViewController ()
 
@@ -30,9 +32,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self populateView];
 }
 
+- (IBAction)changeSegment:(id)sender {
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        self.displayLabel.text = @"My Timeline";
+    } else{
+        self.displayLabel.text = @"Friends";
+    }
+}
+
+
+-(void) populateView{
+    PFUser *user = PFUser.currentUser;
+    self.usernameLabel.text = user.username;
+    if ([user objectForKey: @"image"] != nil){
+        self.displayName.text = [user objectForKey: @"displayName"];
+        self.statusRank.text = [user objectForKey: @"status"];
+        self.numLikes.text = [NSString stringWithFormat: @"%d", [user objectForKey: @"likes"]];
+        self.numSquats.text = [NSString stringWithFormat: @"%d", [user objectForKey: @"squats"]];
+    } else{
+        self.displayName.alpha = 0;
+        self.statusLabel.alpha = 0;
+        self.statusRank.alpha = 0;
+    }
+}
 /*
 #pragma mark - Navigation
 
