@@ -331,6 +331,21 @@
             </objects>
             <point key="canvasLocation" x="-1951" y="1873"/>
         </scene>
+        <!--Users Profile View Controller-->
+        <scene sceneID="jBN-yO-bMO">
+            <objects>
+                <viewController id="KDD-Do-pTb" customClass="UsersProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y7Y-UG-PB4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1952" y="3708"/>
+        </scene>
         <!--Search Others-->
         <scene sceneID="4T0-1s-0ul">
             <objects>
