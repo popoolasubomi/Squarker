@@ -725,17 +725,106 @@
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Settings" id="sxK-b9-Hqr"/>
+                                    <navigationItem title="Settings" id="sxK-b9-Hqr">
+                                        <barButtonItem key="rightBarButtonItem" image="icons8-slr-camera-24" id="aHd-lE-VIS"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-dJ-8mr">
+                                <rect key="frame" x="20" y="119" width="47" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Time:">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Cochin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-WR-ER4">
+                                <rect key="frame" x="38" y="165" width="73" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Indefinite:">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Cochin"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azl-4A-fP3">
+                                <rect key="frame" x="20" y="270" width="102" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Edit Profile:">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Cochin"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
+                                <rect key="frame" x="36" y="193" width="341" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="nng-UX-j5H">
+                                <rect key="frame" x="108" y="301" width="196" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-V8-5JB">
+                                <rect key="frame" x="38" y="519" width="337" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLV-qW-biP">
+                                <rect key="frame" x="39" y="584" width="337" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-QK-gxN">
+                                <rect key="frame" x="178" y="684" width="58" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.13302233220000001" green="0.32601349340000002" blue="0.67286945840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="JCR-HH-mpG" eventType="touchUpInside" id="IsJ-lX-rLZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-qd-Ly9">
+                                <rect key="frame" x="75" y="124" width="51" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15673911739999999" green="0.15673911739999999" blue="0.15673911739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-mG-0gc">
+                                <rect key="frame" x="139" y="160" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="DSz-EA-Bqh"/>
                     </view>
+                    <connections>
+                        <outlet property="heightTextView" destination="cLV-qW-biP" id="SL1-Zq-vwu"/>
+                        <outlet property="nameTextView" destination="dDS-V8-5JB" id="U57-sD-Ryi"/>
+                        <outlet property="profileImage" destination="nng-UX-j5H" id="dwx-n1-cFy"/>
+                        <outlet property="slider" destination="fzv-dA-dzr" id="2IM-Qv-llq"/>
+                        <outlet property="sliderValue" destination="zBg-qd-Ly9" id="QZ4-AJ-0dG"/>
+                        <outlet property="toggleSwitch" destination="aWc-mG-0gc" id="dP0-Pg-SOD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPl-t0-iBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="2164"/>
+            <point key="canvasLocation" x="2042.0289855072465" y="2162.9464285714284"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -974,6 +1063,7 @@
         <image name="icons8-increase-24" width="24" height="24"/>
         <image name="icons8-search-30" width="30" height="30"/>
         <image name="icons8-settings-64" width="64" height="64"/>
+        <image name="icons8-slr-camera-24" width="24" height="24"/>
         <image name="icons8-squats-30" width="30" height="30"/>
         <image name="icons8-user-30" width="30" height="30"/>
         <image name="images 1" width="236" height="454"/>
