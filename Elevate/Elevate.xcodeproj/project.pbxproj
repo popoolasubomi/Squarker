@@ -12,6 +12,7 @@
 		43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB524C8A23C00E41A75 /* PostViewController.m */; };
 		43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EB824C8C44F00E41A75 /* HomeCell.m */; };
 		43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */; };
+		43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EBE24C919D200E41A75 /* SettingsViewController.m */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18424C76595006EE244 /* CGImage+Extension.swift */; };
 		435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18524C76595006EE244 /* CGPoint+Extension.swift */; };
@@ -74,6 +75,8 @@
 		43079EB824C8C44F00E41A75 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		43079EBA24C8FCEF00E41A75 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		43079EBD24C919D200E41A75 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		43079EBE24C919D200E41A75 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		435AD18424C76595006EE244 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				43079EB524C8A23C00E41A75 /* PostViewController.m */,
 				43079EBA24C8FCEF00E41A75 /* ProfileViewController.h */,
 				43079EBB24C8FCEF00E41A75 /* ProfileViewController.m */,
+				43079EBD24C919D200E41A75 /* SettingsViewController.h */,
+				43079EBE24C919D200E41A75 /* SettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 				435AD19324C77233006EE244 /* PoseBuilderConfiguration.swift in Sources */,
+				43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */,
 				43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */,
 				435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 			);

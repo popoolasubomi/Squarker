@@ -499,11 +499,27 @@
                     </navigationItem>
                     <connections>
                         <segue destination="dss-Lv-NSv" kind="presentation" modalPresentationStyle="fullScreen" id="VrR-pq-3rs"/>
+                        <segue destination="JCR-HH-mpG" kind="presentation" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="2752.9017857142858"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="HGs-ej-bqM">
+            <objects>
+                <viewController id="JCR-HH-mpG" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLb-lf-Kvi" customClass="Se">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DSz-EA-Bqh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPl-t0-iBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2043" y="2164"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -709,7 +725,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2201" y="4027"/>
+            <point key="canvasLocation" x="2043" y="4122"/>
         </scene>
         <!--Search-->
         <scene sceneID="M7Q-1O-StI">
