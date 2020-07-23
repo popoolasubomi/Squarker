@@ -682,8 +682,16 @@
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="EZa-Fz-y9x">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-squats-30" id="q7I-uk-JoQ"/>
-                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-64" id="omk-Si-Ong"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-squats-30" id="q7I-uk-JoQ">
+                            <connections>
+                                <action selector="squatButton:" destination="KVq-cq-bwi" id="aZt-oZ-5Re"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-64" id="omk-Si-Ong">
+                            <connections>
+                                <action selector="settingsButton:" destination="KVq-cq-bwi" id="6K5-W7-UxM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="displayLabel" destination="dcH-HO-yWy" id="24V-MO-pWi"/>
@@ -699,8 +707,8 @@
                         <outlet property="statusRank" destination="kQc-tK-rYC" id="fGZ-1b-RLh"/>
                         <outlet property="tableView" destination="BdS-jE-jL7" id="Tfa-ha-J8N"/>
                         <outlet property="usernameLabel" destination="uB4-z1-ap2" id="5kz-fd-KCG"/>
-                        <segue destination="dss-Lv-NSv" kind="presentation" modalPresentationStyle="fullScreen" id="VrR-pq-3rs"/>
-                        <segue destination="JCR-HH-mpG" kind="presentation" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
+                        <segue destination="dss-Lv-NSv" kind="presentation" identifier="squatSegue" modalPresentationStyle="fullScreen" id="VrR-pq-3rs"/>
+                        <segue destination="JCR-HH-mpG" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

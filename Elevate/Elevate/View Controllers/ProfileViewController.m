@@ -51,14 +51,23 @@
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
-        self.numLikes.text = [NSString stringWithFormat: @"%d", [user objectForKey: @"likes"]];
-        self.numSquats.text = [NSString stringWithFormat: @"%d", [user objectForKey: @"squats"]];
+        self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
+        self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
     } else{
         self.displayName.alpha = 0;
         self.statusLabel.alpha = 0;
         self.statusRank.alpha = 0;
     }
 }
+
+- (IBAction)settingsButton:(id)sender {
+    [self performSegueWithIdentifier: @"settingsSegue" sender: nil];
+}
+
+- (IBAction)squatButton:(id)sender {
+    [self performSegueWithIdentifier: @"squatSegue" sender: nil];
+}
+
 /*
 #pragma mark - Navigation
 
