@@ -15,13 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeCell : UITableViewCell
 
 @property (nonatomic, strong) Post *post;
-@property (nonatomic, strong) NSString *friendName;
+@property (nonatomic, strong) PFUser *friendName;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
 -(void)setPost:(Post *)post;
--(void)setFriends:(NSString *)friendName;
+-(void)setFriends:(PFUser *)friendName;
 
 @end
 

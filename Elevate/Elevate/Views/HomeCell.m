@@ -38,7 +38,7 @@
     self.caption.text = post.caption;
 }
 
-- (void)setFriends:(NSString *)friendName{
+- (void)setFriends:(PFUser *)friendName{
     _friendName = friendName;
     
     CGRect newFrame = self.caption.frame;
@@ -46,6 +46,7 @@
     newFrame.size.height = 21;
     
     self.caption.alpha = 0;
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%d", [[friendName objectForKey: @"squats"] intValue]];
     self.usernameLabel.frame = newFrame;
 }
 @end

@@ -111,8 +111,8 @@
         Post *post = self.posts[indexPath.row];
         [cell setPost: post];
     } else{
-        NSString *friendName = self.friends[indexPath.row];
-        [cell setFriends: friendName];
+        PFUser *friend = self.friends[indexPath.row];
+        [cell setFriends: friend];
     }
     return cell;
 }

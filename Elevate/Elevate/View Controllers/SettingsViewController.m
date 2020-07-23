@@ -116,7 +116,7 @@
 }
 
 - (IBAction)updateSliderValue:(id)sender {
-    self.sliderValue.text = [NSString stringWithFormat: @"%f mins", self.slider.value];
+    self.sliderValue.text = [NSString stringWithFormat: @"%.f mins", self.slider.value];
 }
 
 - (IBAction)submitButton:(id)sender {
