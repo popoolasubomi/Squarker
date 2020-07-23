@@ -494,6 +494,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="ZKv-hP-pRo" id="McJ-w9-7LX"/>
+                        <outlet property="displayNameLabel" destination="g2A-Ku-IgX" id="vFC-8x-Y9C"/>
+                        <outlet property="heartImage" destination="flY-FA-grT" id="FpI-RL-Hfp"/>
+                        <outlet property="middleView" destination="wQR-Sr-BhR" id="DH1-96-Uru"/>
+                        <outlet property="numLikes" destination="bGE-Jz-Dmk" id="mbn-wY-KkY"/>
+                        <outlet property="numSquats" destination="9MQ-XU-qYq" id="I5u-MF-jQI"/>
+                        <outlet property="profileImageLabel" destination="6lu-08-N0E" id="qDZ-ox-Wre"/>
+                        <outlet property="segmentedController" destination="FUy-Pk-vSh" id="vIC-gc-4sq"/>
+                        <outlet property="squatImage" destination="LHp-GW-Zs0" id="bfA-UV-jY1"/>
+                        <outlet property="statusLabel" destination="33N-I7-4Mx" id="vL4-LN-dw0"/>
+                        <outlet property="statusRank" destination="f35-rX-Kck" id="9td-ad-TB4"/>
+                        <outlet property="userProfileLabel" destination="aKe-7E-Sol" id="ug7-En-L6t"/>
+                        <outlet property="usernameLabel" destination="al2-X5-HAg" id="v0u-ld-ayL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -668,6 +683,19 @@
                         <barButtonItem key="rightBarButtonItem" image="icons8-settings-64" id="omk-Si-Ong"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="displayLabel" destination="dcH-HO-yWy" id="24V-MO-pWi"/>
+                        <outlet property="displayName" destination="ABW-Q5-cla" id="EFE-Me-Ht7"/>
+                        <outlet property="heartImage" destination="G6I-5F-Kuc" id="PG5-dA-jYR"/>
+                        <outlet property="middleView" destination="AJh-cd-gz7" id="5wd-XI-14H"/>
+                        <outlet property="numLikes" destination="tRg-QL-YCJ" id="0Ah-eC-aiP"/>
+                        <outlet property="numSquats" destination="B1m-6c-i3y" id="vTL-FU-4kM"/>
+                        <outlet property="profileImage" destination="9On-w0-IlS" id="49v-Ux-nkZ"/>
+                        <outlet property="segmentedController" destination="BNK-FI-ev0" id="lZA-Tf-Jhp"/>
+                        <outlet property="squatImage" destination="ZdY-kB-P6Y" id="Rfs-jj-Nhd"/>
+                        <outlet property="statusLabel" destination="GQV-Ux-NSE" id="Pg2-qE-cL6"/>
+                        <outlet property="statusRank" destination="kQc-tK-rYC" id="fGZ-1b-RLh"/>
+                        <outlet property="tableView" destination="BdS-jE-jL7" id="Tfa-ha-J8N"/>
+                        <outlet property="usernameLabel" destination="uB4-z1-ap2" id="5kz-fd-KCG"/>
                         <segue destination="dss-Lv-NSv" kind="presentation" modalPresentationStyle="fullScreen" id="VrR-pq-3rs"/>
                         <segue destination="JCR-HH-mpG" kind="presentation" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
                     </connections>

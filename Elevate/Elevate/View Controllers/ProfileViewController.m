@@ -10,6 +10,20 @@
 
 @interface ProfileViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *displayName;
+@property (weak, nonatomic) IBOutlet UILabel *statusRank;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *heartImage;
+@property (weak, nonatomic) IBOutlet UIImageView *squatImage;
+@property (weak, nonatomic) IBOutlet UILabel *numLikes;
+@property (weak, nonatomic) IBOutlet UILabel *numSquats;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
+@property (weak, nonatomic) IBOutlet UIView *middleView;
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ProfileViewController
