@@ -10,7 +10,7 @@
 #import "HomeCell.h"
 #import "Post.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *posts;
 
 @end
 
@@ -32,6 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     [self populateView];
 }
@@ -60,6 +64,22 @@
     }
 }
 
+-(void) loadPosts{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey: @"author"];
+    [query orderByDescending: @"createdAt"];
+    [query whereKey:@"author" equalTo: [PFUser currentUser]];
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *) posts;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 - (IBAction)settingsButton:(id)sender {
     [self performSegueWithIdentifier: @"settingsSegue" sender: nil];
 }
@@ -77,5 +97,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
+    Post *post = self.posts[indexPath.row];
+    [cell setPost: post];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
 
 @end
