@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) NSMutableArray *friends;
 
@@ -62,7 +63,7 @@
         self.statusRank.text = [user objectForKey: @"status"];
         self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
         self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
-        
+        self.descriptionLabel.text = [user objectForKey: @"description"];
         PFFileObject *imageData = [user objectForKey: @"image"];
         self.profileImage.layer.cornerRadius = 72;
         self.profileImage.layer.masksToBounds = YES;
@@ -72,6 +73,7 @@
         self.displayName.alpha = 0;
         self.statusLabel.alpha = 0;
         self.statusRank.alpha = 0;
+        self.descriptionLabel.alpha = 0;
     }
 }
 

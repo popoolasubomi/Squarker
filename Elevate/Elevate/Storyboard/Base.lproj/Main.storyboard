@@ -677,6 +677,13 @@
                                     <action selector="changeSegment:" destination="KVq-cq-bwi" eventType="valueChanged" id="Cgj-u6-zh6"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMJ-zS-9Us">
+                                <rect key="frame" x="186" y="270" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
@@ -694,6 +701,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLabel" destination="LMJ-zS-9Us" id="kFd-sh-AVb"/>
                         <outlet property="displayLabel" destination="dcH-HO-yWy" id="24V-MO-pWi"/>
                         <outlet property="displayName" destination="ABW-Q5-cla" id="EFE-Me-Ht7"/>
                         <outlet property="heartImage" destination="G6I-5F-Kuc" id="PG5-dA-jYR"/>
