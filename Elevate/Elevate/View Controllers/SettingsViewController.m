@@ -11,14 +11,18 @@
 #import "Post.h"
 @import Parse;
 
-@interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *sliderValue;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UISwitch *toggleSwitch;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextView;
-@property (weak, nonatomic) IBOutlet UITextField *heightTextView;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
+@property (nonatomic, strong) NSMutableArray *possibleHeights;
+@property (nonatomic, strong) NSString *heightValue;
 
 @end
 
@@ -26,7 +30,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.pickerView.delegate = self;
+    self.pickerView.dataSource = self;
+    
+    [self buildHeights];
+}
 
+- (void) buildHeights{
+    self.possibleHeights = [NSMutableArray array];
+    for (int i = 4; i < 8; i++){
+        for (int j = 0; j <= 11; j++){
+            [self.possibleHeights addObject: @[@(i), @(j)]];
+        }
+    }
+    [self.pickerView reloadAllComponents];
 }
 
 - (void) errorAlert{
@@ -120,14 +138,12 @@
 }
 
 - (IBAction)submitButton:(id)sender {
-    if ([self.heightTextView isEqual: @""] || [self.nameTextView isEqual: @""]){
+    if ([self.descriptionTextView isEqual: @""] || [self.nameTextView isEqual: @""]){
         [self emptyFieldsAlert];
     }
     else{
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        double heightValue = [self.heightTextView.text doubleValue];
-        [defaults setDouble: heightValue forKey: @"Height"];
+        [defaults setObject: self.heightValue forKey: @"Height"];
         
         if (self.toggleSwitch.on){
             self.sliderValue.alpha = 0;
@@ -150,6 +166,7 @@
         }
         
         [PFUser.currentUser setObject: self.nameTextView.text forKey: @"displayName"];
+        [PFUser.currentUser setObject: self.descriptionTextView forKey: @"description"];
         PFFileObject *imageData = [Post getPFFileFromImage: self.profileImage.image];
         [PFUser.currentUser setObject: imageData forKey: @"image"];
         [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -174,6 +191,25 @@
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing: YES];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.possibleHeights.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    NSArray *height = self.possibleHeights[row];
+    return [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSArray *height = self.possibleHeights[row];
+    self.heightLabel.text = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
+    self.heightValue = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
 }
 
 @end
