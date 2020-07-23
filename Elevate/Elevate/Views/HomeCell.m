@@ -41,12 +41,8 @@
 - (void)setFriends:(PFUser *)friendName{
     _friendName = friendName;
     
-    CGRect newFrame = self.caption.frame;
-    newFrame.origin.y += 50;
-    newFrame.size.height = 21;
-    
-    self.caption.alpha = 0;
+    self.caption.text = [friendName objectForKey: @"description"];
     self.numberOfSquats.text = [NSString stringWithFormat: @"%d", [[friendName objectForKey: @"squats"] intValue]];
-    self.usernameLabel.frame = newFrame;
+    self.usernameLabel.text = friendName.username;
 }
 @end

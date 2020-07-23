@@ -38,11 +38,16 @@
 }
 
 - (void) buildHeights{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.possibleHeights = [NSMutableArray array];
     for (int i = 4; i < 8; i++){
         for (int j = 0; j <= 11; j++){
             [self.possibleHeights addObject: @[@(i), @(j)]];
         }
+    }
+    NSString *height = [defaults objectForKey: @"Height"];
+    if (!height){
+        self.heightLabel.text = height;
     }
     [self.pickerView reloadAllComponents];
 }
