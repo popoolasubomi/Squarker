@@ -281,6 +281,7 @@
                                 <action selector="logoutButton:" destination="ISZ-qx-kaJ" id="bvc-fC-ouY"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-email-send-24" id="mvu-km-17D"/>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="0bU-Fl-ePh" id="Paj-W6-QEE"/>
@@ -472,10 +473,17 @@
                                     <segment title="Friends"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-08-N0E">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-08-N0E" customClass="PFImageView">
                                 <rect key="frame" x="20" y="143" width="145" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofz-qr-OkL">
+                                <rect key="frame" x="186" y="302" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-7E-Sol">
                                 <rect key="frame" x="86" y="65" width="243" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -495,13 +503,14 @@
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
                         <outlet property="displayLabel" destination="ZKv-hP-pRo" id="McJ-w9-7LX"/>
                         <outlet property="displayNameLabel" destination="g2A-Ku-IgX" id="vFC-8x-Y9C"/>
                         <outlet property="heartImage" destination="flY-FA-grT" id="FpI-RL-Hfp"/>
                         <outlet property="middleView" destination="wQR-Sr-BhR" id="DH1-96-Uru"/>
                         <outlet property="numLikes" destination="bGE-Jz-Dmk" id="mbn-wY-KkY"/>
                         <outlet property="numSquats" destination="9MQ-XU-qYq" id="I5u-MF-jQI"/>
-                        <outlet property="profileImageLabel" destination="6lu-08-N0E" id="qDZ-ox-Wre"/>
+                        <outlet property="profileImage" destination="6lu-08-N0E" id="GaZ-5o-HgM"/>
                         <outlet property="segmentedController" destination="FUy-Pk-vSh" id="vIC-gc-4sq"/>
                         <outlet property="squatImage" destination="LHp-GW-Zs0" id="bfA-UV-jY1"/>
                         <outlet property="statusLabel" destination="33N-I7-4Mx" id="vL4-LN-dw0"/>
@@ -826,7 +835,7 @@
                                     <action selector="submitButton:" destination="JCR-HH-mpG" eventType="touchUpInside" id="IsJ-lX-rLZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-qd-Ly9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="? mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-qd-Ly9">
                                 <rect key="frame" x="75" y="124" width="61" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -1115,13 +1124,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MTj-Ah-h4Y"/>
+        <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>
         <image name="close-icon" width="26" height="24"/>
         <image name="download" width="200" height="200"/>
         <image name="favor-icon-red" width="30" height="30"/>
+        <image name="icons8-email-send-24" width="24" height="24"/>
         <image name="icons8-home-32" width="32" height="32"/>
         <image name="icons8-increase-24" width="24" height="24"/>
         <image name="icons8-search-30" width="30" height="30"/>

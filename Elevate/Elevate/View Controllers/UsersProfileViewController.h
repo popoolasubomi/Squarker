@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UsersProfileViewController : UIViewController
+
+@property (nonatomic, strong) Post* post;
 
 @end
 

@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *userProfileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UIImageView *heartImage;
 @property (weak, nonatomic) IBOutlet UIImageView *squatImage;
 @property (weak, nonatomic) IBOutlet UILabel *numLikes;
@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -33,6 +33,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+-(void) populateView{
+    PFUser *user = self.post[@"author"];
+    self.usernameLabel.text = user.username;
+    if ([user objectForKey: @"image"] != nil){
+        self.displayNameLabel.text = [user objectForKey: @"displayName"];
+        self.statusRank.text = [user objectForKey: @"status"];
+        self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
+        self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
+        self.descriptionLabel.text = [user objectForKey: @"description"];
+        PFFileObject *imageData = [user objectForKey: @"image"];
+        self.profileImage.layer.cornerRadius = 72;
+        self.profileImage.layer.masksToBounds = YES;
+        self.profileImage.file = imageData;
+        [self.profileImage loadInBackground];
+    } else{
+        self.displayNameLabel.alpha = 0;
+        self.statusLabel.alpha = 0;
+        self.statusRank.alpha = 0;
+        self.descriptionLabel.alpha = 0;
+    }
+}
+
 
 /*
 #pragma mark - Navigation
