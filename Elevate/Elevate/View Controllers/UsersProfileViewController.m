@@ -56,6 +56,15 @@
     }
 }
 
+- (IBAction)changeSegment:(id)sender {
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        //[self loadPosts];
+        self.displayLabel.text = @"Users Timeline";
+    } else{
+        //[self loadFriends];
+        self.displayLabel.text = @"Friends";
+    }
+}
 
 /*
 #pragma mark - Navigation

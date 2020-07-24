@@ -472,6 +472,9 @@
                                     <segment title="Timeline"/>
                                     <segment title="Friends"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSegment:" destination="KDD-Do-pTb" eventType="valueChanged" id="5fY-Jr-8ds"/>
+                                </connections>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-08-N0E" customClass="PFImageView">
                                 <rect key="frame" x="20" y="143" width="145" height="143"/>
