@@ -8,6 +8,6 @@
 
 #ifndef Elevate_Bridging_Header_h
 #define Elevate_Bridging_Header_h
-
+#import "PostViewController.h"
 
 #endif /* Elevate_Bridging_Header_h */

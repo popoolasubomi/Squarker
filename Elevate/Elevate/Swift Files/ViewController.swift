@@ -85,22 +85,27 @@ class ViewController: UIViewController {
 
 extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let uiNavigationController = segue.destination as? UINavigationController else {
-            return
-        }
-        guard let configurationViewController = uiNavigationController.viewControllers.first
-            as? ConfigurationViewController else {
-                    return
-        }
+        if !(segue.destination is PostViewController){
+            guard let uiNavigationController = segue.destination as? UINavigationController else {
+                return
+            }
+            guard let configurationViewController = uiNavigationController.viewControllers.first
+                as? ConfigurationViewController else {
+                        return
+            }
 
-        configurationViewController.configuration = poseBuilderConfiguration
-        configurationViewController.algorithm = algorithm
-        configurationViewController.delegate = self
+            configurationViewController.configuration = poseBuilderConfiguration
+            configurationViewController.algorithm = algorithm
+            configurationViewController.delegate = self
 
-        popOverPresentationManager = PopOverPresentationManager(presenting: self,
-                                                                presented: uiNavigationController)
-        segue.destination.modalPresentationStyle = .custom
-        segue.destination.transitioningDelegate = popOverPresentationManager
+            popOverPresentationManager = PopOverPresentationManager(presenting: self,
+                                                                    presented: uiNavigationController)
+            segue.destination.modalPresentationStyle = .custom
+            segue.destination.transitioningDelegate = popOverPresentationManager
+        } else{
+            let postController = segue.destination as! PostViewController
+            postController.numSquats = NSNumber(value: self.counter)
+        }
     }
 }
 
