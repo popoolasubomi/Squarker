@@ -13,6 +13,8 @@ import VideoToolbox
 class ViewController: UIViewController {
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
+    @IBOutlet weak var timeCounter: UILabel!
+    @IBOutlet weak var counterLabel: UILabel!
     
     var counter = 0 // Counter for Squats
     var previous = [Float]()    // Previous data of squats
