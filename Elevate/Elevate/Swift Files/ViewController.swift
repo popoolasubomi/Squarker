@@ -211,6 +211,7 @@ extension ViewController: PoseNetDelegate {
                  
                         if self.previous_action == "r" && current_action == "f" { //When body is rising after a squat, increment counter by 1
                             self.counter += 1
+                            self.counterLabel.text = String(self.counter)
                         }
                         self.previous_action = current_action //Assign current action to previous action
                     }
