@@ -101,4 +101,8 @@
     return self.filteredData.count;
 }
 
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing: YES];
+}
+
 @end

@@ -273,7 +273,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="7PC-fJ-akp"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wZx-eq-bcA" appends="YES" id="sbG-ft-2UQ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Timeline" id="z3S-ny-CA1">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="IUI-bX-Gg8">
@@ -291,6 +295,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wZx-eq-bcA">
+                    <connections>
+                        <action selector="onTap:" destination="ISZ-qx-kaJ" id="S51-5z-7cw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1952.1739130434785" y="2752.9017857142858"/>
         </scene>
@@ -1046,11 +1055,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7G2-1c-9nb">
-                                <rect key="frame" x="35" y="136" width="81" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start/Stop"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-0i-Fma">
                                 <rect key="frame" x="20" y="438" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
