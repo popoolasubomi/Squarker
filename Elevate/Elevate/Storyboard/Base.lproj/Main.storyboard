@@ -503,7 +503,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rS7-IS-BZa" appends="YES" id="vgH-ys-eNX"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
@@ -524,6 +528,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rS7-IS-BZa">
+                    <connections>
+                        <action selector="onTap:" destination="KDD-Do-pTb" id="uKU-bQ-mE0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1952.1739130434785" y="3707.8125"/>
         </scene>
@@ -699,7 +708,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oF3-8a-5ch" appends="YES" id="K4H-Km-tPa"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="EZa-Fz-y9x">
                         <barButtonItem key="leftBarButtonItem" image="icons8-squats-30" id="q7I-uk-JoQ">
@@ -733,6 +746,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oF3-8a-5ch">
+                    <connections>
+                        <action selector="onTap:" destination="KVq-cq-bwi" id="izh-lh-xYc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="2752.9017857142858"/>
         </scene>
