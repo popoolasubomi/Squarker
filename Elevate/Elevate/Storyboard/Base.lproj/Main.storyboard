@@ -518,6 +518,7 @@
                         <outlet property="squatImage" destination="LHp-GW-Zs0" id="bfA-UV-jY1"/>
                         <outlet property="statusLabel" destination="33N-I7-4Mx" id="vL4-LN-dw0"/>
                         <outlet property="statusRank" destination="f35-rX-Kck" id="9td-ad-TB4"/>
+                        <outlet property="tableView" destination="V9a-jM-geg" id="RL5-ex-6y5"/>
                         <outlet property="userProfileLabel" destination="aKe-7E-Sol" id="ug7-En-L6t"/>
                         <outlet property="usernameLabel" destination="al2-X5-HAg" id="v0u-ld-ayL"/>
                     </connections>

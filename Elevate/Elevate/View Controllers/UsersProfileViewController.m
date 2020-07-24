@@ -7,8 +7,9 @@
 //
 
 #import "UsersProfileViewController.h"
+#import "HomeCell.h"
 
-@interface UsersProfileViewController ()
+@interface UsersProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *userProfileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -24,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *friends;
+@property (nonatomic, strong) NSMutableArray *posts;
 
 @end
 
@@ -31,7 +35,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self populateView];
+    [self loadPosts];
 }
 
 -(void) populateView{
@@ -58,12 +67,35 @@
 
 - (IBAction)changeSegment:(id)sender {
     if (self.segmentedController.selectedSegmentIndex == 0){
-        //[self loadPosts];
+        [self loadPosts];
         self.displayLabel.text = @"Users Timeline";
     } else{
-        //[self loadFriends];
+        [self loadFriends];
         self.displayLabel.text = @"Friends";
     }
+}
+
+-(void) loadPosts{
+    PFUser *user = self.post[@"author"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey: @"author"];
+    [query orderByDescending: @"createdAt"];
+    [query whereKey:@"author" equalTo: user];
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *) posts;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) loadFriends{
+    PFUser *user = self.post[@"author"];
+    self.friends = [user objectForKey: @"Friends"];
+    [self.tableView reloadData];
 }
 
 /*
@@ -75,5 +107,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        Post *post = self.posts[indexPath.row];
+        [cell setPost: post];
+    } else{
+        PFUser *friend = self.friends[indexPath.row];
+        [cell setFriends: friend];
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
 
 @end
