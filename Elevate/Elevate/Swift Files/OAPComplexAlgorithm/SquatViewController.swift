@@ -10,7 +10,7 @@ import UIKit
 import UIKit
 import VideoToolbox
 
-class SquatViewController: UIViewController, ConfigurationViewControllerDelegate {
+class SquatViewController: UIViewController, ConfigurationViewControllerDelegate, VideoCaptureDelegate {
     
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
@@ -48,7 +48,13 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         } catch {
             fatalError("Failed to load model. \(error.localizedDescription)")
         }
-
+        
+        setupAndBeginCapturingVideoFrames()
+        videoCapture.flipCamera { error in
+            if let error = error {
+                print("Failed to flip camera with error \(error)")
+            }
+        }
     }
     
     private func setupAndBeginCapturingVideoFrames() {
@@ -57,7 +63,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
                 print("Failed to setup camera with error \(error)")
                 return
             }
-
+            self.videoCapture.delegate = self
             self.videoCapture.startCapturing()
         }
     }
@@ -109,6 +115,20 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     func configurationViewController(_ viewController: ConfigurationViewController, didUpdateAlgorithm algorithm: Algorithm) {
         self.algorithm = algorithm
+    }
+    
+    // MARK: - VideoCaptureDelegate
+    
+    func videoCapture(_ videoCapture: VideoCapture, didCaptureFrame capturedImage: CGImage?) {
+        guard currentFrame == nil else {
+            return
+        }
+        guard let image = capturedImage else {
+            fatalError("Captured image is null")
+        }
+
+        currentFrame = image
+        poseNet.predict(image)
     }
     
 }
