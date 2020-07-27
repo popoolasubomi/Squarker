@@ -49,10 +49,13 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
             fatalError("Failed to load model. \(error.localizedDescription)")
         }
         
+        poseNet.delegate = self
         setupAndBeginCapturingVideoFrames()
         videoCapture.flipCamera { error in
             if let error = error {
                 print("Failed to flip camera with error \(error)")
+            }else{
+                print("worked")
             }
         }
     }
