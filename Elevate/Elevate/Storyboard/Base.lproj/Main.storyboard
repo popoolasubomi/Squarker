@@ -985,7 +985,7 @@
         <!--Squat-->
         <scene sceneID="DTI-Od-wYw">
             <objects>
-                <viewController id="dss-Lv-NSv" customClass="ViewController" customModule="Elevate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dss-Lv-NSv" customClass="SquatViewController" customModule="Elevate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GIg-Ps-Vv2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

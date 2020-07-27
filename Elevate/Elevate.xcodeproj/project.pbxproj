@@ -45,6 +45,7 @@
 		4307A0EF24CE648200E41A75 /* PoseNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0CD24CE648200E41A75 /* PoseNet.swift */; };
 		4307A0F024CE648200E41A75 /* PoseNetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0CE24CE648200E41A75 /* PoseNetInput.swift */; };
 		4307A0F124CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0CF24CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel */; };
+		4307A0F424CE66A700E41A75 /* SquatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0F324CE66A700E41A75 /* SquatViewController.swift */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
@@ -131,6 +132,7 @@
 		4307A0CD24CE648200E41A75 /* PoseNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNet.swift; sourceTree = "<group>"; };
 		4307A0CE24CE648200E41A75 /* PoseNetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNetInput.swift; sourceTree = "<group>"; };
 		4307A0CF24CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PoseNetMobileNet075S16FP16.mlmodel; sourceTree = "<group>"; };
+		4307A0F324CE66A700E41A75 /* SquatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatViewController.swift; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		435AD1AB24C78074006EE244 /* Elevate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Elevate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -204,7 +206,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4307A0A124CE648200E41A75 /* DetectingHumanBodyPosesInAnImage */ = {
+		4307A0A124CE648200E41A75 /* ApplePoseEstimationModel */ = {
 			isa = PBXGroup;
 			children = (
 				4307A0A224CE648200E41A75 /* Configuration */,
@@ -215,7 +217,7 @@
 				4307A0AE24CE648200E41A75 /* .gitignore */,
 				4307A0AF24CE648200E41A75 /* PoseFinder */,
 			);
-			path = DetectingHumanBodyPosesInAnImage;
+			path = ApplePoseEstimationModel;
 			sourceTree = "<group>";
 		};
 		4307A0A224CE648200E41A75 /* Configuration */ = {
@@ -331,6 +333,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4307A0F224CE666800E41A75 /* OAPComplexAlgorithm */ = {
+			isa = PBXGroup;
+			children = (
+				4307A0F324CE66A700E41A75 /* SquatViewController.swift */,
+			);
+			path = OAPComplexAlgorithm;
+			sourceTree = "<group>";
+		};
 		435AD14D24C7530F006EE244 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,7 +353,8 @@
 		435AD18324C7651A006EE244 /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
-				4307A0A124CE648200E41A75 /* DetectingHumanBodyPosesInAnImage */,
+				4307A0F224CE666800E41A75 /* OAPComplexAlgorithm */,
+				4307A0A124CE648200E41A75 /* ApplePoseEstimationModel */,
 				435AD1AB24C78074006EE244 /* Elevate-Bridging-Header.h */,
 			);
 			path = "Swift Files";
@@ -728,6 +739,7 @@
 				4307A0E424CE648200E41A75 /* CGPoint+Extension.swift in Sources */,
 				437B886524BF62B60073C533 /* main.m in Sources */,
 				4307A0E824CE648200E41A75 /* Joint.swift in Sources */,
+				4307A0F424CE66A700E41A75 /* SquatViewController.swift in Sources */,
 				43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */,
 				4307A0DD24CE648200E41A75 /* PopOverModalViewController.swift in Sources */,
 				437B888C24BF73590073C533 /* SignUpViewController.m in Sources */,
