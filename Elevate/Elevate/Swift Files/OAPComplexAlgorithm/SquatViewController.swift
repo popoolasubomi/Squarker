@@ -37,7 +37,15 @@ class SquatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // For convenience, the idle timer is disabled to prevent the screen from locking.
+        UIApplication.shared.isIdleTimerDisabled = true
+
+        do {
+            poseNet = try PoseNet()
+        } catch {
+            fatalError("Failed to load model. \(error.localizedDescription)")
+        }
+
     }
     
 
