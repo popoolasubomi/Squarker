@@ -52,6 +52,9 @@
 		437B887A24BF62B60073C533 /* ElevateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B887924BF62B60073C533 /* ElevateUITests.m */; };
 		437B888C24BF73590073C533 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888B24BF73590073C533 /* SignUpViewController.m */; };
 		437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888E24BF7A8C0073C533 /* LoginViewController.m */; };
+		43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327B624CF66E600D59DFC /* ProgressViewController.m */; };
+		43F327B924CF6AF500D59DFC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F327B824CF6AF500D59DFC /* Charts.framework */; };
+		43F327BA24CF6AF500D59DFC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43F327B824CF6AF500D59DFC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		54163124F682B9FF2D30D2AA /* Pods_Elevate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359FDC34018F1F87F3E8D3DE /* Pods_Elevate.framework */; };
 		6FCAB2C2CD91A79215E74151 /* Pods_ElevateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F10B4E51C2C08AFBD7BAD /* Pods_ElevateTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,20 @@
 			remoteInfo = Elevate;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43F327BB24CF6AF500D59DFC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43F327BA24CF6AF500D59DFC /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C5F10B4E51C2C08AFBD7BAD /* Pods_ElevateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +155,9 @@
 		437B888B24BF73590073C533 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		437B888D24BF7A8C0073C533 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		437B888E24BF7A8C0073C533 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		43F327B524CF66E600D59DFC /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
+		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
+		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483365DB59C01BF455718CA3 /* Pods-ElevateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevateTests.release.xcconfig"; path = "Target Support Files/Pods-ElevateTests/Pods-ElevateTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A7B81352B4F019D68C23300 /* Pods-Elevate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate.release.xcconfig"; path = "Target Support Files/Pods-Elevate/Pods-Elevate.release.xcconfig"; sourceTree = "<group>"; };
 		62DFCE8323E0D2B10432BB08 /* Pods-Elevate-ElevateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevate-ElevateUITests.debug.xcconfig"; path = "Target Support Files/Pods-Elevate-ElevateUITests/Pods-Elevate-ElevateUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54163124F682B9FF2D30D2AA /* Pods_Elevate.framework in Frameworks */,
+				43F327B924CF6AF500D59DFC /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +417,8 @@
 				43079EBE24C919D200E41A75 /* SettingsViewController.m */,
 				43079EC024C91A5E00E41A75 /* UsersProfileViewController.h */,
 				43079EC124C91A5E00E41A75 /* UsersProfileViewController.m */,
+				43F327B524CF66E600D59DFC /* ProgressViewController.h */,
+				43F327B624CF66E600D59DFC /* ProgressViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -421,6 +444,7 @@
 		6EB4601A7A6FE17272611C1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43F327B824CF6AF500D59DFC /* Charts.framework */,
 				359FDC34018F1F87F3E8D3DE /* Pods_Elevate.framework */,
 				735269D1EA823D1EA1BD5473 /* Pods_Elevate_ElevateUITests.framework */,
 				0C5F10B4E51C2C08AFBD7BAD /* Pods_ElevateTests.framework */,
@@ -440,6 +464,7 @@
 				437B884C24BF62B40073C533 /* Frameworks */,
 				437B884D24BF62B40073C533 /* Resources */,
 				9B90805EBD236F6A664BE7C4 /* [CP] Embed Pods Frameworks */,
+				43F327BB24CF6AF500D59DFC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -699,6 +724,7 @@
 				4307A0E724CE648200E41A75 /* VideoCapture.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
 				43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */,
+				43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */,
 				4307A0EB24CE648200E41A75 /* Pose.swift in Sources */,
 				4307A0EE24CE648200E41A75 /* PoseNetOutput.swift in Sources */,
 				43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */,
