@@ -26,11 +26,6 @@
 		4307A0DC24CE648200E41A75 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0B324CE648200E41A75 /* ConfigurationViewController.swift */; };
 		4307A0DD24CE648200E41A75 /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0B424CE648200E41A75 /* PopOverModalViewController.swift */; };
 		4307A0DE24CE648200E41A75 /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0B524CE648200E41A75 /* GradientOverlayView.swift */; };
-		4307A0DF24CE648200E41A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4307A0B724CE648200E41A75 /* Assets.xcassets */; };
-		4307A0E024CE648200E41A75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4307A0B824CE648200E41A75 /* LaunchScreen.storyboard */; };
-		4307A0E124CE648200E41A75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4307A0BA24CE648200E41A75 /* Main.storyboard */; };
-		4307A0E224CE648200E41A75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0BC24CE648200E41A75 /* AppDelegate.swift */; };
-		4307A0E324CE648200E41A75 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4307A0BD24CE648200E41A75 /* Info.plist */; };
 		4307A0E424CE648200E41A75 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0BF24CE648200E41A75 /* CGPoint+Extension.swift */; };
 		4307A0E524CE648200E41A75 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0C024CE648200E41A75 /* CGImage+Extension.swift */; };
 		4307A0E624CE648200E41A75 /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0C224CE648200E41A75 /* AVCaptureVideoOrientation+Extension.swift */; };
@@ -62,13 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4307A0D124CE648200E41A75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4307A0AA24CE648200E41A75 /* PoseFinder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4A2D23AE22BB70E400494C55;
-			remoteInfo = PoseFinder;
-		};
 		437B886B24BF62B60073C533 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 437B884724BF62B40073C533 /* Project object */;
@@ -105,7 +93,6 @@
 		4307A0A624CE648200E41A75 /* PoseNetPipeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PoseNetPipeline.png; sourceTree = "<group>"; };
 		4307A0A824CE648200E41A75 /* ACKNOWLEDGMENTS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACKNOWLEDGMENTS.txt; sourceTree = "<group>"; };
 		4307A0A924CE648200E41A75 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		4307A0AA24CE648200E41A75 /* PoseFinder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PoseFinder.xcodeproj; sourceTree = "<group>"; };
 		4307A0AD24CE648200E41A75 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4307A0AE24CE648200E41A75 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4307A0B124CE648200E41A75 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,11 +100,6 @@
 		4307A0B324CE648200E41A75 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		4307A0B424CE648200E41A75 /* PopOverModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
 		4307A0B524CE648200E41A75 /* GradientOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
-		4307A0B724CE648200E41A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4307A0B924CE648200E41A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4307A0BB24CE648200E41A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4307A0BC24CE648200E41A75 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4307A0BD24CE648200E41A75 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4307A0BF24CE648200E41A75 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		4307A0C024CE648200E41A75 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
 		4307A0C224CE648200E41A75 /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extension.swift"; sourceTree = "<group>"; };
@@ -212,7 +194,6 @@
 				4307A0A224CE648200E41A75 /* Configuration */,
 				4307A0A424CE648200E41A75 /* Documentation */,
 				4307A0A724CE648200E41A75 /* LICENSE */,
-				4307A0AA24CE648200E41A75 /* PoseFinder.xcodeproj */,
 				4307A0AD24CE648200E41A75 /* README.md */,
 				4307A0AE24CE648200E41A75 /* .gitignore */,
 				4307A0AF24CE648200E41A75 /* PoseFinder */,
@@ -246,19 +227,10 @@
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
-		4307A0AB24CE648200E41A75 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4307A0D224CE648200E41A75 /* PoseFinder.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4307A0AF24CE648200E41A75 /* PoseFinder */ = {
 			isa = PBXGroup;
 			children = (
 				4307A0B024CE648200E41A75 /* UI */,
-				4307A0B624CE648200E41A75 /* App */,
 				4307A0BE24CE648200E41A75 /* Extensions+Types */,
 				4307A0C124CE648200E41A75 /* Utils */,
 				4307A0C424CE648200E41A75 /* Pose */,
@@ -277,18 +249,6 @@
 				4307A0B524CE648200E41A75 /* GradientOverlayView.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		4307A0B624CE648200E41A75 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				4307A0B724CE648200E41A75 /* Assets.xcassets */,
-				4307A0B824CE648200E41A75 /* LaunchScreen.storyboard */,
-				4307A0BA24CE648200E41A75 /* Main.storyboard */,
-				4307A0BC24CE648200E41A75 /* AppDelegate.swift */,
-				4307A0BD24CE648200E41A75 /* Info.plist */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		4307A0BE24CE648200E41A75 /* Extensions+Types */ = {
@@ -563,12 +523,6 @@
 			mainGroup = 437B884624BF62B40073C533;
 			productRefGroup = 437B885024BF62B40073C533 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4307A0AB24CE648200E41A75 /* Products */;
-					ProjectRef = 4307A0AA24CE648200E41A75 /* PoseFinder.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				437B884E24BF62B40073C533 /* Elevate */,
@@ -578,16 +532,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		4307A0D224CE648200E41A75 /* PoseFinder.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = PoseFinder.app;
-			remoteRef = 4307A0D124CE648200E41A75 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		437B884D24BF62B40073C533 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -595,16 +539,12 @@
 			files = (
 				4307A0D924CE648200E41A75 /* .gitignore in Resources */,
 				4307A0D424CE648200E41A75 /* PoseNetVisualization.png in Resources */,
-				4307A0DF24CE648200E41A75 /* Assets.xcassets in Resources */,
 				437B886224BF62B60073C533 /* LaunchScreen.storyboard in Resources */,
 				4307A0D624CE648200E41A75 /* ACKNOWLEDGMENTS.txt in Resources */,
 				437B885F24BF62B60073C533 /* Assets.xcassets in Resources */,
-				4307A0E324CE648200E41A75 /* Info.plist in Resources */,
 				4307A0D724CE648200E41A75 /* LICENSE.txt in Resources */,
-				4307A0E124CE648200E41A75 /* Main.storyboard in Resources */,
 				437B885D24BF62B40073C533 /* Main.storyboard in Resources */,
 				4307A0D824CE648200E41A75 /* README.md in Resources */,
-				4307A0E024CE648200E41A75 /* LaunchScreen.storyboard in Resources */,
 				4307A0D524CE648200E41A75 /* PoseNetPipeline.png in Resources */,
 				4307A0D324CE648200E41A75 /* SampleCode.xcconfig in Resources */,
 			);
@@ -754,7 +694,6 @@
 				4307A0F024CE648200E41A75 /* PoseNetInput.swift in Sources */,
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
 				4307A0F124CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
-				4307A0E224CE648200E41A75 /* AppDelegate.swift in Sources */,
 				4307A0DA24CE648200E41A75 /* ViewController.swift in Sources */,
 				43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */,
 				4307A0E724CE648200E41A75 /* VideoCapture.swift in Sources */,
@@ -802,22 +741,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4307A0B824CE648200E41A75 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4307A0B924CE648200E41A75 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		4307A0BA24CE648200E41A75 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4307A0BB24CE648200E41A75 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		437B885B24BF62B40073C533 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -10,7 +10,8 @@ import UIKit
 import UIKit
 import VideoToolbox
 
-class SquatViewController: UIViewController {
+class SquatViewController: UIViewController, ConfigurationViewControllerDelegate {
+    
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
     @IBOutlet weak var timeCounter: UILabel!
@@ -87,7 +88,8 @@ class SquatViewController: UIViewController {
 
                 configurationViewController.configuration = poseBuilderConfiguration
                 configurationViewController.algorithm = algorithm
-
+                configurationViewController.delegate = self
+            
                 popOverPresentationManager = PopOverPresentationManager(presenting: self,
                                                                         presented: uiNavigationController)
                 segue.destination.modalPresentationStyle = .custom
@@ -98,7 +100,21 @@ class SquatViewController: UIViewController {
             postController.numSquats = NSNumber(value: self.counter)
         }
     }
+    
+    // MARK: - ConfigurationViewControllerDelegate
+    
+    func configurationViewController(_ viewController: ConfigurationViewController, didUpdateConfiguration configuration: PoseBuilderConfiguration) {
+        poseBuilderConfiguration = configuration
+    }
+    
+    func configurationViewController(_ viewController: ConfigurationViewController, didUpdateAlgorithm algorithm: Algorithm) {
+        self.algorithm = algorithm
+    }
+    
 }
+
+
+
 
 
 
