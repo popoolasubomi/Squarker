@@ -15,25 +15,6 @@
 		43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EBE24C919D200E41A75 /* SettingsViewController.m */; };
 		43079EC224C91A5E00E41A75 /* UsersProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079EC124C91A5E00E41A75 /* UsersProfileViewController.m */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
-		435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18424C76595006EE244 /* CGImage+Extension.swift */; };
-		435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18524C76595006EE244 /* CGPoint+Extension.swift */; };
-		435AD18E24C77233006EE244 /* Joint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18824C77233006EE244 /* Joint.swift */; };
-		435AD18F24C77233006EE244 /* PoseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18924C77233006EE244 /* PoseBuilder.swift */; };
-		435AD19024C77233006EE244 /* PoseBuilder+Multiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18A24C77233006EE244 /* PoseBuilder+Multiple.swift */; };
-		435AD19124C77233006EE244 /* PoseBuilder+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18B24C77233006EE244 /* PoseBuilder+Single.swift */; };
-		435AD19224C77233006EE244 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18C24C77233006EE244 /* Pose.swift */; };
-		435AD19324C77233006EE244 /* PoseBuilderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD18D24C77233006EE244 /* PoseBuilderConfiguration.swift */; };
-		435AD19924C772B1006EE244 /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19424C772B1006EE244 /* GradientOverlayView.swift */; };
-		435AD19A24C772B1006EE244 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19524C772B1006EE244 /* ConfigurationViewController.swift */; };
-		435AD19B24C772B1006EE244 /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19624C772B1006EE244 /* PopOverModalViewController.swift */; };
-		435AD19C24C772B1006EE244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19724C772B1006EE244 /* ViewController.swift */; };
-		435AD19D24C772B1006EE244 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19824C772B1006EE244 /* PoseImageView.swift */; };
-		435AD1A024C7741A006EE244 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19E24C7741A006EE244 /* VideoCapture.swift */; };
-		435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */; };
-		435AD1A624C77513006EE244 /* PoseNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD1A224C77512006EE244 /* PoseNet.swift */; };
-		435AD1A724C77513006EE244 /* PoseNetOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD1A324C77512006EE244 /* PoseNetOutput.swift */; };
-		435AD1A824C77513006EE244 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 435AD1A424C77512006EE244 /* PoseNetMobileNet075S16FP16.mlmodel */; };
-		435AD1A924C77513006EE244 /* PoseNetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AD1A524C77512006EE244 /* PoseNetInput.swift */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
 		437B885D24BF62B40073C533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437B885B24BF62B40073C533 /* Main.storyboard */; };
@@ -82,25 +63,6 @@
 		43079EC124C91A5E00E41A75 /* UsersProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersProfileViewController.m; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		435AD18424C76595006EE244 /* CGImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
-		435AD18524C76595006EE244 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
-		435AD18824C77233006EE244 /* Joint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joint.swift; sourceTree = "<group>"; };
-		435AD18924C77233006EE244 /* PoseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseBuilder.swift; sourceTree = "<group>"; };
-		435AD18A24C77233006EE244 /* PoseBuilder+Multiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PoseBuilder+Multiple.swift"; sourceTree = "<group>"; };
-		435AD18B24C77233006EE244 /* PoseBuilder+Single.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PoseBuilder+Single.swift"; sourceTree = "<group>"; };
-		435AD18C24C77233006EE244 /* Pose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
-		435AD18D24C77233006EE244 /* PoseBuilderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseBuilderConfiguration.swift; sourceTree = "<group>"; };
-		435AD19424C772B1006EE244 /* GradientOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
-		435AD19524C772B1006EE244 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
-		435AD19624C772B1006EE244 /* PopOverModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
-		435AD19724C772B1006EE244 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		435AD19824C772B1006EE244 /* PoseImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
-		435AD19E24C7741A006EE244 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCapture.swift; path = "Elevate/Swift Files/VideoCapture.swift"; sourceTree = SOURCE_ROOT; };
-		435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AVCaptureVideoOrientation+Extension.swift"; path = "Elevate/Swift Files/AVCaptureVideoOrientation+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		435AD1A224C77512006EE244 /* PoseNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNet.swift; sourceTree = "<group>"; };
-		435AD1A324C77512006EE244 /* PoseNetOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNetOutput.swift; sourceTree = "<group>"; };
-		435AD1A424C77512006EE244 /* PoseNetMobileNet075S16FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PoseNetMobileNet075S16FP16.mlmodel; sourceTree = "<group>"; };
-		435AD1A524C77512006EE244 /* PoseNetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNetInput.swift; sourceTree = "<group>"; };
 		435AD1AB24C78074006EE244 /* Elevate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Elevate-Bridging-Header.h"; sourceTree = "<group>"; };
 		437B884F24BF62B40073C533 /* Elevate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437B885224BF62B40073C533 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -184,25 +146,6 @@
 		435AD18324C7651A006EE244 /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
-				435AD18424C76595006EE244 /* CGImage+Extension.swift */,
-				435AD18524C76595006EE244 /* CGPoint+Extension.swift */,
-				435AD18824C77233006EE244 /* Joint.swift */,
-				435AD18C24C77233006EE244 /* Pose.swift */,
-				435AD18924C77233006EE244 /* PoseBuilder.swift */,
-				435AD18A24C77233006EE244 /* PoseBuilder+Multiple.swift */,
-				435AD18B24C77233006EE244 /* PoseBuilder+Single.swift */,
-				435AD18D24C77233006EE244 /* PoseBuilderConfiguration.swift */,
-				435AD19524C772B1006EE244 /* ConfigurationViewController.swift */,
-				435AD19424C772B1006EE244 /* GradientOverlayView.swift */,
-				435AD19624C772B1006EE244 /* PopOverModalViewController.swift */,
-				435AD19824C772B1006EE244 /* PoseImageView.swift */,
-				435AD1A224C77512006EE244 /* PoseNet.swift */,
-				435AD1A524C77512006EE244 /* PoseNetInput.swift */,
-				435AD1A424C77512006EE244 /* PoseNetMobileNet075S16FP16.mlmodel */,
-				435AD1A324C77512006EE244 /* PoseNetOutput.swift */,
-				435AD19F24C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift */,
-				435AD19E24C7741A006EE244 /* VideoCapture.swift */,
-				435AD19724C772B1006EE244 /* ViewController.swift */,
 				435AD1AB24C78074006EE244 /* Elevate-Bridging-Header.h */,
 			);
 			path = "Swift Files";
@@ -555,37 +498,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				435AD19024C77233006EE244 /* PoseBuilder+Multiple.swift in Sources */,
 				437B885424BF62B40073C533 /* AppDelegate.m in Sources */,
-				435AD1A924C77513006EE244 /* PoseNetInput.swift in Sources */,
-				435AD1A824C77513006EE244 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				437B886524BF62B60073C533 /* main.m in Sources */,
 				43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */,
-				435AD18F24C77233006EE244 /* PoseBuilder.swift in Sources */,
-				435AD18E24C77233006EE244 /* Joint.swift in Sources */,
-				435AD19B24C772B1006EE244 /* PopOverModalViewController.swift in Sources */,
-				435AD1A624C77513006EE244 /* PoseNet.swift in Sources */,
-				435AD19924C772B1006EE244 /* GradientOverlayView.swift in Sources */,
 				437B888C24BF73590073C533 /* SignUpViewController.m in Sources */,
-				435AD19124C77233006EE244 /* PoseBuilder+Single.swift in Sources */,
 				437B885724BF62B40073C533 /* SceneDelegate.m in Sources */,
 				43079EB324C7B25900E41A75 /* Post.m in Sources */,
 				43079EC224C91A5E00E41A75 /* UsersProfileViewController.m in Sources */,
-				435AD1A724C77513006EE244 /* PoseNetOutput.swift in Sources */,
-				435AD19A24C772B1006EE244 /* ConfigurationViewController.swift in Sources */,
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
-				435AD19C24C772B1006EE244 /* ViewController.swift in Sources */,
-				435AD19224C77233006EE244 /* Pose.swift in Sources */,
 				43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */,
-				435AD18624C76595006EE244 /* CGImage+Extension.swift in Sources */,
-				435AD19D24C772B1006EE244 /* PoseImageView.swift in Sources */,
-				435AD1A024C7741A006EE244 /* VideoCapture.swift in Sources */,
-				435AD18724C76595006EE244 /* CGPoint+Extension.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
-				435AD19324C77233006EE244 /* PoseBuilderConfiguration.swift in Sources */,
 				43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */,
 				43079EB924C8C44F00E41A75 /* HomeCell.m in Sources */,
-				435AD1A124C7741A006EE244 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +723,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FC4BA904EF73BF9DA3B66AB /* Pods-ElevateTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
@@ -821,7 +744,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 483365DB59C01BF455718CA3 /* Pods-ElevateTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
@@ -843,7 +765,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62DFCE8323E0D2B10432BB08 /* Pods-Elevate-ElevateUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = ElevateUITests/Info.plist;
@@ -863,7 +784,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D17274C58F9AAF08671CA110 /* Pods-Elevate-ElevateUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				INFOPLIST_FILE = ElevateUITests/Info.plist;
