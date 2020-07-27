@@ -1114,9 +1114,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Squat" id="B2r-LY-95c"/>
                     <connections>
-                        <outlet property="counterLabel" destination="Jz4-Uj-jiG" id="boc-xx-YCE"/>
-                        <outlet property="previewImageView" destination="be4-eD-c2Z" id="rsK-OK-L6l"/>
-                        <outlet property="timeCounter" destination="eZD-O3-VIs" id="AzM-XY-uhV"/>
+                        <outlet property="counterLabel" destination="Jz4-Uj-jiG" id="B5S-UX-9Vc"/>
+                        <outlet property="previewImageView" destination="be4-eD-c2Z" id="mbp-Y4-oeb"/>
+                        <outlet property="timeCounter" destination="eZD-O3-VIs" id="WhF-1c-HSe"/>
                         <segue destination="Q0H-mc-KZk" kind="presentation" id="VpK-2z-lmq"/>
                     </connections>
                 </viewController>
