@@ -14,6 +14,26 @@ class SquatViewController: UIViewController {
     @IBOutlet weak var timeCounter: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
     
+    var counter = 0 // Counter for Squats
+    var previous = [Float]()    // Previous data of squats
+    var current = [Float]() // Current Squatting data
+    var previous_action: String = "r"    // Current State of body
+    
+    private let videoCapture = VideoCapture()
+
+    private var poseNet: PoseNet!
+
+    /// The frame the PoseNet model is currently making pose predictions from.
+    private var currentFrame: CGImage?
+
+    /// The algorithm the controller uses to extract poses from the current frame.
+    private var algorithm: Algorithm = .multiple
+
+    /// The set of parameters passed to the pose builder when detecting poses.
+    private var poseBuilderConfiguration = PoseBuilderConfiguration()
+
+    private var popOverPresentationManager: PopOverPresentationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
