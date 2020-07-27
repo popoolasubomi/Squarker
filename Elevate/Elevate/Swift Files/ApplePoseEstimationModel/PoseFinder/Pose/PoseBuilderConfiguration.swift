@@ -18,12 +18,12 @@ struct PoseBuilderConfiguration {
     var jointConfidenceThreshold = 0.1
 
     /// The minimum value for a valid pose.
-    var poseConfidenceThreshold = 0.5
+    var poseConfidenceThreshold = 0.3
 
     /// The minimum distance between two distinct joints of the same type.
     ///
     /// - Note: This parameter only applies to the multiple-pose algorithm.
-    var matchingJointDistance = 40.0
+    var matchingJointDistance = 55.0
 
     /// Search radius used when checking if a joint has the greatest confidence amongst its neighbors.
     ///
