@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UIKit
+import VideoToolbox
 
 class SquatViewController: UIViewController {
     /// The view the controller uses to visualize the detected poses.
@@ -46,6 +48,17 @@ class SquatViewController: UIViewController {
             fatalError("Failed to load model. \(error.localizedDescription)")
         }
 
+    }
+    
+    private func setupAndBeginCapturingVideoFrames() {
+        videoCapture.setUpAVCapture { error in
+            if let error = error {
+                print("Failed to setup camera with error \(error)")
+                return
+            }
+
+            self.videoCapture.startCapturing()
+        }
     }
     
 
