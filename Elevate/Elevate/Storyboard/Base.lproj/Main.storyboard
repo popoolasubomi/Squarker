@@ -729,7 +729,7 @@
                                 <action selector="squatButton:" destination="KVq-cq-bwi" id="aZt-oZ-5Re"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-64" id="omk-Si-Ong">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-24" id="omk-Si-Ong">
                             <connections>
                                 <action selector="settingsButton:" destination="KVq-cq-bwi" id="6K5-W7-UxM"/>
                             </connections>
@@ -1147,11 +1147,11 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C99-tw-He6">
-                                <rect key="frame" x="341" y="115" width="53" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C99-tw-He6">
+                                <rect key="frame" x="325" y="119" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Share">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Share" image="icons8-forward-arrow-30">
                                     <color key="titleColor" red="0.13302233222175294" green="0.32601349335530166" blue="0.67286945841319801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -1208,7 +1208,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2043" y="4122"/>
+            <point key="canvasLocation" x="2042.0289855072465" y="4121.6517857142853"/>
         </scene>
         <!--Search-->
         <scene sceneID="M7Q-1O-StI">
@@ -1239,10 +1239,11 @@
         <image name="download" width="200" height="200"/>
         <image name="favor-icon-red" width="30" height="30"/>
         <image name="icons8-email-send-24" width="24" height="24"/>
+        <image name="icons8-forward-arrow-30" width="30" height="30"/>
         <image name="icons8-home-32" width="32" height="32"/>
         <image name="icons8-increase-24" width="24" height="24"/>
         <image name="icons8-search-30" width="30" height="30"/>
-        <image name="icons8-settings-64" width="64" height="64"/>
+        <image name="icons8-settings-24" width="24" height="24"/>
         <image name="icons8-slr-camera-24" width="24" height="24"/>
         <image name="icons8-squats-30" width="30" height="30"/>
         <image name="icons8-user-30" width="30" height="30"/>
