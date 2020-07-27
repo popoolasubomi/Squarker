@@ -10,8 +10,8 @@ import UIKit
 import UIKit
 import VideoToolbox
 
-class SquatViewController: UIViewController, ConfigurationViewControllerDelegate, VideoCaptureDelegate {
-    
+class SquatViewController: UIViewController, ConfigurationViewControllerDelegate, VideoCaptureDelegate, PoseNetDelegate {
+
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
     @IBOutlet weak var timeCounter: UILabel!
@@ -131,6 +131,25 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         poseNet.predict(image)
     }
     
+    // MARK: - PoseNetDelegate
+    
+    func poseNet(_ poseNet: PoseNet, didPredict predictions: PoseNetOutput) {
+        defer {
+            // Release `currentFrame` when exiting this method.
+            self.currentFrame = nil
+        }
+
+        guard let currentFrame = currentFrame else {
+            return
+        }
+
+        let poseBuilder = PoseBuilder(output: predictions,
+                                      configuration: poseBuilderConfiguration,
+                                      inputImage: currentFrame)
+
+        let poses = algorithm == .single ? [poseBuilder.pose] : poseBuilder.poses // Returns 2D array with a single element
+        previewImageView.show(poses: poses, on: currentFrame)
+    }
 }
 
 
