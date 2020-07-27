@@ -14,13 +14,16 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
 
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
-    @IBOutlet weak var timeCounter: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
     
-    var counter = 0 // Counter for Squats
+    var squatCounter = 0 // Counter for Squats
+    var timeCounter = UserDefaults.standard.integer(forKey: "Time") // Counter for Time
     var previous = [Float]()    // Previous data of squats
     var current = [Float]() // Current Squatting data
     var previous_action: String = "r"    // Current State of body
+    var timer = Timer() // Timer For Squat App
+    var working = true
     
     private let videoCapture = VideoCapture()
 
@@ -58,6 +61,39 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
                 print("worked")
             }
         }
+        
+        timerType()
+    }
+    
+    func timerType(){
+        self.timeCounter *= 60
+        self.timerLabel.text = String(format: "\(Int(self.timeCounter / 60)) : \(self.timeCounter % 60)")
+        if self.timeCounter != 0{
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        }else{
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countUp), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func countDown(){
+        self.timeCounter -= 1
+        let minutes = "\(Int(self.timeCounter / 60))".count == 2 ? "\(Int(self.timeCounter / 60))" : "0\(Int(self.timeCounter / 60))"
+        let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
+        self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
+        
+        if self.timeCounter == 0{
+            self.working = false
+            self.timer.invalidate()
+        }
+    }
+    
+    @objc func countUp(){
+        self.timeCounter += 1
+        
+        let minutes = "\(Int(self.timeCounter / 60))".count == 2 ? "\(Int(self.timeCounter / 60))" : "0\(Int(self.timeCounter / 60))"
+        let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
+        self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
+        
     }
     
     private func setupAndBeginCapturingVideoFrames() {
@@ -106,7 +142,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         }
         else{
             let postController = segue.destination as! PostViewController
-            postController.numSquats = NSNumber(value: self.counter)
+            postController.numSquats = NSNumber(value: self.squatCounter)
         }
     }
     
@@ -145,73 +181,75 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         guard let currentFrame = currentFrame else {
             return
         }
-
-        let poseBuilder = PoseBuilder(output: predictions,
-                                      configuration: poseBuilderConfiguration,
-                                      inputImage: currentFrame)
-
-        let poses = algorithm == .single ? [poseBuilder.pose] : poseBuilder.poses // Returns 2D array with a single element
         
-        if !poses.isEmpty {
-                   let pose = poses[0] // Take first array in Poses data
-                   
-                   // Get CGPoints of respectivec joints
-                   let left_hip_y = Float(pose.joints[.leftHip]?.position.y ?? 0) * 12
-                   let left_knee_y = Float(pose.joints[.leftKnee]?.position.y ?? 0) * 12
-                   let left_ankle_y = Float(pose.joints[.leftAnkle]?.position.y ?? 0) * 12
-                   let left_ear_y = Float(pose.joints[.leftEar]?.position.y ?? 0 ) * 12
-                   let left_eye_y = Float(pose.joints[.leftEye]?.position.y ?? 0) * 12
-        
-                   let right_hip_y = Float(pose.joints[.rightHip]?.position.y ?? 0) * 12
-                   let right_knee_y = Float(pose.joints[.rightKnee]?.position.y ?? 0) * 12
-                   let right_ankle_y = Float(pose.joints[.rightAnkle]?.position.y ?? 0) * 12
-                   let right_ear_y = Float(pose.joints[.rightEar]?.position.y ?? 0) * 12
-                   let right_eye_y = Float(pose.joints[.rightEye]?.position.y ?? 0) * 12
-                   
-                   let nose_y = Float(pose.joints[.nose]?.position.y ?? 0) * 12
-                   
-                   // Array of current squatting data
-                   self.current = [left_hip_y, left_knee_y, left_ankle_y, left_ear_y, left_eye_y, right_hip_y, right_knee_y, right_ankle_y, right_ear_y, right_eye_y, nose_y]
-                   // Array of minimum required change in current data and previous data
-                   let change = [130, 10, 0, 600, 650, 130, 10, 0, 600, 650, 550]
-                   var check = true
-                   //Ensure that all points are sin and are non-zero
-                   for item in self.current{
-                       if item == Float(0){
-                           check = false
-                       }
-                   }
-                   
-                   if check{
-                       if !self.previous.isEmpty { //If previous points do exist
-                           //check if change btw previous data and current data meet minimum required value
-                           let hips_check = abs(self.current[0] - self.previous[0]) >= Float(change[0]) && abs(self.current[5] - self.previous[5]) >= Float(change[5])
-                           let knees_check = abs(self.current[1] - self.previous[1]) >= Float(change[1]) && abs(self.current[6] - self.previous[6]) >= Float(change[6])
-                           let eyes_check = abs(self.current[4] - self.previous[4]) >= Float(change[4]) && abs(self.current[9] - self.previous[9]) >= Float(change[9])
-                           
-                           if hips_check && knees_check && eyes_check { // If it does meet minimum required value
-                               var fall = 0
-                               var rise = 0
-                               //Get number of data points that rise and fall
-                               for x in 0..<self.current.count{
-                                   fall = self.current[x] > self.previous[x] ? fall + 1 : fall
-                                   rise = self.current[x] < self.previous[x] ? rise + 1 : rise
-                               }
-               
-                               let current_action = rise >= fall ? "r" : "f" // Compare rise and fall values to determine if body is really falling or rising
-                        
-                               if self.previous_action == "r" && current_action == "f" { //When body is rising after a squat, increment counter by 1
-                                   self.counter += 1
-                                   self.counterLabel.text = String(self.counter)
-                               }
-                               self.previous_action = current_action //Assign current action to previous action
+        if self.working{
+            let poseBuilder = PoseBuilder(output: predictions,
+                                          configuration: poseBuilderConfiguration,
+                                          inputImage: currentFrame)
+
+            let poses = algorithm == .single ? [poseBuilder.pose] : poseBuilder.poses // Returns 2D array with a single element
+            
+            if !poses.isEmpty {
+                       let pose = poses[0] // Take first array in Poses data
+                       
+                       // Get CGPoints of respectivec joints
+                       let left_hip_y = Float(pose.joints[.leftHip]?.position.y ?? 0) * 12
+                       let left_knee_y = Float(pose.joints[.leftKnee]?.position.y ?? 0) * 12
+                       let left_ankle_y = Float(pose.joints[.leftAnkle]?.position.y ?? 0) * 12
+                       let left_ear_y = Float(pose.joints[.leftEar]?.position.y ?? 0 ) * 12
+                       let left_eye_y = Float(pose.joints[.leftEye]?.position.y ?? 0) * 12
+            
+                       let right_hip_y = Float(pose.joints[.rightHip]?.position.y ?? 0) * 12
+                       let right_knee_y = Float(pose.joints[.rightKnee]?.position.y ?? 0) * 12
+                       let right_ankle_y = Float(pose.joints[.rightAnkle]?.position.y ?? 0) * 12
+                       let right_ear_y = Float(pose.joints[.rightEar]?.position.y ?? 0) * 12
+                       let right_eye_y = Float(pose.joints[.rightEye]?.position.y ?? 0) * 12
+                       
+                       let nose_y = Float(pose.joints[.nose]?.position.y ?? 0) * 12
+                       
+                       // Array of current squatting data
+                       self.current = [left_hip_y, left_knee_y, left_ankle_y, left_ear_y, left_eye_y, right_hip_y, right_knee_y, right_ankle_y, right_ear_y, right_eye_y, nose_y]
+                       // Array of minimum required change in current data and previous data
+                       let change = [130, 10, 0, 600, 650, 130, 10, 0, 600, 650, 550]
+                       var check = true
+                       //Ensure that all points are sin and are non-zero
+                       for item in self.current{
+                           if item == Float(0){
+                               check = false
                            }
                        }
-                       self.previous = self.current // Assign current data to previous data
+                       
+                       if check{
+                           if !self.previous.isEmpty { //If previous points do exist
+                               //check if change btw previous data and current data meet minimum required value
+                               let hips_check = abs(self.current[0] - self.previous[0]) >= Float(change[0]) && abs(self.current[5] - self.previous[5]) >= Float(change[5])
+                               let knees_check = abs(self.current[1] - self.previous[1]) >= Float(change[1]) && abs(self.current[6] - self.previous[6]) >= Float(change[6])
+                               let eyes_check = abs(self.current[4] - self.previous[4]) >= Float(change[4]) && abs(self.current[9] - self.previous[9]) >= Float(change[9])
+                               
+                               if hips_check && knees_check && eyes_check { // If it does meet minimum required value
+                                   var fall = 0
+                                   var rise = 0
+                                   //Get number of data points that rise and fall
+                                   for x in 0..<self.current.count{
+                                       fall = self.current[x] > self.previous[x] ? fall + 1 : fall
+                                       rise = self.current[x] < self.previous[x] ? rise + 1 : rise
+                                   }
+                   
+                                   let current_action = rise >= fall ? "r" : "f" // Compare rise and fall values to determine if body is really falling or rising
+                            
+                                   if self.previous_action == "r" && current_action == "f" { //When body is rising after a squat, increment counter by 1
+                                       self.squatCounter += 1
+                                       self.counterLabel.text = String(self.squatCounter)
+                                   }
+                                   self.previous_action = current_action //Assign current action to previous action
+                               }
+                           }
+                           self.previous = self.current // Assign current data to previous data
+                       }
                    }
-               }
-        
-        previewImageView.show(poses: poses, on: currentFrame)
+            
+            previewImageView.show(poses: poses, on: currentFrame)
+        }
     }
 }
 

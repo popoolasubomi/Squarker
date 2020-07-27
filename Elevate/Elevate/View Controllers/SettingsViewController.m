@@ -151,11 +151,10 @@
         [defaults setObject: self.heightValue forKey: @"Height"];
         
         if (self.toggleSwitch.on){
-            self.sliderValue.alpha = 0;
             [defaults setInteger: 0 forKey: @"Time"];
         } else{
-            self.sliderValue.alpha = 1;
-            int time = [self.sliderValue.text intValue];
+            NSString *timeSet = [NSString stringWithFormat: @"%.f", self.slider.value];
+            int time = [timeSet intValue];
             [defaults setInteger: time forKey: @"Time"];
         }
         
@@ -215,6 +214,14 @@
     NSArray *height = self.possibleHeights[row];
     self.heightLabel.text = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
     self.heightValue = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
+}
+
+- (IBAction)toggleAction:(id)sender {
+    if (self.toggleSwitch.on){
+        self.slider.alpha = 0;
+    } else{
+        self.slider.alpha = 1;
+    }
 }
 
 @end

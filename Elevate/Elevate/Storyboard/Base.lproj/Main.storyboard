@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dss-Lv-NSv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7z-m0-EYb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -873,9 +873,12 @@
                                 <color key="textColor" red="0.15673911739999999" green="0.15673911739999999" blue="0.15673911739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-mG-0gc">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-mG-0gc">
                                 <rect key="frame" x="139" y="160" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleAction:" destination="JCR-HH-mpG" eventType="valueChanged" id="dCL-zY-Vr1"/>
+                                </connections>
                             </switch>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-mY-KlY">
                                 <rect key="frame" x="0.0" y="637" width="414" height="183"/>
@@ -1116,7 +1119,7 @@
                     <connections>
                         <outlet property="counterLabel" destination="Jz4-Uj-jiG" id="B5S-UX-9Vc"/>
                         <outlet property="previewImageView" destination="be4-eD-c2Z" id="mbp-Y4-oeb"/>
-                        <outlet property="timeCounter" destination="eZD-O3-VIs" id="WhF-1c-HSe"/>
+                        <outlet property="timerLabel" destination="eZD-O3-VIs" id="Cxh-JS-cqI"/>
                         <segue destination="Q0H-mc-KZk" kind="presentation" id="VpK-2z-lmq"/>
                     </connections>
                 </viewController>
@@ -1231,7 +1234,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aaj-xu-n9W"/>
+        <segue reference="MTj-Ah-h4Y"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>
