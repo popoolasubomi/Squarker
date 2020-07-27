@@ -23,12 +23,12 @@ import Charts
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: values[i], y: Double(i))
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
         var colors: [UIColor] = []
         
-        for i in 0..<dataPoints.count {
+        for _ in 0..<dataPoints.count {
             let red = Double(arc4random_uniform(256))
             let green = Double(arc4random_uniform(256))
             let blue = Double(arc4random_uniform(256))
