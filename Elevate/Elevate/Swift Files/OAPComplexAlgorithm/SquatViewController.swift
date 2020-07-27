@@ -65,6 +65,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         timerType()
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func timerType(){
         self.timeCounter *= 60
         self.timerLabel.text = String(format: "\(Int(self.timeCounter / 60)) : \(self.timeCounter % 60)")

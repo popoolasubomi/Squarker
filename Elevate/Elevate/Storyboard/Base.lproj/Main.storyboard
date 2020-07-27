@@ -1047,6 +1047,14 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQF-KM-BZE">
+                                        <rect key="frame" x="8" y="47" width="52" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icons8-back-96"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="dss-Lv-NSv" eventType="touchUpInside" id="TqX-A3-6V7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -1241,6 +1249,7 @@
         <image name="close-icon" width="26" height="24"/>
         <image name="download" width="200" height="200"/>
         <image name="favor-icon-red" width="30" height="30"/>
+        <image name="icons8-back-96" width="96" height="96"/>
         <image name="icons8-email-send-24" width="24" height="24"/>
         <image name="icons8-forward-arrow-30" width="30" height="30"/>
         <image name="icons8-home-32" width="32" height="32"/>
