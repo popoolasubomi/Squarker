@@ -65,10 +65,6 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         timerType()
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func postButton(_ sender: Any) {
         self.performSegue(withIdentifier: "postSegue", sender: nil)
     }
