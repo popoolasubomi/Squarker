@@ -103,10 +103,6 @@
     [self performSegueWithIdentifier: @"settingsSegue" sender: nil];
 }
 
-- (IBAction)squatButton:(id)sender {
-    [self performSegueWithIdentifier: @"squatSegue" sender: nil];
-}
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
     if (self.segmentedController.selectedSegmentIndex == 0){
