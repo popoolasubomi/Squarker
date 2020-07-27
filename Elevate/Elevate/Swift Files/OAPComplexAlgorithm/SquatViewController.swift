@@ -67,13 +67,39 @@ class SquatViewController: UIViewController {
             }
         }
 
-        override func viewWillTransition(to size: CGSize,
-                                         with coordinator: UIViewControllerTransitionCoordinator) {
-            // Reinitilize the camera to update its output stream with the new orientation.
-            setupAndBeginCapturingVideoFrames()
-        }
- 
-
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        // Reinitilize the camera to update its output stream with the new orientation.
+        setupAndBeginCapturingVideoFrames()
+    }
+    
     // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if !(segue.destination is PostViewController){
+                guard let uiNavigationController = segue.destination as? UINavigationController else {
+                    return
+                }
+                guard let configurationViewController = uiNavigationController.viewControllers.first
+                    as? ConfigurationViewController else {
+                            return
+                }
+
+                configurationViewController.configuration = poseBuilderConfiguration
+                configurationViewController.algorithm = algorithm
+
+                popOverPresentationManager = PopOverPresentationManager(presenting: self,
+                                                                        presented: uiNavigationController)
+                segue.destination.modalPresentationStyle = .custom
+                segue.destination.transitioningDelegate = popOverPresentationManager
+        }
+        else{
+            let postController = segue.destination as! PostViewController
+            postController.numSquats = NSNumber(value: self.counter)
+        }
+    }
 }
+
+
+
+
