@@ -34,6 +34,7 @@
     self.searchBar.delegate = self;
     
     [self hideNavigationBarTitle];
+    [self loadPosts];
 }
 
 - (void) hideNavigationBarTitle{

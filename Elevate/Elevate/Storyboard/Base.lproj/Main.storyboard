@@ -1033,6 +1033,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="postButton:" destination="dss-Lv-NSv" eventType="touchUpInside" id="P8f-37-E1V"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXE-iA-9JT">
                                         <rect key="frame" x="151" y="58" width="113" height="21"/>
@@ -1128,7 +1131,7 @@
                         <outlet property="counterLabel" destination="Jz4-Uj-jiG" id="B5S-UX-9Vc"/>
                         <outlet property="previewImageView" destination="be4-eD-c2Z" id="mbp-Y4-oeb"/>
                         <outlet property="timerLabel" destination="eZD-O3-VIs" id="Cxh-JS-cqI"/>
-                        <segue destination="Q0H-mc-KZk" kind="presentation" id="VpK-2z-lmq"/>
+                        <segue destination="Q0H-mc-KZk" kind="presentation" identifier="postSegue" id="VpK-2z-lmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-dt-J51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

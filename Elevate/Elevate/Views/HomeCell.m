@@ -25,12 +25,11 @@
 -(void)setPost:(Post *) post{
     _post = post;
     
+    PFUser *user = self.post[@"author"];
     self.profileImage.layer.cornerRadius = 18;
     self.profileImage.layer.masksToBounds = YES;
-    self.profileImage.file = post.image;
+    self.profileImage.file = [user objectForKey: @"image"];
     [self.profileImage loadInBackground];
-    
-    PFUser *user = self.post[@"author"];
     self.usernameLabel.text = user != nil ? user.username : @"🤖";
     
     self.numberOfSquats.text = [NSString stringWithFormat: @"%@", post.squats];
@@ -41,6 +40,8 @@
 - (void)setFriends:(PFUser *)friendName{
     _friendName = friendName;
     
+    UIImage *image = [UIImage imageNamed: @"download"];
+    self.profileImage.image = image;
     self.caption.text = [friendName objectForKey: @"description"];
     self.numberOfSquats.text = [NSString stringWithFormat: @"%d", [[friendName objectForKey: @"squats"] intValue]];
     self.usernameLabel.text = friendName.username;

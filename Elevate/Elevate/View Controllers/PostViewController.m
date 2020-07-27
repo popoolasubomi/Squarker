@@ -62,8 +62,7 @@
 -(void) goHome{
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
-    HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-    myDelegate.window.rootViewController = homeViewController;
+    myDelegate.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
 }
 
 - (IBAction)shareButton:(id)sender {

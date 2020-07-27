@@ -69,6 +69,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func postButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "postSegue", sender: nil)
+    }
+    
     func timerType(){
         self.timeCounter *= 60
         self.timerLabel.text = String(format: "\(Int(self.timeCounter / 60)) : \(self.timeCounter % 60)")
