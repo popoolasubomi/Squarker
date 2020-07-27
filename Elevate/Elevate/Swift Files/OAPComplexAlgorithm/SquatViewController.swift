@@ -98,6 +98,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
             self.counterLabel.text = "0"
         }
     }
+    
     func timerType(){
         self.timeCounter *= 60
         self.timerLabel.text = String(format: "\(Int(self.timeCounter / 60)) : \(self.timeCounter % 60)")
