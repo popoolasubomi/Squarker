@@ -7,11 +7,14 @@
 //
 
 #import "ProgressViewController.h"
-#import "Elevate-Bridging-Header.h"
+#import "Elevate-Swift.h"
+@import Charts;
 
 @interface ProgressViewController ()
 
-@property (weak, nonatomic) IBOutlet PieChartView *pieChartView;
+@property (weak, nonatomic) IBOutlet LineChartView *lineChartView;
+@property (nonatomic, strong) NSArray *dates;
+@property (nonatomic, strong) NSArray *squatsData;
 
 @end
 
@@ -19,9 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.dates = @[@"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun"];
+    self.squatsData = @[@(20.0), @(4.0), @(6.0), @(3.0), @(12.0), @(16.0)];
+    
+    ChartViewController *chartController = [[ChartViewController alloc] init];
+    self.lineChartView.data = [chartController setChartWithDataPoints: self.dates values: self.squatsData];
 }
 
+    
 /*
 #pragma mark - Navigation
 
