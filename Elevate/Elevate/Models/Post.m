@@ -21,12 +21,13 @@
 @dynamic likeArray;
 @dynamic commentArray;
 @dynamic squats;
+@dynamic time;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-+ (void) postUserWithCaption: ( NSString * _Nullable )caption WithSquats: (NSNumber * _Nullable) squats withCompletion: (PFBooleanResultBlock  _Nullable)completion{
++ (void) postUserWithCaption: ( NSString * _Nullable )caption WithSquats: (NSNumber * _Nullable) squats WithTime: (NSNumber * _Nullable) time withCompletion: (PFBooleanResultBlock  _Nullable)completion{
     
     Post *newPost = [Post new];
     newPost.author = [PFUser currentUser];
@@ -36,6 +37,7 @@
     newPost.likeArray = [NSMutableArray array];
     newPost.commentArray = [NSMutableArray array];
     newPost.squats = squats;
+    newPost.time = time;
     [newPost saveInBackgroundWithBlock: completion];
 }
 

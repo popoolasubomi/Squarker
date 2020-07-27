@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PostViewController : UIViewController
 
 @property (nonatomic, strong) NSNumber *numSquats;
+@property (nonatomic, strong) NSNumber *totalTime;
 
 @end
 

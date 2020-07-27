@@ -22,8 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *likeArray;
 @property (nonatomic, strong) NSMutableArray *commentArray;
 @property (nonatomic, strong) NSNumber *squats;
+@property (nonatomic, strong) NSNumber *time;
 
-+ (void) postUserWithCaption: ( NSString * _Nullable )caption WithSquats: (NSNumber * _Nullable) squats withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postUserWithCaption: ( NSString * _Nullable )caption WithSquats: (NSNumber * _Nullable) squats WithTime: (NSNumber * _Nullable) time withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end

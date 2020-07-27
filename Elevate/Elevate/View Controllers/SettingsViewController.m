@@ -35,6 +35,8 @@
     self.pickerView.dataSource = self;
     
     [self buildHeights];
+    self.profileImage.layer.cornerRadius = 98;
+    self.profileImage.layer.masksToBounds = YES;
 }
 
 - (void) buildHeights{
@@ -170,7 +172,7 @@
         }
         
         [PFUser.currentUser setObject: self.nameTextView.text forKey: @"displayName"];
-        [PFUser.currentUser setObject: self.descriptionTextView forKey: @"description"];
+        [PFUser.currentUser setObject: self.descriptionTextView.text forKey: @"description"];
         PFFileObject *imageData = [Post getPFFileFromImage: self.profileImage.image];
         [PFUser.currentUser setObject: imageData forKey: @"image"];
         [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

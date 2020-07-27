@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *squatsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *squatTime;
 
 @end
 
@@ -27,6 +29,7 @@
     [super viewDidLoad];
   
     self.numberOfSquats.text = [NSString stringWithFormat: @"%@", self.numSquats];
+    self.squatTime.text = [NSString stringWithFormat: @"%@", self.totalTime];
     self.textView.delegate = self;
 }
 
@@ -67,7 +70,7 @@
     if ([self.textView.text isEqualToString: @""]){
         [self emptyFieldsAlert];
     } else{
-        [Post postUserWithCaption: self.textView.text WithSquats: self.numSquats withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [Post postUserWithCaption: self.textView.text WithSquats: self.numSquats WithTime: self.totalTime withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if (error){
                 NSLog(@"Error description: %@", error.localizedDescription);
                 [self errorAlert];
@@ -89,6 +92,8 @@
         self.squatsLabel.alpha = 0;
         self.numberOfSquats.alpha = 0;
         self.postButton.alpha = 0;
+        self.timeLabel.alpha = 0;
+        self.squatTime.alpha = 0;
     }];
     
     [UIView animateWithDuration: 0.3 animations:^{
@@ -106,6 +111,8 @@
         self.squatsLabel.alpha = 1;
         self.numberOfSquats.alpha = 1;
         self.postButton.alpha = 1;
+        self.timeLabel.alpha = 1;
+        self.squatTime.alpha = 1;
     }];
     
     [UIView animateWithDuration: 0.2 animations:^{

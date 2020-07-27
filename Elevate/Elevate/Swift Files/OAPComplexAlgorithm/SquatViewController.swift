@@ -85,6 +85,11 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
         self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
         
+        if self.timeCounter == 60{
+            let lowerViews: GradientOverlayView = GradientOverlayView()
+            lowerViews.startColor = UIColor.green
+        }
+        
         if self.timeCounter == 0{
             self.working = false
             self.timer.invalidate()
