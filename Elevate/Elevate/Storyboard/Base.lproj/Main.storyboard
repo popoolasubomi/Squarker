@@ -1096,6 +1096,18 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9g-fy-oR5">
+                                <rect key="frame" x="149" y="660" width="116" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="beginSquatting:" destination="dss-Lv-NSv" eventType="touchUpInside" id="3KB-Ib-azR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="f4S-VY-j3f"/>
@@ -1105,13 +1117,14 @@
                     <connections>
                         <outlet property="counterLabel" destination="Jz4-Uj-jiG" id="B5S-UX-9Vc"/>
                         <outlet property="previewImageView" destination="be4-eD-c2Z" id="mbp-Y4-oeb"/>
+                        <outlet property="startButton" destination="K9g-fy-oR5" id="Sia-iI-yQV"/>
                         <outlet property="timerLabel" destination="eZD-O3-VIs" id="Cxh-JS-cqI"/>
                         <segue destination="Q0H-mc-KZk" kind="presentation" identifier="postSegue" id="VpK-2z-lmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-dt-J51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="1873"/>
+            <point key="canvasLocation" x="-597.10144927536237" y="1872.9910714285713"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="4Mh-L7-xhb">
