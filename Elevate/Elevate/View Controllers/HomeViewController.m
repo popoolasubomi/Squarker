@@ -107,8 +107,18 @@
     [self.view endEditing: YES];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"EEE");
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([[segue identifier] isEqualToString: @"detailsSegue"]){
+        DetailsViewController *detailsController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.posts[indexPath.row];
+        detailsController.post = post;
+    }
 }
     
 @end
