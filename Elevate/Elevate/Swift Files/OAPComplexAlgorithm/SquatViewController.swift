@@ -185,6 +185,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         else{
             let postController = segue.destination as! PostViewController
             postController.numSquats = NSNumber(value: self.squatCounter)
+            let startTime = UserDefaults.standard.integer(forKey: "Time")
+            let endTime = Int(self.timeCounter / 60)
+            let interval = abs(startTime - endTime)
+            postController.totalTime = NSNumber(value: interval)
         }
     }
     

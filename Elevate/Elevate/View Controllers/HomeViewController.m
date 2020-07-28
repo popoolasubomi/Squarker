@@ -112,6 +112,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"me@@");
     if ([[segue identifier] isEqualToString: @"detailsSegue"]){
         DetailsViewController *detailsController = [segue destinationViewController];
         UITableViewCell *tappedCell = sender;

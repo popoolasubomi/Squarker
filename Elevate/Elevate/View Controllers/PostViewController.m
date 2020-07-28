@@ -28,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    self.numberOfSquats.text = [NSString stringWithFormat: @"%@", self.numSquats];
-    self.squatTime.text = [NSString stringWithFormat: @"%@", self.totalTime];
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%d", self.numSquats.intValue];
+    self.squatTime.text = [NSString stringWithFormat: @"%d", self.totalTime.intValue];
     self.textView.delegate = self;
 }
 
