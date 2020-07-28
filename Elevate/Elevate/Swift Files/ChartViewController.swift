@@ -18,12 +18,12 @@ import Charts
         // Do any additional setup after loading the view.
     }
     
-    @objc func setChart(dataPoints: [String], values: [Double]) -> LineChartData {
+    @objc func setChart(dataPoints: [String], values: [NSNumber]) -> LineChartData {
         
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i].doubleValue)
             dataEntries.append(dataEntry)
         }
         var colors: [UIColor] = []
