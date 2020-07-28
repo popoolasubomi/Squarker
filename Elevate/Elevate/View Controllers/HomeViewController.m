@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "DetailsViewController.h"
 #import "SceneDelegate.h"
 #import "HomeCell.h"
 #import "Post.h"
@@ -106,4 +107,8 @@
     [self.view endEditing: YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+}
+    
 @end

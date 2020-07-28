@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dss-Lv-NSv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7z-m0-EYb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -268,6 +268,7 @@
                                             <outlet property="numberOfSquats" destination="PQQ-Qe-vBe" id="oZe-td-bjL"/>
                                             <outlet property="profileImage" destination="NyI-f1-vad" id="zyi-PD-TKM"/>
                                             <outlet property="usernameLabel" destination="Sqh-rU-NgF" id="2Ry-gy-xJ5"/>
+                                            <segue destination="WjT-2X-C0O" kind="show" identifier="detailsSegue" id="ky6-GB-P1y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -420,6 +421,7 @@
                                             <outlet property="numberOfSquats" destination="cTm-IH-xhd" id="Lp6-EW-JhO"/>
                                             <outlet property="profileImage" destination="dA4-bN-uRF" id="3hJ-6Q-vb8"/>
                                             <outlet property="usernameLabel" destination="VWV-Ya-Ukd" id="Iaa-b5-Hvj"/>
+                                            <segue destination="WjT-2X-C0O" kind="show" identifier="detailsSegue" id="Q4c-ub-Pqb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -551,6 +553,22 @@
             </objects>
             <point key="canvasLocation" x="-2626.0869565217395" y="3707.8125"/>
         </scene>
+        <!--Details-->
+        <scene sceneID="kwt-MU-iQr">
+            <objects>
+                <viewController id="WjT-2X-C0O" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cWs-qw-4rX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aY9-fL-LzL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="f4w-Sy-zDV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNX-Nj-A7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597" y="3708"/>
+        </scene>
         <!--Search Others-->
         <scene sceneID="4T0-1s-0ul">
             <objects>
@@ -651,6 +669,7 @@
                                             <outlet property="numberOfSquats" destination="XPQ-jQ-WPB" id="MCe-6X-C5j"/>
                                             <outlet property="profileImage" destination="YkZ-kH-Vvk" id="XJk-XW-k2n"/>
                                             <outlet property="usernameLabel" destination="Kgh-gv-8gt" id="Fst-Za-qHg"/>
+                                            <segue destination="WjT-2X-C0O" kind="show" identifier="detailsSegue" id="EOS-2E-M4T"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1346,7 +1365,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-597" y="3708"/>
+            <point key="canvasLocation" x="-597" y="4646"/>
         </scene>
         <!--Search-->
         <scene sceneID="M7Q-1O-StI">
@@ -1369,7 +1388,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aaj-xu-n9W"/>
+        <segue reference="ky6-GB-P1y"/>
+        <segue reference="MTj-Ah-h4Y"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-icon-white" width="30" height="30"/>
