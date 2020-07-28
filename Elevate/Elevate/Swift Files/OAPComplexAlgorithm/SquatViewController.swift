@@ -103,7 +103,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         self.timeCounter *= 60
         let minutes = "\(Int(self.timeCounter / 60))".count == 2 ? "\(Int(self.timeCounter / 60))" : "0\(Int(self.timeCounter / 60))"
         let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
-        self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
+        self.timerLabel.text = String(format: "\(minutes):\(seconds)")
         
         if self.timeCounter != 0{
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
@@ -116,7 +116,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         self.timeCounter -= 1
         let minutes = "\(Int(self.timeCounter / 60))".count == 2 ? "\(Int(self.timeCounter / 60))" : "0\(Int(self.timeCounter / 60))"
         let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
-        self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
+        self.timerLabel.text = String(format: "\(minutes):\(seconds)")
         
         if self.timeCounter == 60{
             let lowerViews: GradientOverlayView = GradientOverlayView()
@@ -134,7 +134,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         
         let minutes = "\(Int(self.timeCounter / 60))".count == 2 ? "\(Int(self.timeCounter / 60))" : "0\(Int(self.timeCounter / 60))"
         let seconds = "\(self.timeCounter % 60)".count == 2 ? "\(self.timeCounter % 60)" : "0\(self.timeCounter % 60)"
-        self.timerLabel.text = String(format: "\(minutes) : \(seconds)")
+        self.timerLabel.text = String(format: "\(minutes):\(seconds)")
         
     }
     
