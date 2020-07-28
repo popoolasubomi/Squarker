@@ -988,6 +988,9 @@
                                     <segment title="7 days"/>
                                     <segment title="1 month"/>
                                 </segments>
+                                <connections>
+                                    <action selector="switchTimeFrame:" destination="9YS-H6-fjE" eventType="valueChanged" id="J3k-u4-Da9"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnF-QH-mMO" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="384" width="374" height="382"/>
@@ -1040,6 +1043,7 @@
                     <navigationItem key="navigationItem" title="Progress" id="gkU-a3-T9K"/>
                     <connections>
                         <outlet property="lineChartView" destination="JnF-QH-mMO" id="B5C-29-IYO"/>
+                        <outlet property="segnmentedControl" destination="51r-B9-f4m" id="ThC-P6-IOk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogs-t4-xMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

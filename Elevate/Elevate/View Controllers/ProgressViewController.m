@@ -12,10 +12,11 @@
 
 @interface ProgressViewController () <ChartViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segnmentedControl;
 @property (weak, nonatomic) IBOutlet LineChartView *lineChartView;
 @property (nonatomic, strong) NSArray *dates;
 @property (nonatomic, strong) NSArray *squatsData;
-
+@property (nonatomic, strong) NSDate *timeAgo;
 @end
 
 @implementation ProgressViewController
@@ -41,7 +42,9 @@
     self.lineChartView.data = [chartController setChartWithDataPoints: self.dates values: self.squatsData];
 }
 
-    
+- (IBAction)switchTimeFrame:(id)sender {
+}
+
 /*
 #pragma mark - Navigation
 
