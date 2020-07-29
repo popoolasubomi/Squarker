@@ -7,7 +7,9 @@
 //
 
 #import "UsersProfileViewController.h"
+#import "DetailsViewController.h"
 #import "HomeCell.h"
+#import "Post.h"
 
 @interface UsersProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -124,8 +126,14 @@
     return self.posts.count;
 }
 
-- (IBAction)onTap:(id)sender {
-    [self.view endEditing: YES];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"detailsSegue"]){
+        DetailsViewController *detailsController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.posts[indexPath.row];
+        detailsController.post = post;
+    }
 }
 
 @end

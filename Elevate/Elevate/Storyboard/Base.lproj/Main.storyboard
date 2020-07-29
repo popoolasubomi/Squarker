@@ -362,9 +362,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-P7-o6e">
-                                                    <rect key="frame" x="195" y="56" width="219" height="113"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-P7-o6e">
+                                                    <rect key="frame" x="195" y="56" width="194" height="113"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -384,7 +384,7 @@
                                             <constraints>
                                                 <constraint firstItem="89N-XM-dj1" firstAttribute="top" secondItem="gZr-hY-Wyf" secondAttribute="top" constant="8.5" id="2EK-1S-lx0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="f4y-P7-o6e" secondAttribute="bottom" constant="20" id="411-Ma-3vd"/>
-                                                <constraint firstItem="f4y-P7-o6e" firstAttribute="trailing" secondItem="gZr-hY-Wyf" secondAttribute="trailingMargin" constant="20" id="BKo-P4-kVp"/>
+                                                <constraint firstItem="f4y-P7-o6e" firstAttribute="trailing" secondItem="gZr-hY-Wyf" secondAttribute="trailingMargin" constant="-5" id="BKo-P4-kVp"/>
                                                 <constraint firstItem="89N-XM-dj1" firstAttribute="leading" secondItem="cEG-F2-fbd" secondAttribute="trailing" constant="8" id="HwE-GF-g3y"/>
                                                 <constraint firstItem="dlZ-fB-MwC" firstAttribute="top" secondItem="gZr-hY-Wyf" secondAttribute="top" constant="7" id="I0v-hp-S8s"/>
                                                 <constraint firstItem="f4y-P7-o6e" firstAttribute="leading" secondItem="iiO-52-di5" secondAttribute="trailing" constant="23" id="I0y-4Z-KtN"/>
@@ -557,7 +557,7 @@
                                             <outlet property="numberOfSquats" destination="cTm-IH-xhd" id="Lp6-EW-JhO"/>
                                             <outlet property="profileImage" destination="dA4-bN-uRF" id="3hJ-6Q-vb8"/>
                                             <outlet property="usernameLabel" destination="VWV-Ya-Ukd" id="Iaa-b5-Hvj"/>
-                                            <segue destination="vmA-pm-nb2" kind="show" id="YJq-lv-jUP"/>
+                                            <segue destination="vmA-pm-nb2" kind="show" identifier="detailsSegue" id="YJq-lv-jUP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -658,9 +658,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="rS7-IS-BZa" appends="YES" id="vgH-ys-eNX"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
@@ -681,11 +678,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="rS7-IS-BZa">
-                    <connections>
-                        <action selector="onTap:" destination="KDD-Do-pTb" id="uKU-bQ-mE0"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2626.0869565217395" y="3707.8125"/>
         </scene>
@@ -694,7 +686,7 @@
             <objects>
                 <viewController id="vmA-pm-nb2" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7H-sB-0iZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="epk-kw-97M"/>
@@ -805,7 +797,7 @@
                                             <outlet property="numberOfSquats" destination="XPQ-jQ-WPB" id="MCe-6X-C5j"/>
                                             <outlet property="profileImage" destination="YkZ-kH-Vvk" id="XJk-XW-k2n"/>
                                             <outlet property="usernameLabel" destination="Kgh-gv-8gt" id="Fst-Za-qHg"/>
-                                            <segue destination="vmA-pm-nb2" kind="show" id="Vi2-Z1-zZz"/>
+                                            <segue destination="vmA-pm-nb2" kind="show" identifier="detailsSegue" id="Vi2-Z1-zZz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -881,9 +873,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="oF3-8a-5ch" appends="YES" id="K4H-Km-tPa"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="EZa-Fz-y9x">
                         <barButtonItem key="rightBarButtonItem" image="icons8-settings-24" id="omk-Si-Ong">
@@ -911,11 +900,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="oF3-8a-5ch">
-                    <connections>
-                        <action selector="onTap:" destination="KVq-cq-bwi" id="izh-lh-xYc"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="2752.9017857142858"/>
         </scene>
@@ -1234,8 +1218,9 @@
                                             <constraint firstItem="cfS-SH-Mor" firstAttribute="top" secondItem="QbJ-of-Niw" secondAttribute="bottom" constant="38" id="AjM-Ri-qcJ"/>
                                             <constraint firstItem="Zpm-j1-nOA" firstAttribute="leading" secondItem="Ttf-Se-weY" secondAttribute="leading" constant="23" id="CIB-8v-oid"/>
                                             <constraint firstItem="JnF-QH-mMO" firstAttribute="leading" secondItem="Ttf-Se-weY" secondAttribute="leading" constant="20" id="CZi-eQ-l8J"/>
-                                            <constraint firstItem="owU-Fq-foJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zpm-j1-nOA" secondAttribute="trailing" constant="20" id="GOf-bx-9Ju"/>
+                                            <constraint firstItem="owU-Fq-foJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zpm-j1-nOA" secondAttribute="trailing" constant="10" id="GOf-bx-9Ju"/>
                                             <constraint firstItem="QbJ-of-Niw" firstAttribute="top" secondItem="Ttf-Se-weY" secondAttribute="top" constant="48" id="GjE-T3-Y8x"/>
+                                            <constraint firstAttribute="bottom" secondItem="JnF-QH-mMO" secondAttribute="bottom" constant="177" id="PjO-ky-L6f"/>
                                             <constraint firstItem="zwN-JN-YN6" firstAttribute="leading" secondItem="Ttf-Se-weY" secondAttribute="leading" constant="23" id="Prh-ey-nIp"/>
                                             <constraint firstItem="Zpm-j1-nOA" firstAttribute="top" secondItem="zwN-JN-YN6" secondAttribute="bottom" constant="35" id="Rr6-dq-huB"/>
                                             <constraint firstItem="QbJ-of-Niw" firstAttribute="leading" secondItem="Ttf-Se-weY" secondAttribute="leading" id="Twg-mu-W7M"/>
@@ -1615,7 +1600,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tRc-v5-j7D"/>
+        <segue reference="YJq-lv-jUP"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
