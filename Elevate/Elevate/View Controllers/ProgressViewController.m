@@ -42,6 +42,7 @@
     self.lineChartView.legend.enabled = NO;
     self.lineChartView.xAxis.enabled = NO;
     self.lineChartView.rightAxis.enabled = NO;
+    self.lineChartView.legend.textColor = [UIColor blackColor];
     
     NSDate *now = [NSDate date];
     self.timeAgo = [now dateByAddingTimeInterval:-1*24*60*60];
