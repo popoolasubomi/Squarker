@@ -276,9 +276,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="7PC-fJ-akp"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="wZx-eq-bcA" appends="YES" id="sbG-ft-2UQ"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Timeline" id="z3S-ny-CA1">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="IUI-bX-Gg8">
@@ -296,11 +293,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="wZx-eq-bcA">
-                    <connections>
-                        <action selector="onTap:" destination="ISZ-qx-kaJ" id="S51-5z-7cw"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1952.1739130434785" y="2752.9017857142858"/>
         </scene>
@@ -1007,7 +999,7 @@
                                 <rect key="frame" x="20" y="233" width="172" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Lowest Growth: 54%">
+                                    <fragment content="Lowest Growth: 0%">
                                         <attributes>
                                             <font key="NSFont" size="19" name="Cochin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1055,10 +1047,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owU-Fq-foJ">
-                                <rect key="frame" x="219" y="233" width="178" height="38"/>
+                                <rect key="frame" x="200" y="233" width="197" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Highest Growth: 54%">
+                                    <fragment content="Highest Growth: 0%">
                                         <attributes>
                                             <font key="NSFont" size="19" name="Cochin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

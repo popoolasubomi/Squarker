@@ -75,6 +75,10 @@
                 [self errorAlert];
             } else{
                 NSLog(@"Upload was successful");
+                PFUser *user = [PFUser currentUser];
+                NSNumber *squats = [user objectForKey: @"squats"];
+                NSNumber *totalSquats = [NSNumber numberWithInt: squats.intValue + self.numSquats.intValue];
+                [user setObject: totalSquats forKey: @"squats"];
                 [self goHome];
             }
         }];

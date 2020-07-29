@@ -44,14 +44,14 @@
     self.lineChartView.rightAxis.enabled = NO;
     
     NSDate *now = [NSDate date];
-    self.timeAgo = [now dateByAddingTimeInterval:-0*24*60*60];
+    self.timeAgo = [now dateByAddingTimeInterval:-1*24*60*60];
     [self loadData];
 }
 
 - (IBAction)switchTimeFrame:(id)sender {
     if (self.segnmentedControl.selectedSegmentIndex == 0){
         NSDate *now = [NSDate date];
-        self.timeAgo = [now dateByAddingTimeInterval:-0*24*60*60];
+        self.timeAgo = [now dateByAddingTimeInterval:-1*24*60*60];
         [self loadData];
     } else if (self.segnmentedControl.selectedSegmentIndex == 1) {
         NSDate *now = [NSDate date];
@@ -76,7 +76,7 @@
 - (void) loadData{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey: @"author"];
-    [query orderByDescending: @"createdAt"];
+    [query orderByAscending: @"createdAt"];
     [query whereKey: @"author" equalTo: [PFUser currentUser]];
     [query whereKey: @"createdAt" greaterThanOrEqualTo: self.timeAgo];
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -131,14 +131,21 @@
         NSString* date = [formatter stringFromDate: [lower createdAt]];
         [dates addObject: date];
         [squatsData addObject: [NSNumber numberWithDouble: lower.squats.doubleValue]];
-        
+       
         for (int i = 1; i < self.posts.count; i++){
             Post *upper = self.posts[i];
             Post *lower = self.posts[i-1];
-            double percent = (upper.squats.doubleValue - lower.squats.doubleValue) * 100 / lower.squats.doubleValue;
+            double percent;
+            
+            if (lower.squats.doubleValue == 0.0){
+                percent = 0.0;
+            } else{
+                 percent = (upper.squats.doubleValue - lower.squats.doubleValue) * 100 / lower.squats.doubleValue;
+            }
             
             if (percent > highestGrowth){
                 highestGrowth = percent;
+                NSLog(@"%f", highestGrowth);
             }
             if (percent < lowestGrowth){
                 lowestGrowth = percent;
@@ -157,8 +164,8 @@
     
     PFUser *user = [PFUser currentUser];
     NSNumber *squats = [user objectForKey: @"squats"];
-    self.totalSquatLabel.text = [NSString stringWithFormat: @"Squats: %d", squats.intValue];
-    self.squatLabel.text = [NSString stringWithFormat: @"Total Squats: %d", totalSquats];
+    self.totalSquatLabel.text = [NSString stringWithFormat: @"Total Squats: %d", squats.intValue];
+    self.squatLabel.text = [NSString stringWithFormat: @"Squats: %d", totalSquats];
     self.lowGrowthLabel.text = [NSString stringWithFormat: @"Lowest Growth: %.f %%", lowestGrowth];
     self.highGrowthLabel.text = [NSString stringWithFormat: @"Highest Growth: %.f %%", highestGrowth];
     

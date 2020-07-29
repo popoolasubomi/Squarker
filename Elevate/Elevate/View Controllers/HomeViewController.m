@@ -103,16 +103,11 @@
     return self.filteredData.count;
 }
 
-- (IBAction)onTap:(id)sender {
-    [self.view endEditing: YES];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"EEE");
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"me@@");
     if ([[segue identifier] isEqualToString: @"detailsSegue"]){
         DetailsViewController *detailsController = [segue destinationViewController];
         UITableViewCell *tappedCell = sender;
