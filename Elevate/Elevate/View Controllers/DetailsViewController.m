@@ -9,12 +9,14 @@
 #import "DetailsViewController.h"
 #import "Parse/Parse.h"
 #import "CommentCell.h"
+@import Parse;
 
 NSString *const redHeart = @"favor-icon-red";
 NSString *const normalHeart = @"favor-icon";
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numSquatsLabel;
@@ -41,11 +43,11 @@ NSString *const normalHeart = @"favor-icon";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [self populateView];
     [self fetchComments];
 }
 
 - (void) fetchComments{
+    [self populateView];
     self.comments = [self.post objectForKey: @"commentArray"];
     if (self.comments.count == 0){
         self.commentsView.alpha = 0;
@@ -56,41 +58,60 @@ NSString *const normalHeart = @"favor-icon";
 }
 
 - (void) populateView{
-   
+    PFUser *postUser = [self.post objectForKey: @"author"];
+    self.likes = [self.post objectForKey: @"likeArray"];
+    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", postUser.username];
+    NSNumber *numSquats = [self.post objectForKey: @"squats"];
+    self.numSquatsLabel.text = [NSString stringWithFormat: @"%d squats", numSquats.intValue];
+    self.captionLabel.text = [self.post objectForKey: @"caption"];
+    NSNumber *time = [self.post objectForKey: @"time"];
+    self.timeLabel.text = [NSString stringWithFormat: @"Time: %d", time.intValue];
+    NSNumber *commentsCount = [self.post objectForKey: @"commentCount"];
+    self.commentsCount.text = [NSString stringWithFormat: @"%d", commentsCount.intValue];
+    PFFileObject *imageData = [postUser objectForKey: @"image"];
+    self.profileImage.file = imageData;
+    self.profileImage.layer.cornerRadius = 76;
+    self.profileImage.layer.masksToBounds = YES;
+    [self.profileImage loadInBackground];
+    [self updateHeartImage];
 }
 
-- (IBAction)favoriteButton:(id)sender {
-    self.likes = [self.post objectForKey: @"likeArray"];
+- (void) updateHeartImage{
+    PFUser *user = [PFUser currentUser];
+    if ([self.likes containsObject: user.username]){
+        NSLog(@"ME");
+        [self.likeButton setImage: [UIImage imageNamed: redHeart] forState: UIControlStateNormal];
+    } else{
+        [self.likeButton setImage: [UIImage imageNamed: normalHeart] forState: UIControlStateNormal];
+    }
+    self.likesCount.text = [NSString stringWithFormat: @"%d", self.post.likeCount.intValue];
+}
+
+- (void) configureLikeFeatures{
     NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     PFUser *user = [PFUser currentUser];
-    if (![self.likes containsObject: user]){
-        [self.likes addObject: user];
+    if (![self.likes containsObject: user.username]){
+        [self.likes addObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue + 1];
-        [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Updated Likes");
-                [self.likeButton setImage: [UIImage imageNamed: redHeart] forState: UIControlStateNormal];
-            }
-            else {
-                NSLog(@"Failed to Like");
-            }
-        }];
     } else{
-        [self.likes removeObject: user];
+        [self.likes removeObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue - 1];
-        [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Updated Likes");
-                [self.likeButton setImage: [UIImage imageNamed: normalHeart] forState: UIControlStateNormal];
-            }
-            else {
-                NSLog(@"Failed to Like");
-            }
-        }];
     }
-    
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Updated Likes");
+            [self updateHeartImage];
+        }
+        else {
+            NSLog(@"Failed to Like");
+        }
+    }];
+}
+
+- (IBAction)favoriteAndUnFavoriteButton:(id)sender {
+    [self configureLikeFeatures];
 }
 
 - (IBAction)postComment:(id)sender {

@@ -681,7 +681,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-rc-rS6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-rc-rS6" customClass="PFImageView">
                                 <rect key="frame" x="20" y="156" width="153" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -725,7 +725,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="favor-icon"/>
                                 <connections>
-                                    <action selector="favoriteButton:" destination="vmA-pm-nb2" eventType="touchUpInside" id="qdB-pV-VNi"/>
+                                    <action selector="favoriteAndUnFavoriteButton:" destination="vmA-pm-nb2" eventType="touchUpInside" id="yaj-ke-ejY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q18-Wi-M2a">
@@ -787,6 +787,7 @@
                         <outlet property="likeButton" destination="c2J-k4-gL6" id="PnQ-3R-3Qv"/>
                         <outlet property="likesCount" destination="6bs-yh-ucp" id="qYa-px-wyJ"/>
                         <outlet property="numSquatsLabel" destination="zcY-ae-mGd" id="0aL-lu-9JF"/>
+                        <outlet property="profileImage" destination="BhS-rc-rS6" id="o0q-W4-t0c"/>
                         <outlet property="tableView" destination="bpS-fS-TbK" id="r6a-FB-w9q"/>
                         <outlet property="timeLabel" destination="KnB-in-Kvs" id="H5m-Pm-tbA"/>
                         <outlet property="usernameLabel" destination="Spm-xH-o7x" id="gMn-D2-qgJ"/>
