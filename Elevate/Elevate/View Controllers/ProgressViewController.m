@@ -12,6 +12,10 @@
 #import "Post.h"
 @import Charts;
 
+int const DAY_IN_SECS = -1.0 * 24.0 * 60.0 * 60.0;
+int const WEEK_IN_SECS = -7.0 * 24.0 * 60.0 * 60.0;
+int const MONTH_IN_SECS = -31.0 * 24.0 * 60.0 * 60.0;
+
 @interface ProgressViewController () <ChartViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lowGrowthLabel;
@@ -50,19 +54,14 @@
 }
 
 - (IBAction)switchTimeFrame:(id)sender {
-    if (self.segnmentedControl.selectedSegmentIndex == 0){
-        NSDate *now = [NSDate date];
-        self.timeAgo = [now dateByAddingTimeInterval:-1*24*60*60];
-        [self loadData];
-    } else if (self.segnmentedControl.selectedSegmentIndex == 1) {
-        NSDate *now = [NSDate date];
-        self.timeAgo = [now dateByAddingTimeInterval:-7*24*60*60];
-        [self loadData];
-    } else{
-        NSDate *now = [NSDate date];
-        self.timeAgo = [now dateByAddingTimeInterval:-31*24*60*60];
-        [self loadData];
-    }
+    NSDictionary *segmentType = @{@"DAY": @(DAY_IN_SECS), @"WEEK":@(WEEK_IN_SECS), @"MONTH": @(MONTH_IN_SECS)};
+    NSArray *segmentList = @[@"DAY", @"WEEK", @"MONTH"];
+    NSDate *now = [NSDate date];
+    NSString *specificDate = segmentList[self.segnmentedControl.selectedSegmentIndex];
+    NSNumber *time = [segmentType objectForKey: specificDate];
+    self.timeAgo = [now dateByAddingTimeInterval: time.doubleValue];
+
+    [self loadData];
 }
 
 - (void) populateGraph{
@@ -75,6 +74,7 @@
 }
 
 - (void) loadData{
+    self.posts  = [NSArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey: @"author"];
     [query orderByAscending: @"createdAt"];
@@ -157,7 +157,7 @@
             [dates addObject: date];
             [squatsData addObject: [NSNumber numberWithDouble: upper.squats.doubleValue]];
            }
-    }else{
+    }else {
         totalSquats = 0;
         lowestGrowth = 0.0;
         highestGrowth = 0.0;
