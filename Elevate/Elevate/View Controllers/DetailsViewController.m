@@ -10,6 +10,9 @@
 #import "Parse/Parse.h"
 #import "CommentCell.h"
 
+NSString *const redHeart = @"favor-icon-red";
+NSString *const normalHeart = @"favor-icon";
+
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
@@ -38,6 +41,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    [self populateView];
     [self fetchComments];
 }
 
@@ -51,7 +55,41 @@
     }
 }
 
+- (void) populateView{
+   
+}
+
 - (IBAction)favoriteButton:(id)sender {
+    self.likes = [self.post objectForKey: @"likeArray"];
+    NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
+    PFUser *user = [PFUser currentUser];
+    if (![self.likes containsObject: user]){
+        [self.likes addObject: user];
+        self.post.likeArray = self.likes;
+        self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue + 1];
+        [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Updated Likes");
+                [self.likeButton setImage: [UIImage imageNamed: redHeart] forState: UIControlStateNormal];
+            }
+            else {
+                NSLog(@"Failed to Like");
+            }
+        }];
+    } else{
+        [self.likes removeObject: user];
+        self.post.likeArray = self.likes;
+        self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue - 1];
+        [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Updated Likes");
+                [self.likeButton setImage: [UIImage imageNamed: normalHeart] forState: UIControlStateNormal];
+            }
+            else {
+                NSLog(@"Failed to Like");
+            }
+        }];
+    }
     
 }
 
