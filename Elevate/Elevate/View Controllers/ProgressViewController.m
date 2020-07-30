@@ -146,7 +146,6 @@ int const MONTH_IN_SECS = -31.0 * 24.0 * 60.0 * 60.0;
             
             if (percent > highestGrowth){
                 highestGrowth = percent;
-                NSLog(@"%f", highestGrowth);
             }
             if (percent < lowestGrowth){
                 lowestGrowth = percent;

@@ -83,7 +83,6 @@
             newFrame.size.height -= y;
             self.tableView.frame = newFrame;
         } else{
-            NSLog(@"ELSE");
             self.commentsView.frame = self.previousCommentFrame;
             self.tableView.frame = self.previousTableFrame;
         }

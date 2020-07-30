@@ -103,10 +103,6 @@
     return self.filteredData.count;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"EEE");
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString: @"detailsSegue"]){
         DetailsViewController *detailsController = [segue destinationViewController];
