@@ -22,8 +22,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *commentsView;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
-@property (nonatomic, strong) NSArray *comments;
-@property (nonatomic, strong) NSArray *likes;
+@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) NSMutableArray *likes;
 @property (nonatomic) CGRect previousCommentFrame;
 @property (nonatomic) CGRect previousTableFrame;
 
@@ -33,6 +34,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     [self fetchComments];
 }
@@ -53,7 +57,6 @@
 
 - (IBAction)postComment:(id)sender {
     [self buildCommentController];
-    [self fetchComments];
 }
 
 - (void) buildCommentController{
@@ -61,22 +64,46 @@
     commentViewController.view.backgroundColor = [UIColor whiteColor];
     CGRect frame = commentViewController.view.frame;
     
-    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 175, 20)];
+    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 170, 20)];
     [instructionLabel setTextColor:[UIColor darkGrayColor]];
     [instructionLabel setBackgroundColor:[UIColor clearColor]];
     [instructionLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 17.0f]];
     [instructionLabel setText:@"Add your comment..."];
     [commentViewController.view addSubview: instructionLabel];
     
-    UITextView *textView = [[UITextView alloc] initWithFrame: CGRectMake(30, 65, frame.size.width - 60, 200)];
-    [textView setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
-    [textView setTextColor:[UIColor blackColor]];
-    [textView setBackgroundColor:[UIColor lightGrayColor]];
-    [commentViewController.view addSubview: textView];
+    self.textView = [[UITextView alloc] initWithFrame: CGRectMake(30, 65, frame.size.width - 60, 200)];
+    [self.textView  setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
+    [self.textView setTextColor:[UIColor blackColor]];
+    [self.textView  setBackgroundColor:[UIColor lightGrayColor]];
+    [commentViewController.view addSubview: self.textView];
     
-    
+    UIButton *button = [UIButton buttonWithType: UIButtonTypeSystem];
+    [button setFrame: CGRectMake(frame.size.width - 65, 25, 30, 200)];
+    [button setTitle:@"Post" forState: UIControlStateNormal];
+    [button setTitleColor: [UIColor blueColor] forState: UIControlStateNormal];
+    [button addTarget:self action:@selector(postButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    [self.view addSubview:button];
+    [commentViewController.view addSubview: button];
     
     [self presentViewController: commentViewController animated: YES completion: nil];
+}
+
+-(void) postButtonClicked:(UIButton*)sender{
+    NSNumber *commentCount = [self.post objectForKey: @"commentCount"];
+    [self.comments addObject: self.textView.text];
+    self.post.commentArray = self.comments;
+    self.post.commentCount = [NSNumber numberWithInt: commentCount.intValue + 1];
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+           if (succeeded) {
+               NSLog(@"Updated comments");
+               [self dismissViewControllerAnimated: YES completion: nil];
+               [self fetchComments];
+           }
+           else {
+               NSLog(@"Failed to comment");
+           }
+       }];
 }
 
 - (IBAction)viewComments:(id)sender {
