@@ -41,6 +41,7 @@
 		4307A0F024CE648200E41A75 /* PoseNetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0CE24CE648200E41A75 /* PoseNetInput.swift */; };
 		4307A0F124CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0CF24CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel */; };
 		4307A0F424CE66A700E41A75 /* SquatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307A0F324CE66A700E41A75 /* SquatViewController.swift */; };
+		430D45BC24D2003C00A581A3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 430D45BB24D2003C00A581A3 /* CommentCell.m */; };
 		433171CA24C2A623008568D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433171C924C2A623008568D9 /* HomeViewController.m */; };
 		437B885424BF62B40073C533 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885324BF62B40073C533 /* AppDelegate.m */; };
 		437B885724BF62B40073C533 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B885624BF62B40073C533 /* SceneDelegate.m */; };
@@ -118,6 +119,8 @@
 		4307A0CE24CE648200E41A75 /* PoseNetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseNetInput.swift; sourceTree = "<group>"; };
 		4307A0CF24CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PoseNetMobileNet075S16FP16.mlmodel; sourceTree = "<group>"; };
 		4307A0F324CE66A700E41A75 /* SquatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatViewController.swift; sourceTree = "<group>"; };
+		430D45BA24D2003C00A581A3 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		430D45BB24D2003C00A581A3 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		433171C824C2A623008568D9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		433171C924C2A623008568D9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		435AD1AB24C78074006EE244 /* Elevate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Elevate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 			children = (
 				43079EB724C8C44F00E41A75 /* HomeCell.h */,
 				43079EB824C8C44F00E41A75 /* HomeCell.m */,
+				430D45BA24D2003C00A581A3 /* CommentCell.h */,
+				430D45BB24D2003C00A581A3 /* CommentCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				43079EC224C91A5E00E41A75 /* UsersProfileViewController.m in Sources */,
 				4307A0DC24CE648200E41A75 /* ConfigurationViewController.swift in Sources */,
 				4307A0F024CE648200E41A75 /* PoseNetInput.swift in Sources */,
+				430D45BC24D2003C00A581A3 /* CommentCell.m in Sources */,
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
 				4307A0F124CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				4307A0DA24CE648200E41A75 /* ViewController.swift in Sources */,

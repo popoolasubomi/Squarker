@@ -7,21 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="952-Oi-LAp">
-            <objects>
-                <viewController id="lgZ-bO-yzP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dAG-Oe-yMT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ewN-2B-7eJ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFw-gr-Zs7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2968" y="2753"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="KIG-gM-gCm">
             <objects>
@@ -739,18 +724,24 @@
                                 <rect key="frame" x="197" y="321" width="45" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="favor-icon"/>
+                                <connections>
+                                    <action selector="favoriteButton:" destination="vmA-pm-nb2" eventType="touchUpInside" id="qdB-pV-VNi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q18-Wi-M2a">
                                 <rect key="frame" x="310" y="320" width="45" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-topic-30"/>
+                                <connections>
+                                    <action selector="postComment:" destination="vmA-pm-nb2" eventType="touchUpInside" id="djr-gu-IYM"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-fS-TbK">
                                 <rect key="frame" x="0.0" y="438" width="414" height="458"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="zyM-PF-uK3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="100" id="zyM-PF-uK3" customClass="CommentCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zyM-PF-uK3" id="YpI-Yd-kxH">
@@ -766,6 +757,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="zNN-k4-AjA" id="cct-DN-K5l"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -776,12 +770,27 @@
                                 <state key="normal" title="Comments">
                                     <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="viewComments:" destination="vmA-pm-nb2" eventType="touchUpInside" id="qdo-48-VO0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="epk-kw-97M"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Oq-9l-Vfk"/>
+                    <connections>
+                        <outlet property="captionLabel" destination="rA3-e3-V3U" id="sgy-it-t5Q"/>
+                        <outlet property="commentButton" destination="q18-Wi-M2a" id="fJe-YZ-fWe"/>
+                        <outlet property="commentsCount" destination="bHs-HH-m5s" id="iIg-sb-ETf"/>
+                        <outlet property="commentsView" destination="tW8-8C-lDI" id="9ZB-1I-b6k"/>
+                        <outlet property="likeButton" destination="c2J-k4-gL6" id="PnQ-3R-3Qv"/>
+                        <outlet property="likesCount" destination="6bs-yh-ucp" id="qYa-px-wyJ"/>
+                        <outlet property="numSquatsLabel" destination="zcY-ae-mGd" id="0aL-lu-9JF"/>
+                        <outlet property="tableView" destination="bpS-fS-TbK" id="r6a-FB-w9q"/>
+                        <outlet property="timeLabel" destination="KnB-in-Kvs" id="H5m-Pm-tbA"/>
+                        <outlet property="usernameLabel" destination="Spm-xH-o7x" id="gMn-D2-qgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLT-54-XT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1690,7 +1699,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tRc-v5-j7D"/>
+        <segue reference="Vi2-Z1-zZz"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
