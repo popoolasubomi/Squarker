@@ -54,7 +54,22 @@
 }
 
 - (IBAction)postComment:(id)sender {
-    self.tableView.alpha = self.tableView.alpha == 0 ? 1 : 0;
+    [self buildCommentController];
+}
+
+- (void) buildCommentController{
+    UIViewController* commentViewController = [UIViewController new];
+    commentViewController.view.backgroundColor = [UIColor whiteColor];
+    CGRect frame = commentViewController.view.frame;
+    
+    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 175, 30)];
+    [instructionLabel setTextColor:[UIColor brownColor]];
+    [instructionLabel setBackgroundColor:[UIColor clearColor]];
+    [instructionLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 17.0f]];
+    [instructionLabel setText:@"Add your comment..."];
+    [commentViewController.view addSubview: instructionLabel];
+    
+    [self presentViewController: commentViewController animated: YES completion: nil];
 }
 
 - (IBAction)viewComments:(id)sender {
