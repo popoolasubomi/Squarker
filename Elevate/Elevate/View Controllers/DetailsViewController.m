@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, strong) NSArray *likes;
-@property (nonatomic, strong) UITextField *textField;
 @property (nonatomic) CGRect previousCommentFrame;
 @property (nonatomic) CGRect previousTableFrame;
 
@@ -36,17 +35,16 @@
     [super viewDidLoad];
     
     [self fetchComments];
-    self.textField.alpha = 1;
 }
 
 - (void) fetchComments{
     self.comments = [self.post objectForKey: @"commentArray"];
-//    if (self.comments.count == 0){
-//        self.commentsView.alpha = 0;
-//        self.tableView.alpha = 0;
-//    }else{
-//        [self.tableView reloadData];
-//    }
+    if (self.comments.count == 0){
+        self.commentsView.alpha = 0;
+        self.tableView.alpha = 0;
+    }else{
+        [self.tableView reloadData];
+    }
 }
 
 - (IBAction)favoriteButton:(id)sender {
@@ -55,6 +53,7 @@
 
 - (IBAction)postComment:(id)sender {
     [self buildCommentController];
+    [self fetchComments];
 }
 
 - (void) buildCommentController{
@@ -62,12 +61,20 @@
     commentViewController.view.backgroundColor = [UIColor whiteColor];
     CGRect frame = commentViewController.view.frame;
     
-    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 175, 30)];
-    [instructionLabel setTextColor:[UIColor brownColor]];
+    UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 175, 20)];
+    [instructionLabel setTextColor:[UIColor darkGrayColor]];
     [instructionLabel setBackgroundColor:[UIColor clearColor]];
     [instructionLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 17.0f]];
     [instructionLabel setText:@"Add your comment..."];
     [commentViewController.view addSubview: instructionLabel];
+    
+    UITextView *textView = [[UITextView alloc] initWithFrame: CGRectMake(30, 65, frame.size.width - 60, 200)];
+    [textView setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
+    [textView setTextColor:[UIColor blackColor]];
+    [textView setBackgroundColor:[UIColor lightGrayColor]];
+    [commentViewController.view addSubview: textView];
+    
+    
     
     [self presentViewController: commentViewController animated: YES completion: nil];
 }
@@ -78,7 +85,6 @@
         CGFloat y = self.usernameLabel.frame.origin.y;
         newFrame.origin.y = y;
         
-        self.textField.alpha = self.textField.alpha == 1 ? 0 : 1;
         self.usernameLabel.alpha = self.usernameLabel.alpha == 1 ? 0 : 1;
         self.captionLabel.alpha = self.captionLabel.alpha == 1 ? 0 : 1;
         self.numSquatsLabel.alpha =  self.numSquatsLabel.alpha == 1 ? 0 : 1;
