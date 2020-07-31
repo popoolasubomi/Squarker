@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "OAPFetcherSingleton.h"
 #import "Parse/Parse.h"
 #import "Post.h"
 @import Parse;
@@ -160,19 +161,8 @@
             [defaults setInteger: time forKey: @"Time"];
         }
         
-        PFUser *user = PFUser.currentUser;
-        NSArray *stages = @[@"Novice", @"Beginner", @"Competent", @"Proficient", @"Expert"];
-        NSArray *minimum_req = @[@(50), @(150), @(300), @(500), @(750)];
-        
-        int squats = [[user objectForKey: @"squats"] intValue];
-        int i = 0;
-        while (i < stages.count){
-            if (squats < [minimum_req[i] intValue]){
-                [PFUser.currentUser setObject: stages[i] forKey: @"status"];
-                i += stages.count;
-            }
-            i ++;
-        }
+        OAPFetcherSingleton *singleton = [OAPFetcherSingleton sharedObject];
+        [singleton fetchStatusLevel];
         
         [PFUser.currentUser setObject: self.nameTextView.text forKey: @"displayName"];
         [PFUser.currentUser setObject: self.descriptionTextView.text forKey: @"description"];
