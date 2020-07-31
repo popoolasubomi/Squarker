@@ -121,10 +121,8 @@
         Post *post = self.posts[indexPath.row];
         detailsController.post = post;
     } else if ([[segue identifier] isEqualToString: @"profileSegue"]){
-        UsersProfileViewController *profileController = [segue destinationViewController];
-        UITableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Post *post = tappedCell;
+          UINavigationController *navigationController = [segue destinationViewController];
+        UsersProfileViewController *profileController = (UsersProfileViewController *)  navigationController.topViewController;
         profileController.post = sender;
         profileController.type = NO;
     }

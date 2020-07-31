@@ -425,7 +425,7 @@
                         <outlet property="searchBar" destination="z1Z-Pz-MmR" id="bMX-ya-BdI"/>
                         <outlet property="tableView" destination="g58-xR-jXq" id="jFz-fo-PX8"/>
                         <outlet property="titleLabel" destination="Fz2-ZA-bD1" id="ahU-1M-KJU"/>
-                        <segue destination="KDD-Do-pTb" kind="presentation" identifier="profileSegue" modalPresentationStyle="fullScreen" id="F9b-ip-cpD"/>
+                        <segue destination="ERX-or-Owg" kind="presentation" identifier="profileSegue" modalPresentationStyle="fullScreen" id="F9b-ip-cpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -475,7 +475,7 @@
             </objects>
             <point key="canvasLocation" x="-2625" y="1873"/>
         </scene>
-        <!--Users Profile View Controller-->
+        <!--User Profile-->
         <scene sceneID="jBN-yO-bMO">
             <objects>
                 <viewController id="KDD-Do-pTb" customClass="UsersProfileViewController" sceneMemberID="viewController">
@@ -607,7 +607,7 @@
                                 </connections>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-08-N0E" customClass="PFImageView">
-                                <rect key="frame" x="20" y="143" width="145" height="143"/>
+                                <rect key="frame" x="20" y="120" width="145" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofz-qr-OkL">
@@ -617,29 +617,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-7E-Sol">
-                                <rect key="frame" x="86" y="65" width="243" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Users Profile">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="50" name="BodoniSvtyTwoITCTT-Book"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al2-X5-HAg">
-                                <rect key="frame" x="185" y="135" width="95" height="36"/>
+                                <rect key="frame" x="187" y="120" width="95" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="diplayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2A-Ku-IgX">
-                                <rect key="frame" x="187" y="168" width="91" height="21"/>
+                                <rect key="frame" x="187" y="164" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.15673911739999999" green="0.15673911739999999" blue="0.15673911739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -650,7 +636,7 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="i5C-Ib-n4w"/>
+                    <navigationItem key="navigationItem" title="User Profile" id="i5C-Ib-n4w"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
                         <outlet property="displayLabel" destination="ZKv-hP-pRo" id="McJ-w9-7LX"/>
@@ -665,13 +651,12 @@
                         <outlet property="statusLabel" destination="33N-I7-4Mx" id="vL4-LN-dw0"/>
                         <outlet property="statusRank" destination="f35-rX-Kck" id="9td-ad-TB4"/>
                         <outlet property="tableView" destination="V9a-jM-geg" id="RL5-ex-6y5"/>
-                        <outlet property="userProfileLabel" destination="aKe-7E-Sol" id="ug7-En-L6t"/>
                         <outlet property="usernameLabel" destination="al2-X5-HAg" id="v0u-ld-ayL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2626.0869565217395" y="3707.8125"/>
+            <point key="canvasLocation" x="-2626" y="4720"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="kyu-o1-QJV">
@@ -802,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLT-54-XT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597.10144927536237" y="3707.8125"/>
+            <point key="canvasLocation" x="-597" y="3708"/>
         </scene>
         <!--Search Others-->
         <scene sceneID="4T0-1s-0ul">
@@ -847,7 +832,7 @@
                                         <connections>
                                             <outlet property="profileImage" destination="03l-dN-bdR" id="wjf-XY-JJg"/>
                                             <outlet property="usernameLabel" destination="LLp-S8-Uw8" id="01M-ue-d81"/>
-                                            <segue destination="KDD-Do-pTb" kind="show" identifier="profileSegue" id="9ko-21-1Pz"/>
+                                            <segue destination="ERX-or-Owg" kind="show" identifier="profileSegue" id="kJQ-AT-g4h"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1054,7 +1039,7 @@
                         <outlet property="statusRank" destination="kQc-tK-rYC" id="fGZ-1b-RLh"/>
                         <outlet property="tableView" destination="BdS-jE-jL7" id="Tfa-ha-J8N"/>
                         <outlet property="usernameLabel" destination="uB4-z1-ap2" id="5kz-fd-KCG"/>
-                        <segue destination="JCR-HH-mpG" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
+                        <segue destination="pqi-9T-rvv" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1209,6 +1194,7 @@
                             <outletCollection property="gestureRecognizers" destination="qeF-Ar-4s4" appends="YES" id="T3j-QD-kKd"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="uCg-5p-uUd"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="cLV-qW-biP" id="fHD-Wa-jlI"/>
                         <outlet property="heightLabel" destination="Xoz-6v-Sti" id="TUR-tO-ovl"/>
@@ -1227,7 +1213,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1354" y="3708"/>
+            <point key="canvasLocation" x="1354" y="4720"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -1756,10 +1742,47 @@
             </objects>
             <point key="canvasLocation" x="-1662" y="1873"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lSV-G7-8wh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ERX-or-Owg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ccR-Sh-VmH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vj2-nB-QRQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KDD-Do-pTb" kind="relationship" relationship="rootViewController" id="wWb-Vn-WHQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwq-jM-e8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2626" y="3708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yWc-vz-X8a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pqi-9T-rvv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="psc-g4-hMZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JCR-HH-mpG" kind="relationship" relationship="rootViewController" id="MN0-Xr-8if"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spV-fP-Rfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353.6231884057972" y="3747.9910714285711"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tRc-v5-j7D"/>
         <segue reference="F9b-ip-cpD"/>
+        <segue reference="tRc-v5-j7D"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
