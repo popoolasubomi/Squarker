@@ -67,6 +67,10 @@
     }
 }
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated: YES completion: nil];
+}
+
 - (IBAction)changeSegment:(id)sender {
     if (self.segmentedController.selectedSegmentIndex == 0){
         [self loadPosts];

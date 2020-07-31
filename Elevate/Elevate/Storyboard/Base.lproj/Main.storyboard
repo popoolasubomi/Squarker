@@ -636,7 +636,13 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
                     </view>
-                    <navigationItem key="navigationItem" title="User Profile" id="i5C-Ib-n4w"/>
+                    <navigationItem key="navigationItem" title="User Profile" id="i5C-Ib-n4w">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="4pG-g0-etv">
+                            <connections>
+                                <action selector="backButton:" destination="KDD-Do-pTb" id="ohG-rt-q0I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
                         <outlet property="displayLabel" destination="ZKv-hP-pRo" id="McJ-w9-7LX"/>
@@ -1046,7 +1052,7 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="2752.9017857142858"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="HGs-ej-bqM">
             <objects>
                 <viewController id="JCR-HH-mpG" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -1194,7 +1200,18 @@
                             <outletCollection property="gestureRecognizers" destination="qeF-Ar-4s4" appends="YES" id="T3j-QD-kKd"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="uCg-5p-uUd"/>
+                    <navigationItem key="navigationItem" title="Settings" id="uCg-5p-uUd">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="VE3-lI-MES">
+                            <connections>
+                                <action selector="cancelButton:" destination="JCR-HH-mpG" id="n5P-vO-bWm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-slr-camera-24" id="hsB-7m-ndH">
+                            <connections>
+                                <action selector="cameraButton:" destination="JCR-HH-mpG" id="ECq-o6-U7g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="cLV-qW-biP" id="fHD-Wa-jlI"/>
                         <outlet property="heightLabel" destination="Xoz-6v-Sti" id="TUR-tO-ovl"/>
@@ -1782,7 +1799,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F9b-ip-cpD"/>
-        <segue reference="tRc-v5-j7D"/>
+        <segue reference="YJq-lv-jUP"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
