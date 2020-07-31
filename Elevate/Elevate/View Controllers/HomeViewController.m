@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "OAPFetcherSingleton.h"
 #import "LoginViewController.h"
 #import "DetailsViewController.h"
 #import "SceneDelegate.h"
@@ -34,6 +35,7 @@
     
     self.searchBar.delegate = self;
     
+    [[OAPFetcherSingleton sharedObject] fetchStatusLevel];
     [self hideNavigationBarTitle];
     [self loadPosts];
 }
