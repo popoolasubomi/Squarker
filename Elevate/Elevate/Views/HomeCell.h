@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol HomeCellDelegate;
+
 @interface HomeCell : UITableViewCell
 
 @property (nonatomic, strong) Post *post;
@@ -22,6 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
 -(void)setPost:(Post *)post;
 -(void)setFriends:(PFUser *)friendName;
+@property (nonatomic, weak) id<HomeCellDelegate> delegate;
+
+@end
+
+@protocol HomeCellDelegate
+
+- (void)homeCell:(HomeCell *) homeCell didTap: (Post *) post;
 
 @end
 

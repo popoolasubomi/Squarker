@@ -7,6 +7,7 @@
 //
 
 #import "SearchUsersViewController.h"
+#import "UsersProfileViewController.h"
 #import "UsersCell.h"
 #import "Parse/Parse.h"
 
@@ -68,14 +69,13 @@
     return self.users.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UICollectionViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell: tappedCell];
+    Post *user = self.users[indexPath.row];
+    UsersProfileViewController *profileController = [segue destinationViewController];
+    profileController.post = user;
 }
-*/
+
 
 @end

@@ -13,13 +13,20 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    [self.profileImage addGestureRecognizer: profileTapGestureRecognizer];
+    [self.profileImage setUserInteractionEnabled:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void) didTapUserProfile{
+    [self.delegate homeCell:self didTap: self.post];
 }
 
 -(void)setPost:(Post *) post{

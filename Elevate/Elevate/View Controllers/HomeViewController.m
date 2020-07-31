@@ -10,6 +10,7 @@
 #import "OAPFetcherSingleton.h"
 #import "LoginViewController.h"
 #import "DetailsViewController.h"
+#import "UsersProfileViewController.h"
 #import "SceneDelegate.h"
 #import "HomeCell.h"
 #import "Post.h"
@@ -113,6 +114,9 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Post *post = self.posts[indexPath.row];
         detailsController.post = post;
+    } else if ([[segue identifier] isEqualToString: @"profileSegue"]){
+        UsersProfileViewController *profileController = [segue destinationViewController];
+        
     }
 }
     
