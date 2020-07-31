@@ -74,9 +74,9 @@
     if (searchText) {
         if (searchText.length != 0) {
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
-                return [evaluatedObject[@"author"] containsString: searchText];
+                return [evaluatedObject[@"author"][@"username"] containsString: searchText];
             }];
-            self.filteredData = [self.posts filteredArrayUsingPredicate: predicate];
+            self.filteredData = (NSMutableArray *) [self.posts filteredArrayUsingPredicate: predicate];
         }
         else {
             self.filteredData = self.posts;
