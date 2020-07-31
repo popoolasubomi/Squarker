@@ -73,10 +73,11 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if (searchText) {
         if (searchText.length != 0) {
-            NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
                 return [evaluatedObject[@"author"][@"username"] containsString: searchText];
             }];
-            self.filteredData = (NSMutableArray *) [self.posts filteredArrayUsingPredicate: predicate];
+            
+            self.filteredData = (NSMutableArray *) [self.posts filteredArrayUsingPredicate: namePredicate];
         }
         else {
             self.filteredData = self.posts;

@@ -54,6 +54,7 @@
 		437B888C24BF73590073C533 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888B24BF73590073C533 /* SignUpViewController.m */; };
 		437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B888E24BF7A8C0073C533 /* LoginViewController.m */; };
 		43A6096C24D46D0D00BEAE5E /* OAPFetcherSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6096B24D46D0D00BEAE5E /* OAPFetcherSingleton.m */; };
+		43A6097224D47B7F00BEAE5E /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */; };
 		43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327B624CF66E600D59DFC /* ProgressViewController.m */; };
 		43F327C224CF81BD00D59DFC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C124CF81BD00D59DFC /* ChartViewController.swift */; };
 		43F327C624D0C3B400D59DFC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C524D0C3B400D59DFC /* DetailsViewController.m */; };
@@ -147,6 +148,8 @@
 		437B888E24BF7A8C0073C533 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		43A6096A24D46D0D00BEAE5E /* OAPFetcherSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAPFetcherSingleton.h; sourceTree = "<group>"; };
 		43A6096B24D46D0D00BEAE5E /* OAPFetcherSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OAPFetcherSingleton.m; sourceTree = "<group>"; };
+		43A6097024D47B7F00BEAE5E /* SearchUsersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUsersViewController.h; sourceTree = "<group>"; };
+		43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
 		43F327B524CF66E600D59DFC /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +421,8 @@
 				43F327B624CF66E600D59DFC /* ProgressViewController.m */,
 				43F327C424D0C3B400D59DFC /* DetailsViewController.h */,
 				43F327C524D0C3B400D59DFC /* DetailsViewController.m */,
+				43A6097024D47B7F00BEAE5E /* SearchUsersViewController.h */,
+				43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */,
 				4307A0E724CE648200E41A75 /* VideoCapture.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,
+				43A6097224D47B7F00BEAE5E /* SearchUsersViewController.m in Sources */,
 				43079EBF24C919D200E41A75 /* SettingsViewController.m in Sources */,
 				43F327C224CF81BD00D59DFC /* ChartViewController.swift in Sources */,
 				43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */,
