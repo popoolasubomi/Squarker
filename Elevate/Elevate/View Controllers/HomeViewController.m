@@ -16,7 +16,7 @@
 #import "Post.h"
 #import "Parse/Parse.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, HomeCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) NSMutableArray *filteredData;
@@ -98,6 +98,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
+    cell.delegate = self;
     Post *post = self.filteredData[indexPath.row];
     [cell setPost: post];
     return cell;
@@ -105,6 +106,11 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredData.count;
+}
+
+- (void)homeCell:(nonnull HomeCell *)homeCell didTap:(nonnull Post *)post {
+    NSLog(@"ME");
+    [self performSegueWithIdentifier:@"profileSegue" sender: post];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -116,8 +122,12 @@
         detailsController.post = post;
     } else if ([[segue identifier] isEqualToString: @"profileSegue"]){
         UsersProfileViewController *profileController = [segue destinationViewController];
-        
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = tappedCell;
+        profileController.post = sender;
+        profileController.type = NO;
     }
 }
-    
+
 @end

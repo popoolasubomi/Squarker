@@ -340,7 +340,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-52-di5" customClass="PFImageView">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-52-di5" customClass="PFImageView">
                                                     <rect key="frame" x="20" y="36" width="152" height="153"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="153" id="0et-Hw-mnb"/>
@@ -847,7 +847,7 @@
                                         <connections>
                                             <outlet property="profileImage" destination="03l-dN-bdR" id="wjf-XY-JJg"/>
                                             <outlet property="usernameLabel" destination="LLp-S8-Uw8" id="01M-ue-d81"/>
-                                            <segue destination="KDD-Do-pTb" kind="show" id="9ko-21-1Pz"/>
+                                            <segue destination="KDD-Do-pTb" kind="show" identifier="profileSegue" id="9ko-21-1Pz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1758,8 +1758,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vi2-Z1-zZz"/>
-        <segue reference="9ko-21-1Pz"/>
+        <segue reference="tRc-v5-j7D"/>
+        <segue reference="F9b-ip-cpD"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>

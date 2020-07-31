@@ -25,7 +25,7 @@
     // Configure the view for the selected state
 }
 
--(void) didTapUserProfile{
+-(void) didTapUserProfile:(UITapGestureRecognizer *)sender{
     [self.delegate homeCell:self didTap: self.post];
 }
 
