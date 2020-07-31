@@ -79,6 +79,7 @@
                 NSNumber *squats = [user objectForKey: @"squats"];
                 NSNumber *totalSquats = [NSNumber numberWithInt: squats.intValue + self.numSquats.intValue];
                 [user setObject: totalSquats forKey: @"squats"];
+                [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {}];
                 [self goHome];
             }
         }];
