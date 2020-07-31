@@ -7,6 +7,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TimesNewRoman.ttf">
+            <string>.SFUI-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="KIG-gM-gCm">
@@ -645,6 +650,7 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="qdK-mi-8AI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="i5C-Ib-n4w"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="ofz-qr-OkL" id="Prt-Ym-H5n"/>
                         <outlet property="displayLabel" destination="ZKv-hP-pRo" id="McJ-w9-7LX"/>
@@ -817,27 +823,32 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CY6-pr-La8">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UsersCell" id="CY6-pr-La8" customClass="UsersCell">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="269"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BMA-iN-YYO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="269"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="03l-dN-bdR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="03l-dN-bdR" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="259"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLp-S8-Uw8">
-                                                    <rect key="frame" x="26" y="213" width="148" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLp-S8-Uw8">
+                                                    <rect key="frame" x="26" y="238" width="148" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="269"/>
+                                        <connections>
+                                            <outlet property="profileImage" destination="03l-dN-bdR" id="wjf-XY-JJg"/>
+                                            <outlet property="usernameLabel" destination="LLp-S8-Uw8" id="01M-ue-d81"/>
+                                            <segue destination="KDD-Do-pTb" kind="show" id="9ko-21-1Pz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -853,9 +864,7 @@
                     <navigationItem key="navigationItem" title="Search Others" id="XQ9-Ht-VMf"/>
                     <connections>
                         <outlet property="collectionView" destination="e5i-g5-WqS" id="ZIQ-K8-v8m"/>
-                        <outlet property="profileImage" destination="03l-dN-bdR" id="NxT-sC-Loa"/>
                         <outlet property="searchBar" destination="6eU-Wj-pMO" id="EbC-y3-3Ua"/>
-                        <outlet property="usernameLabel" destination="LLp-S8-Uw8" id="wsv-tN-BFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hN-Xv-Q4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1750,6 +1759,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Vi2-Z1-zZz"/>
+        <segue reference="9ko-21-1Pz"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>

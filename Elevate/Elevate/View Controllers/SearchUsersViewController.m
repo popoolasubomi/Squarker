@@ -7,14 +7,13 @@
 //
 
 #import "SearchUsersViewController.h"
+#import "UsersCell.h"
 #import "Parse/Parse.h"
 
-@interface SearchUsersViewController ()
+@interface SearchUsersViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (nonatomic, strong) NSMutableArray *users;
 @property (nonatomic, strong) NSMutableArray *filteredUsers;
 @end
@@ -23,20 +22,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    [self loadUsers];
 }
 
 -(void) loadUsers{
-    PFQuery *query = [PFQuery queryWithClassName:@"Users"];
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
     [query orderByDescending: @"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             self.users = (NSMutableArray *) users;
             self.filteredUsers = self.users;
+            [self.collectionView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    UsersCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"UsersCell" forIndexPath: indexPath];
+    Post *post = self.users[indexPath.row];
+    PFFileObject *imageData = [post objectForKey: @"image"];
+    cell.profileImage.file = imageData;
+    cell.usernameLabel.text = [NSString stringWithFormat: @"@%@",[post objectForKey: @"username"]];
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.users.count;
 }
 
 /*
