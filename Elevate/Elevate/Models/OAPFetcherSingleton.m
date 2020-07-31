@@ -29,10 +29,11 @@
     int i = 0;
     while (i < stages.count){
         if (squats.intValue < [minimum_req[i] intValue]){
-            [PFUser.currentUser setObject: stages[i] forKey: @"status"];
+            [user setObject: stages[i] forKey: @"status"];
             i += stages.count;
         }
         i ++;
     }
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {}];
 }
 @end
