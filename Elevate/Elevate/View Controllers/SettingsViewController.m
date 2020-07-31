@@ -165,10 +165,13 @@
         NSArray *minimum_req = @[@(50), @(150), @(300), @(500), @(750)];
         
         int squats = [[user objectForKey: @"squats"] intValue];
-        for (int i = 0; i < stages.count; i++){
+        int i = 0;
+        while (i < stages.count){
             if (squats < [minimum_req[i] intValue]){
                 [PFUser.currentUser setObject: stages[i] forKey: @"status"];
+                i += stages.count;
             }
+            i ++;
         }
         
         [PFUser.currentUser setObject: self.nameTextView.text forKey: @"displayName"];

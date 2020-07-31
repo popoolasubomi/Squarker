@@ -44,6 +44,7 @@ NSString *const normalHeart = @"favor-icon";
     self.tableView.dataSource = self;
     
     [self fetchComments];
+    
 }
 
 - (void) fetchComments{
@@ -79,7 +80,6 @@ NSString *const normalHeart = @"favor-icon";
 - (void) updateHeartImage{
     PFUser *user = [PFUser currentUser];
     if ([self.likes containsObject: user.username]){
-        NSLog(@"ME");
         [self.likeButton setImage: [UIImage imageNamed: redHeart] forState: UIControlStateNormal];
     } else{
         [self.likeButton setImage: [UIImage imageNamed: normalHeart] forState: UIControlStateNormal];
