@@ -27,6 +27,8 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    self.searchBar.delegate = self;
+    
     [self loadUsers];
     [self editCollectionViewCells];
 }
@@ -34,12 +36,12 @@
 -(void) editCollectionViewCells{
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
 
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
+    layout.minimumInteritemSpacing = 2;
+    layout.minimumLineSpacing = 2;
 
     CGFloat postersPerLine = 2;
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
-    CGFloat itemHeight = itemWidth * 1.25;
+    CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
@@ -54,6 +56,23 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText) {
+        searchText = [searchText lowercaseString];
+        if (searchText.length != 0) {
+            NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+                return [evaluatedObject[@"username"] containsString: searchText];
+            }];
+            
+            self.users = (NSMutableArray *) [self.filteredUsers filteredArrayUsingPredicate: namePredicate];
+        }
+        else {
+            self.users = self.filteredUsers;
+        }
+        [self.collectionView reloadData];
+    }
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -73,8 +92,10 @@
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell: tappedCell];
     Post *user = self.users[indexPath.row];
-    UsersProfileViewController *profileController = [segue destinationViewController];
+    UINavigationController *navigationController = [segue destinationViewController];
+    UsersProfileViewController *profileController = (UsersProfileViewController *) navigationController.topViewController;
     profileController.post = user;
+    profileController.type = true;
 }
 
 

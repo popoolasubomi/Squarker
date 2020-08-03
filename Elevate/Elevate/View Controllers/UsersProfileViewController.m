@@ -46,8 +46,13 @@
 }
 
 -(void) populateView{
-    PFUser *user = self.post[@"author"];
-    self.usernameLabel.text = user.username;
+    PFUser *user;
+    if (self.type == true){
+        user = (PFUser *) self.post;
+    }else{
+        user = self.post[@"author"];
+    }
+    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
     if ([user objectForKey: @"image"] != nil){
         self.displayNameLabel.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
@@ -82,7 +87,12 @@
 }
 
 -(void) loadPosts{
-    PFUser *user = self.post[@"author"];
+    PFUser *user;
+    if (self.type == true){
+        user = (PFUser *) self.post;
+    }else{
+        user = self.post[@"author"];
+    }
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey: @"author"];
     [query orderByDescending: @"createdAt"];
@@ -99,7 +109,12 @@
 }
 
 - (void) loadFriends{
-    PFUser *user = self.post[@"author"];
+    PFUser *user;
+    if (self.type == true){
+        user = (PFUser *) self.post;
+    }else{
+        user = self.post[@"author"];
+    }
     self.friends = [user objectForKey: @"Friends"];
     [self.tableView reloadData];
 }
