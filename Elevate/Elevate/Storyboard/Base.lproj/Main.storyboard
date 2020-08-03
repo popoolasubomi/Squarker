@@ -1110,6 +1110,11 @@
                         <viewLayoutGuide key="safeArea" id="h2y-Mu-R7X"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="EZa-Fz-y9x">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="bfu-FR-f4w">
+                            <connections>
+                                <action selector="logoutButton:" destination="KVq-cq-bwi" id="bSp-Oi-XMB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icons8-settings-24" id="omk-Si-Ong">
                             <connections>
                                 <action selector="settingsButton:" destination="KVq-cq-bwi" id="6K5-W7-UxM"/>

@@ -8,6 +8,8 @@
 
 #import "ProfileViewController.h"
 #import "DetailsViewController.h"
+#import "LoginViewController.h"
+#import "SceneDelegate.h"
 #import "HomeCell.h"
 #import "Post.h"
 @import Parse;
@@ -99,6 +101,15 @@
     PFUser *user = PFUser.currentUser;
     self.friends = [user objectForKey: @"Friends"];
     [self.tableView reloadData];
+}
+
+- (IBAction)logoutButton:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+       SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+       UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+       LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+       myDelegate.window.rootViewController = loginViewController;
+    }];
 }
 
 - (IBAction)settingsButton:(id)sender {
