@@ -73,6 +73,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if (searchText) {
+        searchText = [searchText lowercaseString];
         if (searchText.length != 0) {
             NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
                 return [evaluatedObject[@"author"][@"username"] containsString: searchText];

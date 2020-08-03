@@ -54,8 +54,8 @@
         [self invalidDetailAlert];
     }
     else {
-        NSString *username = self.usernameField.text;
-        NSString *password = self.passwordField.text;
+        NSString *username = [self.usernameField.text lowercaseString];
+        NSString *password = [self.passwordField.text lowercaseString];
         
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
             if (error != nil) {
