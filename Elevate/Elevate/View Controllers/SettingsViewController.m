@@ -12,18 +12,12 @@
 #import "Post.h"
 @import Parse;
 
-@interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *sliderValue;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
-@property (weak, nonatomic) IBOutlet UISwitch *toggleSwitch;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
-@property (nonatomic, strong) NSMutableArray *possibleHeights;
-@property (nonatomic, strong) NSString *heightValue;
 
 @end
 
@@ -32,27 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.pickerView.delegate = self;
-    self.pickerView.dataSource = self;
-    
-    [self buildHeights];
     self.profileImage.layer.cornerRadius = 98;
     self.profileImage.layer.masksToBounds = YES;
-}
-
-- (void) buildHeights{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.possibleHeights = [NSMutableArray array];
-    for (int i = 4; i < 8; i++){
-        for (int j = 0; j <= 11; j++){
-            [self.possibleHeights addObject: @[@(i), @(j)]];
-        }
-    }
-    NSString *height = [defaults objectForKey: @"Height"];
-    if (!height){
-        self.heightLabel.text = height;
-    }
-    [self.pickerView reloadAllComponents];
 }
 
 - (void) errorAlert{
@@ -141,29 +116,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)updateSliderValue:(id)sender {
-    self.sliderValue.text = [NSString stringWithFormat: @"%.f mins", self.slider.value];
-}
-
 - (IBAction)submitButton:(id)sender {
     if ([self.descriptionTextView isEqual: @""] || [self.nameTextView isEqual: @""]){
         [self emptyFieldsAlert];
     }
     else{
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject: self.heightValue forKey: @"Height"];
-        
-        if (self.toggleSwitch.on){
-            [defaults setInteger: 0 forKey: @"Time"];
-        } else{
-            NSString *timeSet = [NSString stringWithFormat: @"%.f", self.slider.value];
-            int time = [timeSet intValue];
-            [defaults setInteger: time forKey: @"Time"];
-        }
-        
         OAPFetcherSingleton *singleton = [OAPFetcherSingleton sharedObject];
         [singleton fetchStatusLevel];
-        
         [PFUser.currentUser setObject: self.nameTextView.text forKey: @"displayName"];
         [PFUser.currentUser setObject: self.descriptionTextView.text forKey: @"description"];
         PFFileObject *imageData = [Post getPFFileFromImage: self.profileImage.image];
@@ -190,33 +149,6 @@
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing: YES];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.possibleHeights.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    NSArray *height = self.possibleHeights[row];
-    return [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSArray *height = self.possibleHeights[row];
-    self.heightLabel.text = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
-    self.heightValue = [NSString stringWithFormat: @"%@ '%@", height[0], height[1]];
-}
-
-- (IBAction)toggleAction:(id)sender {
-    if (self.toggleSwitch.on){
-        self.slider.alpha = 0;
-    } else{
-        self.slider.alpha = 1;
-    }
 }
 
 @end

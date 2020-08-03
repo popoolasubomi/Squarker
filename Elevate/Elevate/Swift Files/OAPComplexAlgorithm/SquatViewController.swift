@@ -66,6 +66,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         editRoundButton()
     }
     
+    @IBAction func settingsButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "settingsSegue", sender: nil);
+    }
+    
     func editRoundButton(){
         let y = self.view.frame.size.height - 250
         let x = (self.view.frame.size.width - 100) / 2
