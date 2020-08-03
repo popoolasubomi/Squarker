@@ -1814,10 +1814,10 @@
             </objects>
             <point key="canvasLocation" x="-597.10144927536237" y="1872.9910714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Squat Settings View Controller-->
         <scene sceneID="0XD-aJ-fmq">
             <objects>
-                <viewController id="zhH-Ac-GHX" sceneMemberID="viewController">
+                <viewController id="zhH-Ac-GHX" customClass="SquatSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pCn-5P-om2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

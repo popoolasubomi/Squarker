@@ -56,6 +56,7 @@
 		43A6096C24D46D0D00BEAE5E /* OAPFetcherSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6096B24D46D0D00BEAE5E /* OAPFetcherSingleton.m */; };
 		43A6097224D47B7F00BEAE5E /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */; };
 		43A6097524D47E5900BEAE5E /* UsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097424D47E5900BEAE5E /* UsersCell.m */; };
+		43A6097824D8A3B500BEAE5E /* SquatSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */; };
 		43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327B624CF66E600D59DFC /* ProgressViewController.m */; };
 		43F327C224CF81BD00D59DFC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C124CF81BD00D59DFC /* ChartViewController.swift */; };
 		43F327C624D0C3B400D59DFC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C524D0C3B400D59DFC /* DetailsViewController.m */; };
@@ -153,6 +154,8 @@
 		43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
 		43A6097324D47E5900BEAE5E /* UsersCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsersCell.h; sourceTree = "<group>"; };
 		43A6097424D47E5900BEAE5E /* UsersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersCell.m; sourceTree = "<group>"; };
+		43A6097624D8A3B500BEAE5E /* SquatSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquatSettingsViewController.h; sourceTree = "<group>"; };
+		43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquatSettingsViewController.m; sourceTree = "<group>"; };
 		43F327B524CF66E600D59DFC /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,6 +429,8 @@
 				43F327C524D0C3B400D59DFC /* DetailsViewController.m */,
 				43A6097024D47B7F00BEAE5E /* SearchUsersViewController.h */,
 				43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */,
+				43A6097624D8A3B500BEAE5E /* SquatSettingsViewController.h */,
+				43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -725,6 +730,7 @@
 				43A6096C24D46D0D00BEAE5E /* OAPFetcherSingleton.m in Sources */,
 				43F327C624D0C3B400D59DFC /* DetailsViewController.m in Sources */,
 				43A6097524D47E5900BEAE5E /* UsersCell.m in Sources */,
+				43A6097824D8A3B500BEAE5E /* SquatSettingsViewController.m in Sources */,
 				437B885724BF62B40073C533 /* SceneDelegate.m in Sources */,
 				4307A0E924CE648200E41A75 /* PoseBuilder+Multiple.swift in Sources */,
 				4307A0EF24CE648200E41A75 /* PoseNet.swift in Sources */,
