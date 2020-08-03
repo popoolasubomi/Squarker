@@ -78,8 +78,11 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UsersCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"UsersCell" forIndexPath: indexPath];
     Post *post = self.users[indexPath.row];
+    
+    cell.profileImage.image = [UIImage imageNamed: @"download"];
     PFFileObject *imageData = [post objectForKey: @"image"];
     cell.profileImage.file = imageData;
+    [cell.profileImage loadInBackground];
     cell.usernameLabel.text = [NSString stringWithFormat: @"@%@",[post objectForKey: @"username"]];
     return cell;
 }

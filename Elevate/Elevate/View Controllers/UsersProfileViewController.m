@@ -62,6 +62,7 @@
         PFFileObject *imageData = [user objectForKey: @"image"];
         self.profileImage.layer.cornerRadius = 72;
         self.profileImage.layer.masksToBounds = YES;
+        self.profileImage = [UIImage imageNamed: @"download"];
         self.profileImage.file = imageData;
         [self.profileImage loadInBackground];
     } else{

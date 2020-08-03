@@ -35,6 +35,7 @@
     PFUser *user = self.post[@"author"];
     self.profileImage.layer.cornerRadius = 18;
     self.profileImage.layer.masksToBounds = YES;
+    self.profileImage.image = [UIImage imageNamed: @"download"];
     self.profileImage.file = [user objectForKey: @"image"];
     [self.profileImage loadInBackground];
     self.usernameLabel.text = user != nil ? user.username : @"🤖";
