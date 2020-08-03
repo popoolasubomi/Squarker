@@ -426,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1952.1739130434785" y="2752.9017857142858"/>
+            <point key="canvasLocation" x="-3826" y="2753"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rbR-uA-Jxk">
@@ -658,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2626.0869565217395" y="4719.6428571428569"/>
+            <point key="canvasLocation" x="-1662" y="4720"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="kyu-o1-QJV">
@@ -789,7 +789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLT-54-XT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="3708"/>
+            <point key="canvasLocation" x="-597" y="4136"/>
         </scene>
         <!--Search Others-->
         <scene sceneID="4T0-1s-0ul">
@@ -866,7 +866,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hN-Xv-Q4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1117.3913043478262" y="2752.9017857142858"/>
+            <point key="canvasLocation" x="-2626" y="2753"/>
         </scene>
         <!--Profile-->
         <scene sceneID="gMO-T3-1cI">
@@ -975,6 +975,7 @@
                                             <outlet property="numberOfSquats" destination="DPv-HE-lPg" id="QTc-3V-qel"/>
                                             <outlet property="profileImage" destination="BlC-ED-0rc" id="ZWI-ky-0sR"/>
                                             <outlet property="usernameLabel" destination="COn-0a-NEX" id="H5g-Cp-Qwq"/>
+                                            <segue destination="vmA-pm-nb2" kind="show" identifier="detailsSegue" id="hyI-GP-cst"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1141,7 +1142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="2752.9017857142858"/>
+            <point key="canvasLocation" x="2512" y="2753"/>
         </scene>
         <!--Settings-->
         <scene sceneID="HGs-ej-bqM">
@@ -1411,7 +1412,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1353.6231884057972" y="4719.6428571428569"/>
+            <point key="canvasLocation" x="441" y="4720"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -1609,7 +1610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogs-t4-xMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52.173913043478265" y="2752.9017857142858"/>
+            <point key="canvasLocation" x="1354" y="2753"/>
         </scene>
         <!--Growth-->
         <scene sceneID="m3r-ga-xQi">
@@ -1684,6 +1685,11 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-rv-4UW">
+                                        <rect key="frame" x="21" y="49" width="39" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icons8-settings-64"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1805,6 +1811,21 @@
             </objects>
             <point key="canvasLocation" x="-597.10144927536237" y="1872.9910714285713"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="0XD-aJ-fmq">
+            <objects>
+                <viewController id="zhH-Ac-GHX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pCn-5P-om2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ur0-Gr-NVI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xs-Ib-SiP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597" y="2753"/>
+        </scene>
         <!--Post View Controller-->
         <scene sceneID="4Mh-L7-xhb">
             <objects>
@@ -1919,7 +1940,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-597" y="4720"/>
+            <point key="canvasLocation" x="-597" y="5258"/>
         </scene>
         <!--Search-->
         <scene sceneID="M7Q-1O-StI">
@@ -1957,7 +1978,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwq-jM-e8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2626" y="3708"/>
+            <point key="canvasLocation" x="-1662" y="3708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yWc-vz-X8a">
@@ -1975,12 +1996,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spV-fP-Rfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="3708"/>
+            <point key="canvasLocation" x="441" y="3708"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F9b-ip-cpD"/>
-        <segue reference="tRc-v5-j7D"/>
+        <segue reference="kJQ-AT-g4h"/>
+        <segue reference="hyI-GP-cst"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1994,6 +2015,7 @@
         <image name="icons8-increase-24" width="24" height="24"/>
         <image name="icons8-search-30" width="30" height="30"/>
         <image name="icons8-settings-24" width="24" height="24"/>
+        <image name="icons8-settings-64" width="64" height="64"/>
         <image name="icons8-slr-camera-24" width="24" height="24"/>
         <image name="icons8-squats-30" width="30" height="30"/>
         <image name="icons8-topic-30" width="30" height="30"/>
