@@ -1718,11 +1718,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUp-aY-Hcf" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="928"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-dJ-8mr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-dJ-8mr">
                                                 <rect key="frame" x="30" y="89" width="149" height="23"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="moW-uP-M1j"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Time: ?? mins">
                                                         <attributes>
@@ -1733,9 +1735,11 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-WR-ER4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-WR-ER4">
                                                 <rect key="frame" x="48" y="135" width="73" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="QjJ-Ed-PKC"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Indefinite:">
                                                         <attributes>
@@ -1745,27 +1749,20 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
-                                                <rect key="frame" x="46" y="163" width="341" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-dA-dzr">
+                                                <rect key="frame" x="37" y="169" width="341" height="31"/>
                                                 <connections>
                                                     <action selector="sliderMoved:" destination="zhH-Ac-GHX" eventType="valueChanged" id="YdO-RW-jip"/>
                                                 </connections>
                                             </slider>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-mG-0gc">
-                                                <rect key="frame" x="149" y="130" width="49" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-mG-0gc">
+                                                <rect key="frame" x="149" y="130" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="timeSwitchMoved:" destination="zhH-Ac-GHX" eventType="valueChanged" id="mJ4-I8-Xzo"/>
                                                 </connections>
                                             </switch>
-                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-mY-KlY">
-                                                <rect key="frame" x="0.0" y="517" width="414" height="216"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-ur-Vn2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-ur-Vn2">
                                                 <rect key="frame" x="30" y="488" width="149" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Height: ??">
                                                         <attributes>
@@ -1775,9 +1772,11 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deo-U8-ysK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deo-U8-ysK">
                                                 <rect key="frame" x="30" y="313" width="149" height="23"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="069-5s-buZ"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Stop Instructions:">
                                                         <attributes>
@@ -1788,54 +1787,94 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8K-Ie-Bjs">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8K-Ie-Bjs">
                                                 <rect key="frame" x="149" y="350" width="49" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fN-3W-Sih">
-                                                <rect key="frame" x="128" y="41" width="176" height="23"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fN-3W-Sih">
+                                                <rect key="frame" x="119" y="41" width="176" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="u80-sF-vg9"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Set Squatting Time...">
                                                         <attributes>
                                                             <color key="NSColor" red="0.3318162804141449" green="0.33021330321407655" blue="0.3334192576142132" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="20" name="Cochin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-bz-Ndh">
-                                                <rect key="frame" x="102" y="270" width="229" height="23"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-bz-Ndh">
+                                                <rect key="frame" x="93" y="269" width="229" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="zJS-sv-PXP"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Disable Squatting Guides...">
                                                         <attributes>
                                                             <color key="NSColor" red="0.3318162804141449" green="0.33021330321407655" blue="0.3334192576142132" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="20" name="Cochin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-zb-cmL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-zb-cmL">
                                                 <rect key="frame" x="126" y="437" width="163" height="23"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Set User's Height...">
                                                         <attributes>
                                                             <color key="NSColor" red="0.3318162804141449" green="0.33021330321407655" blue="0.3334192576142132" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="20" name="Cochin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-mY-KlY">
+                                                <rect key="frame" x="0.0" y="516" width="414" height="216"/>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Qsp-dJ-8mr" firstAttribute="top" secondItem="5fN-3W-Sih" secondAttribute="bottom" constant="25" id="8ge-Xy-1Id"/>
+                                            <constraint firstItem="Qsp-dJ-8mr" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="30" id="9Bg-Au-m94"/>
+                                            <constraint firstItem="E8K-Ie-Bjs" firstAttribute="top" secondItem="Deo-U8-ysK" secondAttribute="bottom" constant="14" id="9RV-6k-dfL"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Deo-U8-ysK" secondAttribute="trailing" constant="235" id="BMZ-bq-nSs"/>
+                                            <constraint firstItem="IQ3-zb-cmL" firstAttribute="top" secondItem="E8K-Ie-Bjs" secondAttribute="bottom" constant="56" id="CA7-aK-aOc"/>
+                                            <constraint firstItem="OiM-WR-ER4" firstAttribute="top" secondItem="Qsp-dJ-8mr" secondAttribute="bottom" constant="23" id="Dkb-2n-9Qw"/>
+                                            <constraint firstItem="g1t-ur-Vn2" firstAttribute="top" secondItem="IQ3-zb-cmL" secondAttribute="bottom" constant="28" id="HWg-1A-KFV"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="g1t-ur-Vn2" secondAttribute="trailing" constant="235" id="JJ8-kh-Kqw"/>
+                                            <constraint firstItem="Deo-U8-ysK" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="30" id="KeG-31-p2y"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qsp-dJ-8mr" secondAttribute="trailing" constant="235" id="L8r-bz-0gf"/>
+                                            <constraint firstItem="Deo-U8-ysK" firstAttribute="top" secondItem="fZI-bz-Ndh" secondAttribute="bottom" constant="21" id="M9l-U3-b5D"/>
+                                            <constraint firstItem="5fN-3W-Sih" firstAttribute="top" secondItem="yUp-aY-Hcf" secondAttribute="top" constant="41" id="OHz-vo-IlT"/>
+                                            <constraint firstItem="R2h-mY-KlY" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" id="OOs-EP-Zxo"/>
+                                            <constraint firstItem="aWc-mG-0gc" firstAttribute="leading" secondItem="OiM-WR-ER4" secondAttribute="trailing" constant="28" id="RJh-eH-fQq"/>
+                                            <constraint firstItem="E8K-Ie-Bjs" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="149" id="VvN-L7-VDO"/>
+                                            <constraint firstItem="OiM-WR-ER4" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="48" id="ZYJ-Hb-dcb"/>
+                                            <constraint firstItem="fZI-bz-Ndh" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="93" id="afB-sk-ZWl"/>
+                                            <constraint firstAttribute="trailing" secondItem="5fN-3W-Sih" secondAttribute="trailing" constant="119" id="dwR-MQ-fex"/>
+                                            <constraint firstAttribute="trailing" secondItem="fzv-dA-dzr" secondAttribute="trailing" constant="38" id="eTW-eZ-EKc"/>
+                                            <constraint firstItem="aWc-mG-0gc" firstAttribute="top" secondItem="Qsp-dJ-8mr" secondAttribute="bottom" constant="18" id="gKE-cg-z5g"/>
+                                            <constraint firstAttribute="trailing" secondItem="fZI-bz-Ndh" secondAttribute="trailing" constant="92" id="gjZ-vs-hyY"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="IQ3-zb-cmL" secondAttribute="trailing" constant="125" id="jZN-wK-4KY"/>
+                                            <constraint firstItem="fZI-bz-Ndh" firstAttribute="top" secondItem="fzv-dA-dzr" secondAttribute="bottom" constant="70" id="jbh-bD-xtf"/>
+                                            <constraint firstItem="5fN-3W-Sih" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="119" id="jcW-cV-Sce"/>
+                                            <constraint firstItem="fzv-dA-dzr" firstAttribute="top" secondItem="aWc-mG-0gc" secondAttribute="bottom" constant="8" id="k23-3a-fs9"/>
+                                            <constraint firstAttribute="trailing" secondItem="E8K-Ie-Bjs" secondAttribute="trailing" constant="218" id="kYQ-Oy-iTh"/>
+                                            <constraint firstItem="R2h-mY-KlY" firstAttribute="top" secondItem="g1t-ur-Vn2" secondAttribute="bottom" constant="8" id="lhi-jS-yQU"/>
+                                            <constraint firstItem="IQ3-zb-cmL" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="126" id="lrZ-W6-Emp"/>
+                                            <constraint firstAttribute="trailing" secondItem="aWc-mG-0gc" secondAttribute="trailing" constant="216" id="n2e-I0-qmV"/>
+                                            <constraint firstItem="fzv-dA-dzr" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="39" id="qTI-uY-8bv"/>
+                                            <constraint firstAttribute="bottom" secondItem="R2h-mY-KlY" secondAttribute="bottom" constant="196" id="vQp-EU-pwt"/>
+                                            <constraint firstAttribute="trailing" secondItem="R2h-mY-KlY" secondAttribute="trailing" id="wDx-Q8-HIU"/>
+                                            <constraint firstItem="g1t-ur-Vn2" firstAttribute="leading" secondItem="yUp-aY-Hcf" secondAttribute="leading" constant="30" id="zer-3p-HhV"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
