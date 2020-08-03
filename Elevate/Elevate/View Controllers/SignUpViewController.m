@@ -57,8 +57,8 @@
         NSLog(@"%@", self.usernameField.text);
         PFUser *newUser = [PFUser user];
         newUser.username = [self.usernameField.text lowercaseString];
-        newUser.email = [self.emailField.text lowercaseString];
-        newUser.password = [self.passwordField.text lowercaseString];
+        newUser.email = self.emailField.text;
+        newUser.password = self.passwordField.text;
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
                 NSLog(@"MEABC@");
