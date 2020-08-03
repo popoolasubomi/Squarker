@@ -1581,7 +1581,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="icons8-settings-64"/>
                                         <connections>
-                                            <action selector="settingsButton:" destination="dss-Lv-NSv" eventType="touchUpInside" id="UN2-NS-cRE"/>
+                                            <action selector="settingsButton:" destination="dss-Lv-NSv" eventType="touchUpInside" id="uYM-KF-kqQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1699,23 +1699,23 @@
                         <outlet property="startButton" destination="K9g-fy-oR5" id="Sia-iI-yQV"/>
                         <outlet property="timerLabel" destination="eZD-O3-VIs" id="Cxh-JS-cqI"/>
                         <segue destination="Q0H-mc-KZk" kind="presentation" identifier="postSegue" id="VpK-2z-lmq"/>
-                        <segue destination="V2g-h6-p7B" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="I3D-Rz-06t"/>
+                        <segue destination="V2g-h6-p7B" kind="presentation" identifier="settingsSegue" id="dVk-N3-a8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-dt-J51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597.10144927536237" y="1872.9910714285713"/>
+            <point key="canvasLocation" x="-597" y="1873"/>
         </scene>
         <!--Squat Settings-->
         <scene sceneID="0XD-aJ-fmq">
             <objects>
                 <viewController id="zhH-Ac-GHX" customClass="SquatSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pCn-5P-om2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-VM-xY5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUp-aY-Hcf" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="928"/>
@@ -2099,7 +2099,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V2g-h6-p7B" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ghI-KB-aCT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2109,11 +2109,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4C-wn-u7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="2711"/>
+            <point key="canvasLocation" x="-597" y="2753"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kJQ-AT-g4h"/>
+        <segue reference="F9b-ip-cpD"/>
         <segue reference="hyI-GP-cst"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>

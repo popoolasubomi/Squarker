@@ -35,7 +35,7 @@ class VideoCapture: NSObject {
     let videoOutput = AVCaptureVideoDataOutput()
 
     /// The current camera's position.
-    private(set) var cameraPostion = AVCaptureDevice.Position.back
+    private(set) var cameraPostion = AVCaptureDevice.Position.front
 
     /// The dispatch queue responsible for processing camera set up and frame capture.
     private let sessionQueue = DispatchQueue(

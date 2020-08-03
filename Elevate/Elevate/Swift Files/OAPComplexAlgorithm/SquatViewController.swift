@@ -43,8 +43,12 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
 
-        // For convenience, the idle timer is disabled to prevent the screen from locking.
         UIApplication.shared.isIdleTimerDisabled = true
 
         do {
@@ -55,13 +59,6 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         
         poseNet.delegate = self
         setupAndBeginCapturingVideoFrames()
-        videoCapture.flipCamera { error in
-            if let error = error {
-                print("Failed to flip camera with error \(error)")
-            }else{
-                print("worked")
-            }
-        }
         
         editRoundButton()
     }
