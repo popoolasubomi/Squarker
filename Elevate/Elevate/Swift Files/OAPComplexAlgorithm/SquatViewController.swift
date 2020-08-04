@@ -20,6 +20,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     var squatCounter = 0 // Counter for Squats
     var timeCounter = UserDefaults.standard.integer(forKey: "Time") // Counter for Time
+    var height = UserDefaults.standard.double(forKey: "Height")
     var previous = [Float]()    // Previous data of squats
     var current = [Float]() // Current Squatting data
     var previous_action: String = "r"    // Current State of body
@@ -71,6 +72,13 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         setupAndBeginCapturingVideoFrames()
         
         editRoundButton()
+    }
+    
+    func goToSettingsAlert() {
+        let alertController = UIAlertController(title: "Configure Height & Time", message: "Click Settings to configure neccessary information", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in}
+        alertController.addAction(OKAction)
+        present(alertController, animated: true) {}
     }
     
     func buildInstructionController() {
@@ -180,23 +188,32 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     }
     
     @IBAction func beginSquatting(_ sender: Any) {
-        self.working = self.working == true ? false : true
-        if (self.working){
-            self.startButton.setTitle("Stop", for: .normal)
-            self.startButton.backgroundColor = UIColor.red
-            timerType()
-        } else{
-            self.squatCounter = 0
-            self.timeCounter = UserDefaults.standard.integer(forKey: "Time")
-            self.startButton.setTitle("Start", for: .normal)
-            self.startButton.backgroundColor = UIColor.green
-            self.previous = [Float]()
-            self.current = [Float]()
-            self.previous_action = "r"
-            self.timer.invalidate()
-            
-            self.timerLabel.text = "00:00"
-            self.counterLabel.text = "0"
+        
+        self.timeCounter = UserDefaults.standard.integer(forKey: "Time")
+        self.height = UserDefaults.standard.double(forKey: "Height")
+        
+        if self.height == 0 && self.timeCounter == 0{
+            goToSettingsAlert()
+        }
+        else{
+            self.working = self.working == true ? false : true
+            if (self.working){
+                self.startButton.setTitle("Stop", for: .normal)
+                self.startButton.backgroundColor = UIColor.red
+                timerType()
+            } else{
+                self.squatCounter = 0
+                self.timeCounter = UserDefaults.standard.integer(forKey: "Time")
+                self.startButton.setTitle("Start", for: .normal)
+                self.startButton.backgroundColor = UIColor.green
+                self.previous = [Float]()
+                self.current = [Float]()
+                self.previous_action = "r"
+                self.timer.invalidate()
+                
+                self.timerLabel.text = "00:00"
+                self.counterLabel.text = "0"
+            }
         }
     }
     
