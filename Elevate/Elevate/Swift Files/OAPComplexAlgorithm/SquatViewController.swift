@@ -25,6 +25,9 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     var previous_action: String = "r"    // Current State of body
     var timer = Timer() // Timer For Squat App
     var working = false
+    var nextBtn: UIButton!
+    var prevBtn: UIButton!
+    var btnLoc = 0
     
     private let videoCapture = VideoCapture()
 
@@ -43,6 +46,8 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buildInstructionController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +66,56 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         setupAndBeginCapturingVideoFrames()
         
         editRoundButton()
+    }
+    
+    func buildInstructionController() {
+        let guideView = UIView()
+        guideView.backgroundColor = .white
+        guideView.layer.cornerRadius = 17
+        guideView.layer.masksToBounds = true
+        
+        self.nextBtn = UIButton()
+        self.nextBtn.setTitleColor(.blue, for: .normal)
+        self.nextBtn.setTitle("Next", for: .normal)
+        self.nextBtn.addTarget(self, action: #selector(nextGuide), for: .touchUpInside)
+        
+        self.prevBtn = UIButton()
+        self.prevBtn.setTitle("Previous", for: .normal)
+        self.prevBtn.setTitleColor(.blue, for: .normal)
+        self.prevBtn.addTarget(self, action: #selector(prevGuide), for: .touchUpInside)
+        
+        var frame = guideView.frame
+        frame.origin.x = 10.0
+        frame.origin.y = 465.0
+        frame.size.height = self.view.frame.size.height / 3
+        frame.size.width = (self.view.frame.size.width - 20)
+        guideView.frame = frame
+        
+        var nxtBtnFrame = frame
+        nxtBtnFrame.origin.x = (frame.size.width - 60)
+        nxtBtnFrame.origin.y = (frame.size.height - 70)
+        nxtBtnFrame.size.width = 50.0
+        nxtBtnFrame.size.height = 50.0
+        self.nextBtn.frame = nxtBtnFrame
+        
+        var prvBtnFrame = frame
+        prvBtnFrame.origin.x = 10
+        prvBtnFrame.origin.y = (frame.size.height - 70)
+        prvBtnFrame.size.width = 100.0
+        prvBtnFrame.size.height = 50
+        self.prevBtn.frame = prvBtnFrame
+        
+        guideView.addSubview(self.nextBtn)
+        guideView.addSubview(self.prevBtn)
+        self.view.addSubview(guideView)
+    }
+    
+    @objc func nextGuide(){
+        
+    }
+    
+    @objc func prevGuide(){
+        
     }
     
     @IBAction func settingsButton(_ sender: Any) {
