@@ -21,6 +21,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     var squatCounter = 0 // Counter for Squats
     var timeCounter = UserDefaults.standard.integer(forKey: "Time") // Counter for Time
     var height = UserDefaults.standard.double(forKey: "Height")
+    var noInstructions = UserDefaults.standard.bool(forKey: "Instruction")
     var previous = [Float]()    // Previous data of squats
     var current = [Float]() // Current Squatting data
     var previous_action: String = "r"    // Current State of body
@@ -53,7 +54,13 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.instructions = ["Place Phone on the ground & Allow to rest on a vertical structure", "Before you squat, Allow the phone to capture your entire body so u see point markings from your head to ankle", "If haven't, configure the time for squats required & set your height by clicking settings on the top right corner", "Press next to continue to the start button"]
-        buildInstructionController()
+        
+        if self.height == 0.0{
+            buildInstructionController()
+        }else if self.noInstructions{
+            buildInstructionController()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

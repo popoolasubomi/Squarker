@@ -78,9 +78,9 @@
     }
     
     if (self.instructionSwitch.on){
-        [defaults setInteger: 1 forKey: @"Instruction"];
+        [defaults setBool: NO forKey: @"Instruction"];
     } else{
-        [defaults setInteger: 0 forKey: @"Instruction"];
+        [defaults setBool: YES forKey: @"Instruction"];
     }
     [self dismissViewControllerAnimated: YES completion: nil];
 }
