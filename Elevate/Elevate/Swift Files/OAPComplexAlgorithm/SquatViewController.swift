@@ -25,9 +25,14 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     var previous_action: String = "r"    // Current State of body
     var timer = Timer() // Timer For Squat App
     var working = false
+    
+    var guideView: UIView!
     var nextBtn: UIButton!
     var prevBtn: UIButton!
+    var skipBtn: UIButton!
     var btnLoc = 0
+    var instruction: UILabel!
+    var instructions = [String]()
     
     private let videoCapture = VideoCapture()
 
@@ -46,7 +51,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.instructions = ["Place Phone on the ground & Allow to rest on a vertical structure", "Before you squat, Allow the phone to capture your entire body so u see point markings from your head to ankle", "If haven't, configure the time for squats required & set your height by clicking settings on the top right corner", "Press next to continue to the start button"]
         buildInstructionController()
     }
     
@@ -69,10 +74,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     }
     
     func buildInstructionController() {
-        let guideView = UIView()
-        guideView.backgroundColor = .white
-        guideView.layer.cornerRadius = 17
-        guideView.layer.masksToBounds = true
+        self.guideView = UIView()
+        self.guideView.backgroundColor = .white
+        self.guideView.layer.cornerRadius = 17
+        self.guideView.layer.masksToBounds = true
         
         self.nextBtn = UIButton()
         self.nextBtn.setTitleColor(.blue, for: .normal)
@@ -83,6 +88,18 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         self.prevBtn.setTitle("Previous", for: .normal)
         self.prevBtn.setTitleColor(.blue, for: .normal)
         self.prevBtn.addTarget(self, action: #selector(prevGuide), for: .touchUpInside)
+        
+        self.skipBtn = UIButton()
+        self.skipBtn.setTitle("Skip", for: .normal)
+        self.skipBtn.setTitleColor(.blue, for: .normal)
+        self.skipBtn.addTarget(self, action: #selector(skipGuide), for: .touchUpInside)
+        
+        self.instruction = UILabel()
+        self.instruction.textColor = .black
+        self.instruction.text = self.instructions[self.btnLoc]
+        self.instruction.numberOfLines = 0
+        self.instruction.font = UIFont(name: "Cochin ", size: 25)
+        self.instruction.textAlignment = .center
         
         var frame = guideView.frame
         frame.origin.x = 10.0
@@ -105,17 +122,45 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         prvBtnFrame.size.height = 50
         self.prevBtn.frame = prvBtnFrame
         
-        guideView.addSubview(self.nextBtn)
-        guideView.addSubview(self.prevBtn)
-        self.view.addSubview(guideView)
+        var skipBtnFrame = frame
+        skipBtnFrame.origin.x = (frame.size.width - 60)
+        skipBtnFrame.origin.y = 10.0
+        skipBtnFrame.size.width = 50.0
+        skipBtnFrame.size.height = 20.0
+        self.skipBtn.frame = skipBtnFrame
+        
+        var lblFrame = frame
+        lblFrame.origin.x = 30.0
+        lblFrame.origin.y = 10.0
+        lblFrame.size.width = (frame.size.width - 60)
+        lblFrame.size.height = (frame.size.height - 80)
+        self.instruction.frame = lblFrame
+        
+        self.guideView.addSubview(self.nextBtn)
+        self.guideView.addSubview(self.prevBtn)
+        self.guideView.addSubview(self.instruction)
+        self.guideView.addSubview(self.skipBtn)
+        self.view.addSubview(self.guideView)
     }
     
     @objc func nextGuide(){
-        
+        if self.btnLoc + 1 == self.instructions.count{
+            self.guideView.removeFromSuperview()
+        }else{
+            self.btnLoc += 1
+            self.instruction.text = self.instructions[self.btnLoc]
+        }
     }
     
     @objc func prevGuide(){
-        
+        if self.btnLoc - 1 >= 0{
+            self.btnLoc -= 1
+            self.instruction.text = self.instructions[self.btnLoc]
+        }
+    }
+    
+    @objc func skipGuide(){
+        self.guideView.removeFromSuperview()
     }
     
     @IBAction func settingsButton(_ sender: Any) {
