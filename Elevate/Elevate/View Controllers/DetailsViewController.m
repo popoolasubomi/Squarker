@@ -45,6 +45,7 @@ NSString *const normalHeart = @"favor-icon";
     self.tableView.dataSource = self;
     
     [self fetchComments];
+    [self addTapRecognizer];
     
 }
 

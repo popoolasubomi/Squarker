@@ -128,6 +128,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
+    cell.delegate = self;
     if (self.segmentedController.selectedSegmentIndex == 0){
         Post *post = self.posts[indexPath.row];
         [cell setPost: post];
@@ -143,8 +144,9 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString: @"detailsSegue"]){
-        DetailsViewController *detailsController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString: @"detailSegue"]){
+        UINavigationController *navigationController = [segue destinationViewController];
+        DetailsViewController *detailsController = (DetailsViewController *)  navigationController.topViewController;
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Post *post = self.posts[indexPath.row];

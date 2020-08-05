@@ -457,7 +457,7 @@
                         <outlet property="searchBar" destination="z1Z-Pz-MmR" id="bMX-ya-BdI"/>
                         <outlet property="tableView" destination="g58-xR-jXq" id="jFz-fo-PX8"/>
                         <outlet property="titleLabel" destination="Fz2-ZA-bD1" id="ahU-1M-KJU"/>
-                        <segue destination="pbd-iI-y4v" kind="show" identifier="detailsSegue" id="8jm-Yo-Fg7"/>
+                        <segue destination="pbd-iI-y4v" kind="presentation" identifier="detailsSegue" modalPresentationStyle="fullScreen" id="8jm-Yo-Fg7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2241,7 +2241,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8jm-Yo-Fg7"/>
+        <segue reference="FKH-PU-3kq"/>
         <segue reference="F6d-iP-ARM"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
