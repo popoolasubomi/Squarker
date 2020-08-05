@@ -850,7 +850,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="epk-kw-97M"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="2Oq-9l-Vfk"/>
+                    <navigationItem key="navigationItem" title="Details" id="2Oq-9l-Vfk">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="wOa-ZU-2Sq">
+                            <connections>
+                                <action selector="backButton:" destination="vmA-pm-nb2" id="8uK-TD-sCm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="captionLabel" destination="rA3-e3-V3U" id="sgy-it-t5Q"/>
                         <outlet property="commentButton" destination="q18-Wi-M2a" id="fJe-YZ-fWe"/>
@@ -2235,7 +2241,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FKH-PU-3kq"/>
+        <segue reference="8jm-Yo-Fg7"/>
         <segue reference="F6d-iP-ARM"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>

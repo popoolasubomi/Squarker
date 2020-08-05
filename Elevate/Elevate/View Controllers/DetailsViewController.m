@@ -216,6 +216,10 @@ NSString *const normalHeart = @"favor-icon";
     }];
 }
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated: YES completion: nil];
+}
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CommentCell" forIndexPath: indexPath];
     cell.commentLabel.text = self.comments[indexPath.row];
