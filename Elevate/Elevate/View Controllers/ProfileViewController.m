@@ -45,10 +45,10 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear: animated];
     
-    
+   // NSLog(@"%d", [[PFUser.currentUser objectForKey: @"likes"] intValue]);
     [self populateView];
     [self loadPosts];
 }
@@ -65,7 +65,7 @@
 
 
 -(void) populateView{
-    PFUser *user = PFUser.currentUser;
+    PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
