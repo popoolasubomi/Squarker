@@ -66,7 +66,7 @@ NSString *const normalHeart = @"favor-icon";
     self.numSquatsLabel.text = [NSString stringWithFormat: @"%d squats", numSquats.intValue];
     self.captionLabel.text = [self.post objectForKey: @"caption"];
     NSNumber *time = [self.post objectForKey: @"time"];
-    self.timeLabel.text = [NSString stringWithFormat: @"Time: %d", time.intValue];
+    self.timeLabel.text = [NSString stringWithFormat: @"Time: %d mins@", time.intValue];
     NSNumber *commentsCount = [self.post objectForKey: @"commentCount"];
     self.commentsCount.text = [NSString stringWithFormat: @"%d", commentsCount.intValue];
     PFFileObject *imageData = [postUser objectForKey: @"image"];
@@ -91,15 +91,22 @@ NSString *const normalHeart = @"favor-icon";
 - (void) configureLikeFeatures{
     NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     PFUser *user = [PFUser currentUser];
+    PFUser *postUser = self.post[@"author"];
+    NSNumber *postUserLikes = [postUser objectForKey: @"likes"];
+    NSNumber *totalUserLikes;
     if (![self.likes containsObject: user.username]){
         [self.likes addObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue + 1];
+        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue + 1];
     } else{
         [self.likes removeObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue - 1];
+        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue -1];
     }
+    [postUser setObject: totalUserLikes forKey: @"likes"];
+    [postUser saveInBackground];
     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Updated Likes");

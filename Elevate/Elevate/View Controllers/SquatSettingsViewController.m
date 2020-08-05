@@ -79,6 +79,7 @@
     
     if (self.instructionSwitch.on){
         [defaults setBool: NO forKey: @"Instruction"];
+        NSLog(@"me");
     } else{
         [defaults setBool: YES forKey: @"Instruction"];
     }
