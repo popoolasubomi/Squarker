@@ -14,7 +14,7 @@
 #import "Post.h"
 @import Parse;
 
-@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, HomeCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
@@ -150,6 +150,10 @@
         Post *post = self.posts[indexPath.row];
         detailsController.post = post;
     }
+}
+
+- (void)homeCell:(nonnull HomeCell *)homeCell didTap:(nonnull Post *)post {
+    [self performSegueWithIdentifier: @"detailSegue" sender: nil];
 }
 
 @end

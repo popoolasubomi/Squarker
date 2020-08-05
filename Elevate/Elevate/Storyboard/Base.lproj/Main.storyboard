@@ -457,7 +457,7 @@
                         <outlet property="searchBar" destination="z1Z-Pz-MmR" id="bMX-ya-BdI"/>
                         <outlet property="tableView" destination="g58-xR-jXq" id="jFz-fo-PX8"/>
                         <outlet property="titleLabel" destination="Fz2-ZA-bD1" id="ahU-1M-KJU"/>
-                        <segue destination="vmA-pm-nb2" kind="show" identifier="detailsSegue" id="8jm-Yo-Fg7"/>
+                        <segue destination="pbd-iI-y4v" kind="show" identifier="detailsSegue" id="8jm-Yo-Fg7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -731,13 +731,14 @@
                         <outlet property="statusRank" destination="f35-rX-Kck" id="9td-ad-TB4"/>
                         <outlet property="tableView" destination="V9a-jM-geg" id="RL5-ex-6y5"/>
                         <outlet property="usernameLabel" destination="al2-X5-HAg" id="v0u-ld-ayL"/>
+                        <segue destination="pbd-iI-y4v" kind="presentation" identifier="detailSegue" modalPresentationStyle="fullScreen" id="G3O-CG-TNs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-X1-ToX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1662" y="4720"/>
+            <point key="canvasLocation" x="-2626" y="4720"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Details-->
         <scene sceneID="kyu-o1-QJV">
             <objects>
                 <viewController id="vmA-pm-nb2" customClass="DetailsViewController" sceneMemberID="viewController">
@@ -752,7 +753,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-rc-rS6" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-rc-rS6" customClass="PFImageView">
                                 <rect key="frame" x="20" y="156" width="153" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -849,7 +850,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="epk-kw-97M"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Oq-9l-Vfk"/>
+                    <navigationItem key="navigationItem" title="Details" id="2Oq-9l-Vfk"/>
                     <connections>
                         <outlet property="captionLabel" destination="rA3-e3-V3U" id="sgy-it-t5Q"/>
                         <outlet property="commentButton" destination="q18-Wi-M2a" id="fJe-YZ-fWe"/>
@@ -862,11 +863,12 @@
                         <outlet property="tableView" destination="bpS-fS-TbK" id="r6a-FB-w9q"/>
                         <outlet property="timeLabel" destination="KnB-in-Kvs" id="H5m-Pm-tbA"/>
                         <outlet property="usernameLabel" destination="Spm-xH-o7x" id="gMn-D2-qgJ"/>
+                        <segue destination="ERX-or-Owg" kind="presentation" identifier="profileSegue" modalPresentationStyle="fullScreen" id="F6d-iP-ARM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLT-54-XT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="4414"/>
+            <point key="canvasLocation" x="-597" y="5170"/>
         </scene>
         <!--Search Others-->
         <scene sceneID="4T0-1s-0ul">
@@ -1241,6 +1243,7 @@
                         <outlet property="tableView" destination="BdS-jE-jL7" id="Tfa-ha-J8N"/>
                         <outlet property="usernameLabel" destination="uB4-z1-ap2" id="5kz-fd-KCG"/>
                         <segue destination="pqi-9T-rvv" kind="presentation" identifier="settingsSegue" modalPresentationStyle="fullScreen" id="Gyx-rz-lPi"/>
+                        <segue destination="pbd-iI-y4v" kind="presentation" identifier="detailSegue" modalPresentationStyle="fullScreen" id="FKH-PU-3kq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zu-o5-xVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1403,7 +1406,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="440.57971014492756" y="4719.6428571428569"/>
+            <point key="canvasLocation" x="1354" y="4720"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nlm-VY-ilB">
@@ -2135,7 +2138,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-597" y="5258"/>
+            <point key="canvasLocation" x="-597" y="5882"/>
         </scene>
         <!--Search-->
         <scene sceneID="M7Q-1O-StI">
@@ -2211,8 +2214,29 @@
             </objects>
             <point key="canvasLocation" x="-597" y="2753"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pwx-8v-tQ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pbd-iI-y4v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="R2Z-4v-47E"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hf4-E3-RXR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vmA-pm-nb2" kind="relationship" relationship="rootViewController" id="iMs-0b-B2c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MF0-H3-DrG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597" y="4365"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="FKH-PU-3kq"/>
+        <segue reference="F6d-iP-ARM"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>

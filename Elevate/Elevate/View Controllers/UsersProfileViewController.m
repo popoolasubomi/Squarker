@@ -11,9 +11,8 @@
 #import "HomeCell.h"
 #import "Post.h"
 
-@interface UsersProfileViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface UsersProfileViewController () <UITableViewDelegate, UITableViewDataSource, HomeCellDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *userProfileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UIImageView *heartImage;
@@ -121,16 +120,6 @@
     [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
     if (self.segmentedController.selectedSegmentIndex == 0){
@@ -155,6 +144,10 @@
         Post *post = self.posts[indexPath.row];
         detailsController.post = post;
     }
+}
+
+- (void)homeCell:(nonnull HomeCell *)homeCell didTap:(nonnull Post *)post { 
+    [self performSegueWithIdentifier: @"detailSegue" sender: nil];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "UsersProfileViewController.h"
 #import "Parse/Parse.h"
 #import "CommentCell.h"
 @import Parse;
@@ -57,6 +58,17 @@ NSString *const normalHeart = @"favor-icon";
         [self.tableView reloadData];
     }
 }
+
+-(void) addTapRecognizer{
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapProfile:)];
+    [self.profileImage addGestureRecognizer: profileTapGestureRecognizer];
+    [self.profileImage setUserInteractionEnabled: YES];
+}
+
+-(void) didTapProfile:(UITapGestureRecognizer *)sender{
+    [self performSegueWithIdentifier: @"profileSegue" sender: nil];
+}
+
 
 - (void) populateView{
     PFUser *postUser = [self.post objectForKey: @"author"];
@@ -212,6 +224,15 @@ NSString *const normalHeart = @"favor-icon";
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.comments.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString: @"profileSegue"]){
+          UINavigationController *navigationController = [segue destinationViewController];
+        UsersProfileViewController *profileController = (UsersProfileViewController *)  navigationController.topViewController;
+        profileController.post = self.post;
+        profileController.type = NO;
+    }
 }
 
 @end

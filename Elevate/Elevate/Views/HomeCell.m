@@ -99,7 +99,7 @@ NSString *const normalHearts = @"favor-icon";
     self.cellView.layer.shadowOpacity = 0.5;
     self.profileImage.file = [user objectForKey: @"image"];
     [self.profileImage loadInBackground];
-    self.usernameLabel.text = user != nil ? user.username : @"🤖";
+    self.usernameLabel.text = user != nil ? [NSString stringWithFormat: @"@%@", user.username] : @"🤖";
     
     self.numberOfSquats.text = [NSString stringWithFormat: @"%@ squats", post.squats];
     
@@ -115,6 +115,6 @@ NSString *const normalHearts = @"favor-icon";
     self.profileImage.image = image;
     self.caption.text = [friendName objectForKey: @"description"];
     self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", [[friendName objectForKey: @"squats"] intValue]];
-    self.usernameLabel.text = friendName.username;
+    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", friendName.username];
 }
 @end
