@@ -42,6 +42,12 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     
     [self populateView];
     [self loadPosts];

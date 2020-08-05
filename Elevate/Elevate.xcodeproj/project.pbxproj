@@ -160,7 +160,6 @@
 		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F327C124CF81BD00D59DFC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		43F327C324CF81C400D59DFC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		43F327C424D0C3B400D59DFC /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		43F327C524D0C3B400D59DFC /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		483365DB59C01BF455718CA3 /* Pods-ElevateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevateTests.release.xcconfig"; path = "Target Support Files/Pods-ElevateTests/Pods-ElevateTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 		4307A0AF24CE648200E41A75 /* PoseFinder */ = {
 			isa = PBXGroup;
 			children = (
-				43F327C324CF81C400D59DFC /* ChartViewController.swift */,
 				4307A0B024CE648200E41A75 /* UI */,
 				4307A0BE24CE648200E41A75 /* Extensions+Types */,
 				4307A0C124CE648200E41A75 /* Utils */,

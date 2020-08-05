@@ -99,7 +99,6 @@
 }
 
 - (void)homeCell:(nonnull HomeCell *)homeCell didTap:(nonnull Post *)post {
-    NSLog(@"ME");
     [self performSegueWithIdentifier:@"profileSegue" sender: post];
 }
 
