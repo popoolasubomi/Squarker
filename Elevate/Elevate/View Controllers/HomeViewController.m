@@ -35,7 +35,7 @@
     self.searchBar.delegate = self;
     
     [[OAPFetcherSingleton sharedObject] fetchStatusLevel];
-    [self hideNavigationBarTitle];
+    [self showNavigationBarTitle];
     [self loadPosts];
 }
 
@@ -48,7 +48,8 @@
 
 - (void) showNavigationBarTitle{
     UILabel *titleLabel = [UILabel new];
-    titleLabel.text = @"Timeline";
+    titleLabel.text = @"Elevate";
+    titleLabel.font = [UIFont fontWithName: @"Didot" size: 20];
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
 }

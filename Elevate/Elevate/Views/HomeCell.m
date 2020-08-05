@@ -101,7 +101,7 @@ NSString *const normalHearts = @"favor-icon";
     [self.profileImage loadInBackground];
     self.usernameLabel.text = user != nil ? user.username : @"🤖";
     
-    self.numberOfSquats.text = [NSString stringWithFormat: @"%@ squats@", post.squats];
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%@ squats", post.squats];
     
     self.caption.text = post.caption;
     
@@ -114,7 +114,7 @@ NSString *const normalHearts = @"favor-icon";
     UIImage *image = [UIImage imageNamed: @"download"];
     self.profileImage.image = image;
     self.caption.text = [friendName objectForKey: @"description"];
-    self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats@", [[friendName objectForKey: @"squats"] intValue]];
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", [[friendName objectForKey: @"squats"] intValue]];
     self.usernameLabel.text = friendName.username;
 }
 @end

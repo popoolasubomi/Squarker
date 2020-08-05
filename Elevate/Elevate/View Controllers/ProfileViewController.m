@@ -71,7 +71,6 @@
 -(void) populateView{
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
-    NSLog(@"populate view %@", [user objectForKey: @"likes"]);
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
