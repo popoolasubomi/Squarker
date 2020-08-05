@@ -90,7 +90,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     func buildInstructionController() {
         self.guideView = UIView()
-        self.guideView.backgroundColor = .white
+        self.guideView.backgroundColor = .gray
         self.guideView.layer.cornerRadius = 17
         self.guideView.layer.masksToBounds = true
         

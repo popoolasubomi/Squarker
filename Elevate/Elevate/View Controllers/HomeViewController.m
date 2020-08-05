@@ -99,7 +99,7 @@
 }
 
 - (void)homeCell:(nonnull HomeCell *)homeCell didTap:(nonnull Post *)post {
-    [self performSegueWithIdentifier:@"profileSegue" sender: post];
+    [self performSegueWithIdentifier:@"detailsSegue" sender: post];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -18,10 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) PFUser *friendName;
+@property (nonatomic, strong) NSMutableArray *likes;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfSquats;
+@property (weak, nonatomic) IBOutlet UILabel *numLikes;
+@property (weak, nonatomic) IBOutlet UIImageView *likeImage;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+
 -(void)setPost:(Post *)post;
 -(void)setFriends:(PFUser *)friendName;
 @property (nonatomic, weak) id<HomeCellDelegate> delegate;

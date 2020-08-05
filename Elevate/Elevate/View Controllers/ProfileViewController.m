@@ -48,8 +48,12 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear: animated];
     
-   // NSLog(@"%d", [[PFUser.currentUser objectForKey: @"likes"] intValue]);
-    [self populateView];
+    NSLog(@"%d", [[PFUser.currentUser objectForKey: @"likes"] intValue]);
+    
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        [self populateView];
+    }];
+    
     [self loadPosts];
 }
 
@@ -67,6 +71,7 @@
 -(void) populateView{
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
+    NSLog(@"populate view %@", [user objectForKey: @"likes"]);
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
