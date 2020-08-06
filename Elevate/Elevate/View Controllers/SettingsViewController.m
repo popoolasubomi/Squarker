@@ -28,6 +28,7 @@
     
     self.profileImage.layer.cornerRadius = 98;
     self.profileImage.layer.masksToBounds = YES;
+    [self addTapGestureRecognizer];
 }
 
 - (void) errorAlert{
@@ -92,6 +93,16 @@
     [self presentViewController: alert animated:YES completion:^{}];
 }
 
+-(void) addTapGestureRecognizer{
+    UITapGestureRecognizer *cameraTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapImage:)];
+    [self.profileImage addGestureRecognizer: cameraTapGestureRecognizer];
+    [self.profileImage setUserInteractionEnabled:YES];
+}
+
+-(void) didTapImage:(UITapGestureRecognizer *)sender{
+    [self pictureSource];
+}
+
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
@@ -141,10 +152,6 @@
 
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated: YES completion: nil];
-}
-
-- (IBAction)cameraButton:(id)sender {
-    [self pictureSource];
 }
 
 - (IBAction)onTap:(id)sender {
