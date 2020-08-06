@@ -426,6 +426,9 @@
                                             <segment title="FYP"/>
                                             <segment title="Friends"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="postType:" destination="ISZ-qx-kaJ" eventType="valueChanged" id="ZNl-Mr-4YG"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -455,6 +458,7 @@
                     <navigationItem key="navigationItem" title="Timeline" id="z3S-ny-CA1"/>
                     <connections>
                         <outlet property="searchBar" destination="z1Z-Pz-MmR" id="bMX-ya-BdI"/>
+                        <outlet property="segmentedControl" destination="Rpl-bd-7ZW" id="hEi-tB-APk"/>
                         <outlet property="tableView" destination="g58-xR-jXq" id="jFz-fo-PX8"/>
                         <outlet property="titleLabel" destination="Fz2-ZA-bD1" id="ahU-1M-KJU"/>
                         <segue destination="pbd-iI-y4v" kind="presentation" identifier="detailsSegue" modalPresentationStyle="fullScreen" id="8jm-Yo-Fg7"/>

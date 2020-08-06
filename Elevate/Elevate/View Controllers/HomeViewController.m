@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -106,6 +107,14 @@
             self.filteredData = self.posts;
         }
         [self.tableView reloadData];
+    }
+}
+- (IBAction)postType:(id)sender {
+    if (self.segmentedControl.selectedSegmentIndex == 0){
+        [self loadPosts];
+    }
+    else{
+        [self loadFriendsPosts];
     }
 }
 
