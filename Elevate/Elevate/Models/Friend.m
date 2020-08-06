@@ -34,6 +34,19 @@
     return self;
 }
 
+- (NSDictionary *)BuildWithPFUser:(PFUser *)dictionary {
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    if (dictionary) {
+        [result setObject: dictionary.username forKey: @"username"];
+        [result setObject: dictionary[@"squats"] forKey: @"squats"];
+        [result setObject: dictionary[@"likes"] forKey: @"likes"];
+        [result setObject: dictionary[@"description"] forKey: @"description"];
+        PFFileObject *imageData = dictionary[@"image"];
+        [result setObject: [NSString stringWithFormat: @"%@", imageData.url] forKey: @"imageUrl"];
+    }
+    return result;
+}
+
 -(NSURL *)getImage: (NSString *) imageURL{
     return [NSURL URLWithString: imageURL];
 }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Friend.h"
 #import "Post.h"
 @import Parse;
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeCell : UITableViewCell
 
 @property (nonatomic, strong) Post *post;
-@property (nonatomic, strong) PFUser *friendName;
+@property (nonatomic, strong) Friend *friendName;
 @property (nonatomic, strong) NSMutableArray *likes;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
@@ -28,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *cellView;
 
 -(void)setPost:(Post *)post;
--(void)setFriends:(PFUser *)friendName;
+-(void)setFriends:(Friend *)friendName;
 @property (nonatomic, weak) id<HomeCellDelegate> delegate;
 
 @end

@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import "HomeCell.h"
+#import "Friend.h"
 #import "Post.h"
 @import Parse;
 
@@ -75,6 +76,7 @@
     self.friendNames = [user objectForKey: @"friendNames"];
     if (!self.friends){
         self.friends = [NSMutableArray array];
+        self.friendNames = [NSMutableArray array];
     }
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
@@ -113,6 +115,7 @@
     }else{
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
     }
+    
     self.isFriendImage.frame = frame;
     [self.view addSubview: self.isFriendImage];
 }
@@ -126,7 +129,8 @@
 -(void) didTapAddImage:(UITapGestureRecognizer *)sender{
     PFUser *user = [PFUser currentUser];
     if  (![self.friendNames containsObject: user.username]){
-        [self.friends addObject: user];
+        NSDictionary *friend = [[Friend alloc] BuildWithPFUser: user];
+        [self.friends addObject: friend];
         [self.friendNames addObject: user.username];
         [user setObject: self.friends forKey: @"friends"];
         [user setObject: self.friendNames forKey: @"friendNames"];
@@ -156,7 +160,8 @@
 
 - (void) loadFriends{
     PFUser *user = PFUser.currentUser;
-    self.friends = [user objectForKey: @"friends"];
+    NSArray *friends = [user objectForKey: @"friends"];
+    self.friends = [Friend friendsWithArray: friends];
     [self.tableView reloadData];
 }
 
@@ -180,14 +185,18 @@
         Post *post = self.posts[indexPath.row];
         [cell setPost: post];
     } else{
-        PFUser *friend = self.friends[indexPath.row];
+        Friend *friend = self.friends[indexPath.row];
         [cell setFriends: friend];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count;
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        return self.posts.count;
+    } else{
+        return self.friends.count;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

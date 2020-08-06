@@ -8,6 +8,7 @@
 
 #import "HomeCell.h"
 #import "Post.h"
+#import "UIImageView+AFNetworking.h"
 
 NSString *const redHearts = @"favor-icon-red";
 NSString *const normalHearts = @"favor-icon";
@@ -105,17 +106,23 @@ NSString *const normalHearts = @"favor-icon";
     [self updateHeartImage];
 }
 
-- (void)setFriends:(PFUser *)friendName{
+- (void)setFriends:(Friend *)friendName{
     _friendName = friendName;
     
     UIImage *image = [UIImage imageNamed: @"download"];
-    self.profileImage.image = image;
-    
-    //self.caption.text = friendName.description;
-    //self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", friendName.squats];
+    NSURL *imageURL = [[Friend alloc] getImage: friendName.imageUrl];
+    [self.profileImage setImageWithURL: imageURL];
+    if (self.profileImage.image == nil){
+        self.profileImage.image = image;
+    }
+    self.profileImage.layer.cornerRadius = 18;
+    self.profileImage.layer.masksToBounds = YES;
+    self.caption.text = friendName.caption;
+    self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", friendName.squats.intValue];
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", friendName.username];
-    //self.numLikes.text = [NSString stringWithFormat: @"%d", friendName.likes];
-    UIImage *heartImage = [UIImage imageNamed: @"download"];
+    self.numLikes.text = [NSString stringWithFormat: @"%d", friendName.numLikes.intValue];
+    UIImage *heartImage = [UIImage imageNamed: redHearts];
     self.likeImage.image = heartImage;
 }
+
 @end

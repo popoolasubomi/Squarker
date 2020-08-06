@@ -9,6 +9,7 @@
 #import "UsersProfileViewController.h"
 #import "DetailsViewController.h"
 #import "HomeCell.h"
+#import "Friend.h"
 #import "Post.h"
 
 @interface UsersProfileViewController () <UITableViewDelegate, UITableViewDataSource, HomeCellDelegate>
@@ -57,6 +58,10 @@
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
     self.friends = [user objectForKey: @"friends"];
     self.friendNames = [user objectForKey: @"friendNames"];
+    if (!self.friends){
+        self.friends = [NSMutableArray array];
+        self.friendNames = [NSMutableArray array];
+    }
     if ([user objectForKey: @"image"] != nil){
         self.displayNameLabel.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
@@ -70,6 +75,7 @@
         self.profileImage.file = imageData;
         [self.profileImage loadInBackground];
         [self constructIsFriendimage];
+        [self addTapGestureRecognizer];
     } else{
         self.displayNameLabel.alpha = 0;
         self.statusLabel.alpha = 0;
@@ -120,10 +126,11 @@
 -(void) didTapAddImage:(UITapGestureRecognizer *)sender{
     PFUser *user = [PFUser currentUser];
     if  (![self.friendNames containsObject: user.username]){
-        [self.friends addObject: user];
+        NSDictionary *friend = [[Friend alloc] BuildWithPFUser: user];
+        [self.friends addObject: friend];
         [self.friendNames addObject: user.username];
-        [user setObject: self.friendNames forKey: @"friendNames"];
         [user setObject: self.friends forKey: @"friends"];
+        [user setObject: self.friendNames forKey: @"friendNames"];
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded){
                 self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
@@ -162,7 +169,8 @@
     }else{
         user = self.post[@"author"];
     }
-    self.friends = [user objectForKey: @"friends"];
+    NSArray *friends = [user objectForKey: @"friends"];
+    self.friends = [Friend friendsWithArray: friends];
     [self.tableView reloadData];
 }
 
@@ -173,14 +181,18 @@
         Post *post = self.posts[indexPath.row];
         [cell setPost: post];
     } else{
-        PFUser *friend = self.friends[indexPath.row];
+        Friend *friend = self.friends[indexPath.row];
         [cell setFriends: friend];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.posts.count;
+    if (self.segmentedController.selectedSegmentIndex == 0){
+        return self.posts.count;
+    } else{
+        return self.friends.count;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

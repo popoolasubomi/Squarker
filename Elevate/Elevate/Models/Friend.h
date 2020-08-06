@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray *)friendsWithArray:(NSArray *)dictionaries;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)BuildWithPFUser:(PFUser *)dictionary;
 -(NSURL *)getImage: (NSString *) imageURL;
 
 @end

@@ -21,6 +21,7 @@
 @dynamic commentArray;
 @dynamic squats;
 @dynamic time;
+@dynamic username;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -37,6 +38,7 @@
     newPost.commentArray = [NSMutableArray array];
     newPost.squats = squats;
     newPost.time = time;
+    newPost.username = PFUser.currentUser.username;
     [newPost saveInBackgroundWithBlock: completion];
 }
 

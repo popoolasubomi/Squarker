@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) NSMutableArray *filteredData;
+@property (nonatomic, strong) NSMutableArray *friendNames;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -58,6 +59,27 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey: @"author"];
     [query orderByDescending: @"createdAt"];
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *) posts;
+            self.filteredData = self.posts;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+-(void) loadFriendsPosts{
+    self.friendNames = [PFUser.currentUser objectForKey: @"friendNames"];
+    if (!self.friendNames){
+        self.friendNames = [NSMutableArray array];
+    }
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey: @"author"];
+    [query orderByDescending: @"createdAt"];
+    [query whereKey: @"username" containedIn: self.friendNames];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
