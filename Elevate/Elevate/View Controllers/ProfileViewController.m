@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) NSMutableArray *friends;
+@property (nonatomic, strong) NSMutableArray *friendNames;
 @property (nonatomic, strong) UIImageView *isFriendImage;
 
 @end
@@ -70,7 +71,11 @@
 -(void) populateView{
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
-    self.friends = [user objectForKey: @"Friends"];
+    self.friends = [user objectForKey: @"friends"];
+    self.friendNames = [user objectForKey: @"friendNames"];
+    if (!self.friends){
+        self.friends = [NSMutableArray array];
+    }
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
@@ -84,6 +89,7 @@
         self.profileImage.file = imageData;
         [self.profileImage loadInBackground];
         [self constructIsFriendimage];
+        [self addTapGestureRecognizer];
     } else{
         self.displayName.alpha = 0;
         self.statusLabel.alpha = 0;
@@ -102,13 +108,34 @@
     frame.size.height = 40.0;
     
     self.isFriendImage = [[UIImageView alloc] init];
-    if  (![self.friends containsObject: user]){
+    if  (![self.friendNames containsObject: user.username]){
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-add-60"];
     }else{
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
     }
     self.isFriendImage.frame = frame;
     [self.view addSubview: self.isFriendImage];
+}
+
+-(void) addTapGestureRecognizer{
+    UITapGestureRecognizer *friendTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapAddImage:)];
+    [self.isFriendImage addGestureRecognizer: friendTapGestureRecognizer];
+    [self.isFriendImage setUserInteractionEnabled:YES];
+}
+
+-(void) didTapAddImage:(UITapGestureRecognizer *)sender{
+    PFUser *user = [PFUser currentUser];
+    if  (![self.friendNames containsObject: user.username]){
+        [self.friends addObject: user];
+        [self.friendNames addObject: user.username];
+        [user setObject: self.friends forKey: @"friends"];
+        [user setObject: self.friendNames forKey: @"friendNames"];
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded){
+                self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
+            }
+        }];
+    }
 }
 
 -(void) loadPosts{
@@ -129,7 +156,7 @@
 
 - (void) loadFriends{
     PFUser *user = PFUser.currentUser;
-    self.friends = [user objectForKey: @"Friends"];
+    self.friends = [user objectForKey: @"friends"];
     [self.tableView reloadData];
 }
 
@@ -148,8 +175,8 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
-    cell.delegate = self;
     if (self.segmentedController.selectedSegmentIndex == 0){
+        cell.delegate = self;
         Post *post = self.posts[indexPath.row];
         [cell setPost: post];
     } else{

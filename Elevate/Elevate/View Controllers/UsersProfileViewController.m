@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *friends;
+@property (nonatomic, strong) NSMutableArray *friendNames;
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) UIImageView *isFriendImage;
 
@@ -54,7 +55,8 @@
         user = self.post[@"author"];
     }
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
-    self.friends = [user objectForKey: @"Friends"];
+    self.friends = [user objectForKey: @"friends"];
+    self.friendNames = [user objectForKey: @"friendNames"];
     if ([user objectForKey: @"image"] != nil){
         self.displayNameLabel.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
@@ -100,13 +102,34 @@
     frame.size.height = 40.0;
     
     self.isFriendImage = [[UIImageView alloc] init];
-    if  (![self.friends containsObject: user]){
+    if  (![self.friendNames containsObject: user.username]){
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-add-60"];
     }else{
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
     }
     self.isFriendImage.frame = frame;
     [self.view addSubview: self.isFriendImage];
+}
+
+-(void) addTapGestureRecognizer{
+    UITapGestureRecognizer *friendTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapAddImage:)];
+    [self.isFriendImage addGestureRecognizer: friendTapGestureRecognizer];
+    [self.isFriendImage setUserInteractionEnabled:YES];
+}
+
+-(void) didTapAddImage:(UITapGestureRecognizer *)sender{
+    PFUser *user = [PFUser currentUser];
+    if  (![self.friendNames containsObject: user.username]){
+        [self.friends addObject: user];
+        [self.friendNames addObject: user.username];
+        [user setObject: self.friendNames forKey: @"friendNames"];
+        [user setObject: self.friends forKey: @"friends"];
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded){
+                self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
+            }
+        }];
+    }
 }
 
 
@@ -139,7 +162,7 @@
     }else{
         user = self.post[@"author"];
     }
-    self.friends = [user objectForKey: @"Friends"];
+    self.friends = [user objectForKey: @"friends"];
     [self.tableView reloadData];
 }
 

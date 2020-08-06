@@ -113,8 +113,12 @@ NSString *const normalHearts = @"favor-icon";
     
     UIImage *image = [UIImage imageNamed: @"download"];
     self.profileImage.image = image;
+    
     self.caption.text = [friendName objectForKey: @"description"];
-    self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", [[friendName objectForKey: @"squats"] intValue]];
+    //self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", friendName.squats];
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", friendName.username];
+    //self.numLikes.text = [NSString stringWithFormat: @"%d", friendName.likes];
+    UIImage *heartImage = [UIImage imageNamed: @"download"];
+    self.likeImage.image = heartImage;
 }
 @end
