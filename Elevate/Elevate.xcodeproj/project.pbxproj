@@ -57,6 +57,7 @@
 		43A6097224D47B7F00BEAE5E /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */; };
 		43A6097524D47E5900BEAE5E /* UsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097424D47E5900BEAE5E /* UsersCell.m */; };
 		43A6097824D8A3B500BEAE5E /* SquatSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */; };
+		43AE646B24DC97AE009084D7 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE646A24DC97AE009084D7 /* Friend.m */; };
 		43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327B624CF66E600D59DFC /* ProgressViewController.m */; };
 		43F327C224CF81BD00D59DFC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C124CF81BD00D59DFC /* ChartViewController.swift */; };
 		43F327C624D0C3B400D59DFC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C524D0C3B400D59DFC /* DetailsViewController.m */; };
@@ -156,6 +157,8 @@
 		43A6097424D47E5900BEAE5E /* UsersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersCell.m; sourceTree = "<group>"; };
 		43A6097624D8A3B500BEAE5E /* SquatSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquatSettingsViewController.h; sourceTree = "<group>"; };
 		43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquatSettingsViewController.m; sourceTree = "<group>"; };
+		43AE646924DC97AE009084D7 /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		43AE646A24DC97AE009084D7 /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		43F327B524CF66E600D59DFC /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,6 +456,8 @@
 				43A6096B24D46D0D00BEAE5E /* OAPFetcherSingleton.m */,
 				43079EB124C7B25900E41A75 /* Post.h */,
 				43079EB224C7B25900E41A75 /* Post.m */,
+				43AE646924DC97AE009084D7 /* Friend.h */,
+				43AE646A24DC97AE009084D7 /* Friend.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				4307A0E424CE648200E41A75 /* CGPoint+Extension.swift in Sources */,
 				437B886524BF62B60073C533 /* main.m in Sources */,
 				4307A0E824CE648200E41A75 /* Joint.swift in Sources */,
+				43AE646B24DC97AE009084D7 /* Friend.m in Sources */,
 				4307A0F424CE66A700E41A75 /* SquatViewController.swift in Sources */,
 				43079EB624C8A23C00E41A75 /* PostViewController.m in Sources */,
 				4307A0DD24CE648200E41A75 /* PopOverModalViewController.swift in Sources */,
