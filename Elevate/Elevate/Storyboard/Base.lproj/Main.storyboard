@@ -295,7 +295,7 @@
         <!--Timeline-->
         <scene sceneID="Ujj-Fp-Nmu">
             <objects>
-                <viewController id="ISZ-qx-kaJ" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="ISZ-qx-kaJ" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lxn-f5-i5z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7K-zn-jEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3949.275362318841" y="2682.5892857142858"/>
+            <point key="canvasLocation" x="-3630" y="2753"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rbR-uA-Jxk">
@@ -2241,7 +2241,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FKH-PU-3kq"/>
+        <segue reference="8jm-Yo-Fg7"/>
         <segue reference="F6d-iP-ARM"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
