@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *friends;
 @property (nonatomic, strong) NSMutableArray *posts;
+@property (nonatomic, strong) UIImageView *isFriendImage;
 
 @end
 
@@ -53,6 +54,7 @@
         user = self.post[@"author"];
     }
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
+    self.friends = [user objectForKey: @"Friends"];
     if ([user objectForKey: @"image"] != nil){
         self.displayNameLabel.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
@@ -65,6 +67,7 @@
         self.profileImage.image = [UIImage imageNamed: @"download"];
         self.profileImage.file = imageData;
         [self.profileImage loadInBackground];
+        [self constructIsFriendimage];
     } else{
         self.displayNameLabel.alpha = 0;
         self.statusLabel.alpha = 0;
@@ -86,6 +89,26 @@
         self.displayLabel.text = @"Friends";
     }
 }
+
+-(void) constructIsFriendimage{
+    PFUser *user = [PFUser currentUser];
+    
+    CGRect frame = self.profileImage.frame;
+    frame.origin.x = frame.origin.x + frame.size.width - 37.5;
+    frame.origin.y = frame.origin.y + frame.size.height - 37.5;
+    frame.size.width = 40.0;
+    frame.size.height = 40.0;
+    
+    self.isFriendImage = [[UIImageView alloc] init];
+    if  (![self.friends containsObject: user]){
+        self.isFriendImage.image = [UIImage imageNamed: @"icons8-add-60"];
+    }else{
+        self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
+    }
+    self.isFriendImage.frame = frame;
+    [self.view addSubview: self.isFriendImage];
+}
+
 
 -(void) loadPosts{
     PFUser *user;
