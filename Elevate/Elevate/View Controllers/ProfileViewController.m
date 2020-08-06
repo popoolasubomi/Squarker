@@ -48,8 +48,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear: animated];
     
-    NSLog(@"%d", [[PFUser.currentUser objectForKey: @"likes"] intValue]);
-    
     [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         [self populateView];
     }];

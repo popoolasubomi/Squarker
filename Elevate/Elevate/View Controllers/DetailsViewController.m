@@ -8,7 +8,6 @@
 
 #import "DetailsViewController.h"
 #import "UsersProfileViewController.h"
-#import "HomeViewController.h"
 #import "SceneDelegate.h"
 #import "Parse/Parse.h"
 #import "CommentCell.h"
@@ -222,8 +221,8 @@ NSString *const normalHeart = @"favor-icon";
 - (IBAction)backButton:(id)sender {
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
-    HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-    myDelegate.window.rootViewController = homeViewController;
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+    myDelegate.window.rootViewController = navigationController;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
