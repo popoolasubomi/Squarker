@@ -51,6 +51,10 @@ NSString *const normalHearts = @"favor-icon";
     PFUser *postUser = self.post[@"author"];
     NSNumber *postUserLikes = [postUser objectForKey: @"likes"];
     NSNumber *totalUserLikes;
+    self.likes = [self.post objectForKey: @"likeArray"];
+    if (!self.likes){
+        self.likes = [NSMutableArray array];
+    }
     if (![self.likes containsObject: user.username]){
         [self.likes addObject: user.username];
         self.post.likeArray = self.likes;
