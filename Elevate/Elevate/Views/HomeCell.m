@@ -46,11 +46,8 @@ NSString *const normalHearts = @"favor-icon";
 }
 
 - (void) configureLikeFeatures{
-    NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     PFUser *user = [PFUser currentUser];
-    PFUser *postUser = self.post[@"author"];
-    NSNumber *postUserLikes = [postUser objectForKey: @"likes"];
-    NSNumber *totalUserLikes;
+    NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     self.likes = [self.post objectForKey: @"likeArray"];
     if (!self.likes){
         self.likes = [NSMutableArray array];
@@ -59,15 +56,11 @@ NSString *const normalHearts = @"favor-icon";
         [self.likes addObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue + 1];
-        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue + 1];
     } else{
         [self.likes removeObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue - 1];
-        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue -1];
     }
-    [postUser setObject: totalUserLikes forKey: @"likes"];
-    [postUser saveInBackground];
     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Updated Likes");
@@ -81,6 +74,7 @@ NSString *const normalHearts = @"favor-icon";
 
 - (void) updateHeartImage{
     PFUser *user = [PFUser currentUser];
+    [self.post fetchInBackground];
     self.likes = [self.post objectForKey: @"likeArray"];
     if ([self.likes containsObject: user.username]){
         self.likeImage.image = [UIImage imageNamed: redHearts];
@@ -112,7 +106,6 @@ NSString *const normalHearts = @"favor-icon";
 
 - (void)setFriends:(Friend *)friendName{
     _friendName = friendName;
-    
     UIImage *image = [UIImage imageNamed: @"download"];
     NSURL *imageURL = [[Friend alloc] getImage: friendName.imageUrl];
     [self.profileImage setImageWithURL: imageURL];

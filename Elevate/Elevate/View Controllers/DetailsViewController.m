@@ -103,24 +103,17 @@ NSString *const normalHeart = @"favor-icon";
 }
 
 - (void) configureLikeFeatures{
-    NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     PFUser *user = [PFUser currentUser];
-    PFUser *postUser = self.post[@"author"];
-    NSNumber *postUserLikes = [postUser objectForKey: @"likes"];
-    NSNumber *totalUserLikes;
+    NSNumber *numLikes = [self.post objectForKey: @"likeCount"];
     if (![self.likes containsObject: user.username]){
         [self.likes addObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue + 1];
-        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue + 1];
     } else{
         [self.likes removeObject: user.username];
         self.post.likeArray = self.likes;
         self.post.likeCount = [NSNumber numberWithInt: numLikes.intValue - 1];
-        totalUserLikes = [NSNumber numberWithInt: postUserLikes.intValue -1];
     }
-    [postUser setObject: totalUserLikes forKey: @"likes"];
-    [postUser saveInBackground];
     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Updated Likes");

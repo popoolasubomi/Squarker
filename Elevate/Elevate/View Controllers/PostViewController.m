@@ -78,7 +78,10 @@
                 PFUser *user = [PFUser currentUser];
                 NSNumber *squats = [user objectForKey: @"squats"];
                 NSNumber *totalSquats = [NSNumber numberWithInt: squats.intValue + self.numSquats.intValue];
+                NSNumber *posts = [user objectForKey: @"postCount"];
+                NSNumber *totalPosts = [NSNumber numberWithInt: posts.intValue + 1];
                 [user setObject: totalSquats forKey: @"squats"];
+                [user setObject: totalPosts forKey: @"postCount"];
                 [user saveInBackground];
                 [self goHome];
             }

@@ -45,7 +45,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -55,23 +55,27 @@
         [self populateView];
     }];
     
-    [self loadPosts];
+    self.segmentedController.selectedSegmentIndex = 0;
+    [self dataChoice];
 }
 
 - (IBAction)changeSegment:(id)sender {
-    if (self.segmentedController.selectedSegmentIndex == 0){
-        [self loadPosts];
-        self.displayLabel.text = @"My Timeline";
-    } else{
-        [self loadFriends];
-        self.displayLabel.text = @"Friends";
-    }
+    [self dataChoice];
 }
 
+-(void) dataChoice{
+    if (self.segmentedController.selectedSegmentIndex == 0){
+           [self loadPosts];
+           self.displayLabel.text = @"My Timeline";
+       } else{
+           [self loadFriends];
+           self.displayLabel.text = @"Friends";
+       }
+}
 
 -(void) populateView{
     PFUser *user = [PFUser currentUser];
-    self.usernameLabel.text = user.username;
+    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
     self.friends = [user objectForKey: @"friends"];
     self.friendNames = [user objectForKey: @"friendNames"];
     if (!self.friends){
