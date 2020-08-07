@@ -29,6 +29,7 @@ NSString *const normalHearts = @"favor-icon";
     [self.cellView setUserInteractionEnabled:YES];
     
     [detailsTapGestureRecognizer requireGestureRecognizerToFail: likeTapGestureRecognizer];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -117,9 +118,8 @@ NSString *const normalHearts = @"favor-icon";
     self.caption.text = friendName.caption;
     self.numberOfSquats.text = [NSString stringWithFormat: @"%d squats", friendName.squats.intValue];
     self.usernameLabel.text = [NSString stringWithFormat: @"@%@", friendName.username];
-    self.numLikes.text = [NSString stringWithFormat: @"%d", friendName.numLikes.intValue];
-    UIImage *heartImage = [UIImage imageNamed: redHearts];
-    self.likeImage.image = heartImage;
+    self.likeImage.alpha = 0;
+    self.numLikes.alpha = 0;
 }
 
 @end

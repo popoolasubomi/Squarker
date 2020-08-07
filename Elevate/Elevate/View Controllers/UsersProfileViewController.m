@@ -28,8 +28,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) PFUser *postUser;
 @property (nonatomic, strong) NSMutableArray *friends;
 @property (nonatomic, strong) NSMutableArray *friendNames;
+@property (nonatomic, strong) NSMutableArray *currentUserFriends;
+@property (nonatomic, strong) NSMutableArray *currentUserFriendNames;
 @property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) UIImageView *isFriendImage;
 
@@ -43,32 +46,38 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    
-    [self populateView];
-    [self loadPosts];
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        [self populateView];
+        [self loadPosts];
+    }];
 }
 
 -(void) populateView{
-    PFUser *user;
     if (self.type == true){
-        user = (PFUser *) self.post;
+        self.postUser = (PFUser *) self.post;
     }else{
-        user = self.post[@"author"];
+        self.postUser = self.post[@"author"];
     }
-    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", user.username];
-    self.friends = [user objectForKey: @"friends"];
-    self.friendNames = [user objectForKey: @"friendNames"];
+    self.usernameLabel.text = [NSString stringWithFormat: @"@%@", self.postUser.username];
+    self.friends = [self.postUser objectForKey: @"friends"];
+    self.friendNames = [self.postUser objectForKey: @"friendNames"];
     if (!self.friends){
         self.friends = [NSMutableArray array];
         self.friendNames = [NSMutableArray array];
     }
-    if ([user objectForKey: @"image"] != nil){
-        self.displayNameLabel.text = [user objectForKey: @"displayName"];
-        self.statusRank.text = [user objectForKey: @"status"];
-        self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
-        self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
-        self.descriptionLabel.text = [user objectForKey: @"description"];
-        PFFileObject *imageData = [user objectForKey: @"image"];
+    self.currentUserFriendNames = [[PFUser currentUser] objectForKey: @"friendNames"];
+    self.currentUserFriends = [[PFUser currentUser] objectForKey: @"friends"];
+    if (!self.currentUserFriends){
+        self.currentUserFriends = [NSMutableArray array];
+        self.currentUserFriendNames = [NSMutableArray array];
+    }
+    if ([self.postUser objectForKey: @"image"] != nil){
+        self.displayNameLabel.text = [self.postUser objectForKey: @"displayName"];
+        self.statusRank.text = [self.postUser objectForKey: @"status"];
+        self.numLikes.text = [NSString stringWithFormat: @"%d", [[self.postUser objectForKey: @"likes"] intValue]];
+        self.numSquats.text = [NSString stringWithFormat: @"%d", [[self.postUser objectForKey: @"squats"] intValue]];
+        self.descriptionLabel.text = [self.postUser objectForKey: @"description"];
+        PFFileObject *imageData = [self.postUser objectForKey: @"image"];
         self.profileImage.layer.cornerRadius = 72;
         self.profileImage.layer.masksToBounds = YES;
         self.profileImage.image = [UIImage imageNamed: @"download"];
@@ -99,7 +108,6 @@
 }
 
 -(void) constructIsFriendimage{
-    PFUser *user = [PFUser currentUser];
     
     CGRect frame = self.profileImage.frame;
     frame.origin.x = frame.origin.x + frame.size.width - 37.5;
@@ -108,7 +116,7 @@
     frame.size.height = 40.0;
     
     self.isFriendImage = [[UIImageView alloc] init];
-    if  (![self.friendNames containsObject: user.username]){
+    if  (![self.currentUserFriendNames containsObject: self.post.username]){
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-add-60"];
     }else{
         self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
@@ -125,12 +133,12 @@
 
 -(void) didTapAddImage:(UITapGestureRecognizer *)sender{
     PFUser *user = [PFUser currentUser];
-    if  (![self.friendNames containsObject: user.username]){
-        NSDictionary *friend = [[Friend alloc] BuildWithPFUser: user];
-        [self.friends addObject: friend];
-        [self.friendNames addObject: user.username];
-        [user setObject: self.friends forKey: @"friends"];
-        [user setObject: self.friendNames forKey: @"friendNames"];
+    if  (![self.currentUserFriendNames containsObject: self.post.username]){
+        NSDictionary *friend = [[Friend alloc] BuildWithPFUser: self.postUser];
+        [self.currentUserFriends addObject: friend];
+        [self.currentUserFriendNames addObject: self.postUser.username];
+        [user setObject: self.currentUserFriends forKey: @"friends"];
+        [user setObject: self.currentUserFriendNames forKey: @"friendNames"];
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded){
                 self.isFriendImage.image = [UIImage imageNamed: @"icons8-checked-60"];
@@ -176,9 +184,9 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"HomeCell"];
-    cell.delegate = self;
     if (self.segmentedController.selectedSegmentIndex == 0){
         Post *post = self.posts[indexPath.row];
+        cell.delegate = self;
         [cell setPost: post];
     } else{
         Friend *friend = self.friends[indexPath.row];

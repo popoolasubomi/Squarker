@@ -29,6 +29,7 @@
         self.numLikes = dictionary[@"likes"];
         self.caption = dictionary[@"description"];
         self.imageUrl = dictionary[@"image"];
+        self.postCount = dictionary[@"postCount"];
     }
     return self;
 }
@@ -36,7 +37,7 @@
 - (NSDictionary *)BuildWithPFUser:(PFUser *)dictionary {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     NSArray *keys1 = @[@"username",  @"description"]; //Strings
-    NSArray *keys2 = @[@"squats", @"likes"];  //NSNumber
+    NSArray *keys2 = @[@"squats", @"likes", @"postCount"];  //NSNumber
     NSArray *keys3 = @[@"image"];   // PFFileObject
     if (dictionary) {
         for (NSString *key in keys1){

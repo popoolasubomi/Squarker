@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSNumber *squats;
 @property (nonatomic, strong) NSNumber *numLikes;
+@property (nonatomic, strong) NSNumber *postCount;
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) NSString *imageUrl;
 

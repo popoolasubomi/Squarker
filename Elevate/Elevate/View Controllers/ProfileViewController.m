@@ -22,9 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
 @property (weak, nonatomic) IBOutlet UILabel *statusRank;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *heartImage;
 @property (weak, nonatomic) IBOutlet UIImageView *squatImage;
-@property (weak, nonatomic) IBOutlet UILabel *numLikes;
+@property (weak, nonatomic) IBOutlet UILabel *numPosts;
 @property (weak, nonatomic) IBOutlet UILabel *numSquats;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UIView *middleView;
@@ -85,7 +84,7 @@
     if ([user objectForKey: @"image"] != nil){
         self.displayName.text = [user objectForKey: @"displayName"];
         self.statusRank.text = [user objectForKey: @"status"];
-        self.numLikes.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"likes"] intValue]];
+        self.numPosts.text = [NSString stringWithFormat: @"Stories: %d", [[user objectForKey: @"postCount"] intValue]];
         self.numSquats.text = [NSString stringWithFormat: @"%d", [[user objectForKey: @"squats"] intValue]];
         self.descriptionLabel.text = [user objectForKey: @"description"];
         PFFileObject *imageData = [user objectForKey: @"image"];
