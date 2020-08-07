@@ -27,6 +27,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     var previous_action: String = "r"    // Current State of body
     var timer = Timer() // Timer For Squat App
     var working = false
+    var heightEstimator = 5.58
     
     var guideView: UIView!
     var nextBtn: UIButton!
@@ -90,7 +91,7 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
     
     func buildInstructionController() {
         self.guideView = UIView()
-        self.guideView.backgroundColor = .gray
+        self.guideView.backgroundColor = .white
         self.guideView.layer.cornerRadius = 17
         self.guideView.layer.masksToBounds = true
         
@@ -199,11 +200,12 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
         self.timeCounter = UserDefaults.standard.integer(forKey: "Time")
         self.height = UserDefaults.standard.double(forKey: "Height")
         
-        if self.height == 0 && self.timeCounter == 0{
+        if self.height == 0 {
             goToSettingsAlert()
         }
         else{
             self.working = self.working == true ? false : true
+            self.heightEstimator = self.height / self.heightEstimator
             if (self.working){
                 self.startButton.setTitle("Stop", for: .normal)
                 self.startButton.backgroundColor = UIColor.red
@@ -381,7 +383,10 @@ class SquatViewController: UIViewController, ConfigurationViewControllerDelegate
                    // Array of current squatting data
                    self.current = [left_hip_y, left_knee_y, left_ankle_y, left_ear_y, left_eye_y, right_hip_y, right_knee_y, right_ankle_y, right_ear_y, right_eye_y, nose_y]
                    // Array of minimum required change in current data and previous data
-                   let change = [130, 10, 0, 600, 650, 130, 10, 0, 600, 650, 550]
+                   var change = [130.0, 10.0, 0.0, 600.0, 650.0, 130.0, 10.0, 0.0, 600.0, 650.0, 550.0]
+                   for y in 0..<change.count{
+                    change[y] *= self.heightEstimator
+                    }
                    var check = true
                    //Ensure that all points are sin and are non-zero
                    for item in self.current{

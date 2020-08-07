@@ -53,10 +53,15 @@ NSString *const normalHeart = @"favor-icon";
 - (void) fetchComments{
     [self populateView];
     self.comments = [self.post objectForKey: @"commentArray"];
+    if (!self.comments){
+        self.comments = [NSMutableArray array];
+    }
     if (self.comments.count == 0){
         self.commentsView.alpha = 0;
         self.tableView.alpha = 0;
     }else{
+        self.tableView.alpha = 1;
+        self.commentsView.alpha = 1;
         [self.tableView reloadData];
     }
 }
