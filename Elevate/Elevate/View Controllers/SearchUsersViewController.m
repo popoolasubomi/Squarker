@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *users;
 @property (nonatomic, strong) NSMutableArray *filteredUsers;
+
 @end
 
 @implementation SearchUsersViewController
@@ -76,6 +77,7 @@
 }
 
 - (IBAction)findOthers:(id)sender {
+    [self performSegueWithIdentifier: @"findOthersSegue" sender: nil];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
