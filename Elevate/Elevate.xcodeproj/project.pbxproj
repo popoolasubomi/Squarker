@@ -58,6 +58,7 @@
 		43A6097524D47E5900BEAE5E /* UsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097424D47E5900BEAE5E /* UsersCell.m */; };
 		43A6097824D8A3B500BEAE5E /* SquatSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */; };
 		43AE646B24DC97AE009084D7 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE646A24DC97AE009084D7 /* Friend.m */; };
+		43AE64AF24E13A43009084D7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE64AE24E13A43009084D7 /* MapViewController.m */; };
 		43F327B724CF66E600D59DFC /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327B624CF66E600D59DFC /* ProgressViewController.m */; };
 		43F327C224CF81BD00D59DFC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C124CF81BD00D59DFC /* ChartViewController.swift */; };
 		43F327C624D0C3B400D59DFC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F327C524D0C3B400D59DFC /* DetailsViewController.m */; };
@@ -159,6 +160,8 @@
 		43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquatSettingsViewController.m; sourceTree = "<group>"; };
 		43AE646924DC97AE009084D7 /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
 		43AE646A24DC97AE009084D7 /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		43AE64AD24E13A43009084D7 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		43AE64AE24E13A43009084D7 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		43F327B524CF66E600D59DFC /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		43F327B624CF66E600D59DFC /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		43F327B824CF6AF500D59DFC /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +435,8 @@
 				43A6097124D47B7F00BEAE5E /* SearchUsersViewController.m */,
 				43A6097624D8A3B500BEAE5E /* SquatSettingsViewController.h */,
 				43A6097724D8A3B500BEAE5E /* SquatSettingsViewController.m */,
+				43AE64AD24E13A43009084D7 /* MapViewController.h */,
+				43AE64AE24E13A43009084D7 /* MapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -782,6 +787,7 @@
 				437B888F24BF7A8C0073C533 /* LoginViewController.m in Sources */,
 				4307A0F124CE648200E41A75 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				4307A0DA24CE648200E41A75 /* ViewController.swift in Sources */,
+				43AE64AF24E13A43009084D7 /* MapViewController.m in Sources */,
 				43079EBC24C8FCEF00E41A75 /* ProfileViewController.m in Sources */,
 				4307A0E724CE648200E41A75 /* VideoCapture.swift in Sources */,
 				433171CA24C2A623008568D9 /* HomeViewController.m in Sources */,

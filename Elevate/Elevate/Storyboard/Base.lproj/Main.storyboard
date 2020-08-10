@@ -1000,10 +1000,10 @@
             </objects>
             <point key="canvasLocation" x="-2626" y="2753"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="hls-Is-Nek">
             <objects>
-                <viewController id="PvW-1C-iPq" sceneMemberID="viewController">
+                <viewController id="PvW-1C-iPq" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kst-or-LWi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
