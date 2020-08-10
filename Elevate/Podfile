@@ -11,6 +11,8 @@ target 'Elevate' do
     pod 'Parse/UI'
     pod 'IQKeyboardManager'
     pod 'Charts'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
 
   target 'ElevateTests' do
     inherit! :search_paths

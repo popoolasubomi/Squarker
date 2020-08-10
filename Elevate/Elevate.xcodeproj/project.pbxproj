@@ -485,6 +485,7 @@
 				437B884C24BF62B40073C533 /* Frameworks */,
 				437B884D24BF62B40073C533 /* Resources */,
 				9B90805EBD236F6A664BE7C4 /* [CP] Embed Pods Frameworks */,
+				32E7CB87606D69A9ECDF1DA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -523,6 +524,7 @@
 				437B887224BF62B60073C533 /* Frameworks */,
 				437B887324BF62B60073C533 /* Resources */,
 				C6898157D4A100545EF19010 /* [CP] Embed Pods Frameworks */,
+				2EC301B0AACF1B29BAAE6E93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -654,6 +656,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EC301B0AACF1B29BAAE6E93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate-ElevateUITests/Pods-Elevate-ElevateUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate-ElevateUITests/Pods-Elevate-ElevateUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elevate-ElevateUITests/Pods-Elevate-ElevateUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32E7CB87606D69A9ECDF1DA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elevate/Pods-Elevate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B90805EBD236F6A664BE7C4 /* [CP] Embed Pods Frameworks */ = {

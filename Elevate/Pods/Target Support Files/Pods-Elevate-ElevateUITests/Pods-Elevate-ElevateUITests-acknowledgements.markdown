@@ -263,6 +263,14 @@ Apache License
 
 
 
+## GoogleMaps
+
+Copyright 2020 Google
+
+## GooglePlaces
+
+Copyright 2020 Google
+
 ## IQKeyboardManager
 
 MIT License
