@@ -24,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSNumber *some = [PFUser.currentUser objectForKey: @"Longitude"];
+    NSLog(@"%f", some.doubleValue);
     [self getCurrentLocation];
     [self createMapView];
 }
@@ -52,6 +53,11 @@
     } else{
         [self.mapView animateToCameraPosition: camera];
     }
+    NSNumber *longitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.longitude];
+    NSNumber *latitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.latitude];
+    [PFUser.currentUser setObject: longitude forKey: @"Longitude"];
+    [PFUser.currentUser setObject: latitude forKey: @"Latitude"];
+    [PFUser.currentUser saveInBackground];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -78,12 +84,6 @@
     [self.backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.backButton sizeToFit];
     [self.view addSubview: self.backButton];
-    
-    NSNumber *longitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.longitude];
-    NSNumber *latitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.latitude];
-    [PFUser.currentUser setObject: longitude forKey: @"Longitude"];
-    [PFUser.currentUser setObject: latitude forKey: @"Latitude"];
-    [PFUser.currentUser saveInBackground];
 }
 
 
