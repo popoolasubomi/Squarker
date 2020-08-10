@@ -55,4 +55,13 @@
     NSLog(@"Error: %@", error);
 }
 
+- (void) createMapView{
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: self.currentLocation.coordinate.latitude longitude: self.currentLocation.coordinate.longitude zoom: self.zoomLevel];
+        self.mapView = [GMSMapView mapWithFrame: self.view.bounds camera: camera];
+       self.mapView.settings.myLocationButton = YES;
+       [self.mapView setMyLocationEnabled: YES];
+       [self.view addSubview: self.mapView];
+       [self.mapView setHidden: NO];
+}
+
 @end
