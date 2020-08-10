@@ -24,8 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSNumber *some = [PFUser.currentUser objectForKey: @"Longitude"];
-    NSLog(@"%f", some.doubleValue);
+
     [self getCurrentLocation];
     [self createMapView];
 }
@@ -46,18 +45,24 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     CLLocation* location = [locations lastObject];
     self.currentLocation = location;
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: location.coordinate.latitude longitude: location.coordinate.longitude zoom: self.zoomLevel];
+    
     if ([self.mapView isHidden]){
         [self.mapView setHidden: NO];
         self.mapView.camera = camera;
     } else{
         [self.mapView animateToCameraPosition: camera];
     }
+    
     NSNumber *longitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.longitude];
     NSNumber *latitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.latitude];
+    
     [PFUser.currentUser setObject: longitude forKey: @"Longitude"];
     [PFUser.currentUser setObject: latitude forKey: @"Latitude"];
     [PFUser.currentUser saveInBackground];
+    
+    [self addMarkers];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -86,5 +91,25 @@
     [self.view addSubview: self.backButton];
 }
 
+- (void) addMarkers{
+    NSMutableArray  *friends = [PFUser.currentUser objectForKey: @"friendNames"];
+    PFQuery *query = [PFUser query];
+    [query whereKey: @"username" containedIn: friends];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error){
+        if (!error){
+            for (PFUser *user in users){
+                if (user[@"Longitude"] != nil && user[@"Latitude"] != nil){
+                    NSNumber *longitude = user[@"Longitude"];
+                    NSNumber *latitude = user[@"Latitude"];
+                    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue);
+                    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+                    marker.title = user[@"username"];
+                    marker.flat = YES;
+                    marker.map = self.mapView;
+                }
+            }
+        }
+    }];
+}
 
 @end
