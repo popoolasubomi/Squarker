@@ -16,6 +16,7 @@
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) GMSMapView *mapView;
 @property (nonatomic) float zoomLevel;
+@property (nonatomic, strong) UIButton *backButton;
 
 @end
 
@@ -58,6 +59,10 @@
     NSLog(@"Error: %@", error);
 }
 
+-(void) backButtonClicked:(UIButton*)sender{
+    [self dismissViewControllerAnimated: YES completion: nil];
+}
+
 - (void) createMapView{
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: self.currentLocation.coordinate.latitude longitude: self.currentLocation.coordinate.longitude zoom: self.zoomLevel];
         self.mapView = [GMSMapView mapWithFrame: self.view.bounds camera: camera];
@@ -65,10 +70,21 @@
        [self.mapView setMyLocationEnabled: YES];
        [self.view addSubview: self.mapView];
        [self.mapView setHidden: NO];
+    
+    self.backButton = [UIButton buttonWithType: UIButtonTypeSystem];
+    self.backButton.frame = CGRectMake(20.0,  40.0, 50.0, 30.0);
+    [self.backButton setTitle:@"Back" forState: UIControlStateNormal];
+    [self.backButton setTitleColor: [UIColor blueColor] forState: UIControlStateNormal];
+    [self.backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.backButton sizeToFit];
+    [self.view addSubview: self.backButton];
+    
+    NSNumber *longitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.longitude];
+    NSNumber *latitude = [NSNumber numberWithDouble: self.currentLocation.coordinate.latitude];
+    [PFUser.currentUser setObject: longitude forKey: @"Longitude"];
+    [PFUser.currentUser setObject: latitude forKey: @"Latitude"];
+    [PFUser.currentUser saveInBackground];
 }
 
-- (IBAction)backButton:(id)sender {
-    [self dismissViewControllerAnimated: YES completion: nil];
-}
 
 @end

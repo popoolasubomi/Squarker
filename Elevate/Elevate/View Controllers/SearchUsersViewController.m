@@ -97,13 +97,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UICollectionViewCell *tappedCell = sender;
-    NSIndexPath *indexPath = [self.collectionView indexPathForCell: tappedCell];
-    Post *user = self.users[indexPath.row];
-    UINavigationController *navigationController = [segue destinationViewController];
-    UsersProfileViewController *profileController = (UsersProfileViewController *) navigationController.topViewController;
-    profileController.post = user;
-    profileController.type = true;
+    if ([[segue identifier] isEqualToString: @"profileSegue"]){
+        UICollectionViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell: tappedCell];
+        Post *user = self.users[indexPath.row];
+        UINavigationController *navigationController = [segue destinationViewController];
+        UsersProfileViewController *profileController = (UsersProfileViewController *) navigationController.topViewController;
+        profileController.post = user;
+        profileController.type = true;
+    }
 }
 
 
