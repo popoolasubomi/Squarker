@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "Parse/Parse.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface MapViewController () <CLLocationManagerDelegate>
@@ -64,6 +65,10 @@
        [self.mapView setMyLocationEnabled: YES];
        [self.view addSubview: self.mapView];
        [self.mapView setHidden: NO];
+}
+
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 @end
