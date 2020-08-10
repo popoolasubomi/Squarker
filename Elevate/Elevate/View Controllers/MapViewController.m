@@ -38,4 +38,21 @@
     self.locationManager.delegate = self;
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation* location = [locations lastObject];
+    self.currentLocation = location;
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: location.coordinate.latitude longitude: location.coordinate.longitude zoom: self.zoomLevel];
+    if ([self.mapView isHidden]){
+        [self.mapView setHidden: NO];
+        self.mapView.camera = camera;
+    } else{
+        [self.mapView animateToCameraPosition: camera];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    [self.locationManager stopUpdatingLocation];
+    NSLog(@"Error: %@", error);
+}
+
 @end
