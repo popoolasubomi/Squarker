@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+@import GoogleMaps;
 
+NSString *const API_KEY = @"AIzaSyBry432Sv7KgjNmA33gohQ8b1P6QSTrhAo";
 @interface AppDelegate ()
 
 @end
@@ -22,6 +24,7 @@
              configuration.server = @"https://ilevate.herokuapp.com/parse";
          }];
     [Parse initializeWithConfiguration: config];
+    [GMSServices provideAPIKey: API_KEY];
     return YES;
 }
 

@@ -75,6 +75,9 @@
     }
 }
 
+- (IBAction)findOthers:(id)sender {
+}
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UsersCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"UsersCell" forIndexPath: indexPath];
     Post *post = self.users[indexPath.row];

@@ -983,7 +983,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6vO-0g-Dl6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Others" id="XQ9-Ht-VMf"/>
+                    <navigationItem key="navigationItem" title="Search Others" id="XQ9-Ht-VMf">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-location-24" id="HqG-gT-BNL">
+                            <connections>
+                                <action selector="findOthers:" destination="aXc-0Y-g0L" id="tKd-tY-C5P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="e5i-g5-WqS" id="ZIQ-K8-v8m"/>
                         <outlet property="searchBar" destination="6eU-Wj-pMO" id="EbC-y3-3Ua"/>
@@ -2272,7 +2278,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="G3O-CG-TNs"/>
-        <segue reference="F6d-iP-ARM"/>
+        <segue reference="kJQ-AT-g4h"/>
         <segue reference="aaj-xu-n9W"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2283,6 +2289,7 @@
         <image name="icons8-forward-arrow-30" width="30" height="30"/>
         <image name="icons8-home-32" width="32" height="32"/>
         <image name="icons8-increase-24" width="24" height="24"/>
+        <image name="icons8-location-24" width="24" height="24"/>
         <image name="icons8-search-30" width="30" height="30"/>
         <image name="icons8-settings-24" width="24" height="24"/>
         <image name="icons8-settings-64" width="64" height="64"/>
