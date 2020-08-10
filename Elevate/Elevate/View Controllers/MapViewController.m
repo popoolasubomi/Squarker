@@ -7,8 +7,14 @@
 //
 
 #import "MapViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController ()
+@interface MapViewController () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong) GMSMapView *mapView;
+@property (nonatomic) float zoomLevel;
 
 @end
 
@@ -19,14 +25,17 @@
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) getCurrentLocation{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.currentLocation = [[CLLocation alloc] init];
+    self.mapView = [[GMSMapView alloc] init];
+    self.zoomLevel = 15.0;
+    
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestAlwaysAuthorization];
+    self.locationManager.distanceFilter = 50;
+    [self.locationManager startUpdatingLocation];
+    self.locationManager.delegate = self;
 }
-*/
 
 @end
